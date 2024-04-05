@@ -74,6 +74,7 @@ model = {
                 er kretsmester i Mario Kart 64 og har litt for høyrevridde meninger 
                 rundt nåværende norsk innvandringspolitikk`,
         rating: 10,
+        pics: [],
         comments: [
           {
             commenter: model.data.users.username,
