@@ -9,7 +9,7 @@ model = {
     postCat: {
       addNewCat: {
         id: null,
-        owner: model.app.loggedInUser,
+        owner: '', // model.app.loggedinuser
         name: '',
         age: null,
         dateOfBirth: undefined,
@@ -37,12 +37,12 @@ model = {
     viewCat: {
       rating: null,
       comment: {
-        commenter: model.app.loggedInUser,
+        commenter: '', // model.app.loggedinuser
         comment: '',
       },
     },
     reportIssue: {
-      reportee: model.app.loggedInUser,
+      reportee: '', // model.app.loggedinuser
       reportedUser: null,
       reportReason: '',
     },
@@ -65,11 +65,11 @@ model = {
     cats: [
       {
         id: 0,
-        owner: model.data.users.username,
+        owner: '', // model.data.users.username
         name: 'Oliver',
         age: 12,
         dateOfBirth: undefined,
-        race: [model.data.catRaces[0]],
+        race: [], // model.data.catraces[0]
         lore: `Han ble arrestert for skattesvindel og heleri i 2017, 
                 er kretsmester i Mario Kart 64 og har litt for høyrevridde meninger 
                 rundt nåværende norsk innvandringspolitikk`,
@@ -77,11 +77,11 @@ model = {
         pics: [],
         comments: [
           {
-            commenter: model.data.users.username,
+            commenter: 'henrik', //model.data.users.username
             comment: 'I love ur cat',
           },
           {
-            commenter: model.data.users.username,
+            commenter: 'bob', // model.data.users.username
             comment: 'I hate your cat grr',
           },
         ],
