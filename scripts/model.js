@@ -12,7 +12,7 @@ model = {
         owner: '', // model.app.loggedinuser
         name: '',
         age: null,
-        dateOfBirth: undefined,
+        dateOfBirth: null,
         race: [],
         lore: ``,
         pics: [],
