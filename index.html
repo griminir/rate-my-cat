@@ -4,11 +4,58 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rate my Pussy</title>
+
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/add-edit.css" />
+    <link rel="stylesheet" href="css/feed.css" />
+    <link rel="stylesheet" href="css/logIn.css" />
+    <link rel="stylesheet" href="css/profile.css" />
+
     <script src="scripts/model.js"></script>
+    <script src="scripts/commonController.js"></script>
+
+    <script src="scripts/add-edit cat/addEditController.js"></script>
+    <script src="scripts/add-edit cat/addView.js"></script>
+    <script src="scripts/add-edit cat/editView.js"></script>
+
+    <script src="scripts/feed/feedController.js"></script>
+    <script src="scripts/feed/feedView.js"></script>
+
+    <script src="scripts/log-in/logInController.js"></script>
+    <script src="scripts/log-in/logInView.js"></script>
+
+    <script src="scripts/profile/profileController.js"></script>
+    <script src="scripts/profile/profileView.js"></script>
+
+    <script src="scripts/sign-up/signUp.js"></script>
+    <script src="scripts/sign-up/signUpController.js"></script>
+
+    <script src="scripts/catProfile/catProfileController.js"></script>
+    <script src="scripts/catProfile/catProfileView.js"></script>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app"><img src="" alt="" /></div>
+
+    <script>
+      updateView();
+      function updateView() {
+        if (model.app.page == 'feed') {
+          feedView();
+        } else if (model.app.page == 'profile') {
+          profileView();
+        } else if (model.app.page == 'signUp') {
+          signUpView();
+        } else if (model.app.page == 'catProfile') {
+          catProfileView();
+        } else if (model.app.page == 'catEdit') {
+          catEditView();
+        } else if (model.app.page == 'catAdd') {
+          catAddView();
+        } else {
+          logInView();
+        }
+      }
+    </script>
   </body>
 </html>
 
