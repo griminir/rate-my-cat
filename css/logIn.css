@@ -1,0 +1,116 @@
+.LIP-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  /* background: url('background.png') no-repeat; */
+  background-size: cover;
+  background-position: center;
+}
+
+.LIP-login-box {
+  position: relative;
+  width: 400px;
+  height: 450px;
+  background: #89dceb;
+  /* background: transparent; */
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(15px);
+}
+
+.LIP-error {
+  color: red;
+  font-size: 1.5em;
+}
+
+.LIP-h2 {
+  font-size: 2em;
+  color: #fff46f;
+  text-align: center;
+}
+
+.LIP-input-box {
+  position: relative;
+  width: 310px;
+  margin: 30px 0;
+  border-bottom: 2px solid #fff;
+}
+
+.LIP-input-box .LIP-label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  font-size: 1em;
+  color: #fff46f;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.LIP-input-box .LIP-input:focus ~ label,
+.LIP-input-box .LIP-input:valid ~ label {
+  top: -5px;
+}
+
+.LIP-input-box .LIP-input {
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  color: #fff;
+  padding: 0 35px 0 5px;
+}
+
+.LIP-input-box .LIP-icon {
+  position: absolute;
+  right: 8px;
+  color: #fff46f;
+  font-size: 1.2em;
+  line-height: 57px;
+}
+
+.LIP-button {
+  width: 100%;
+  height: 40px;
+  background: #c9beff;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 1em;
+  color: #fff46f;
+  font-weight: 500;
+}
+
+.LIP-register-link {
+  font-size: 0.9em;
+  color: #fff;
+  text-align: center;
+  margin: 25px 0 10px;
+}
+
+.LIP-register-link .LIP-para .LIP-link {
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.LIP-register-link .LIP-para .LIP-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 360px) {
+  .LIP-login-box {
+    width: 100%;
+    height: 100vh;
+    border: none;
+    border-radius: 0;
+  }
+}
