@@ -1,4 +1,4 @@
-model = {
+let model = {
   app: {
     isLoggedIn: false,
     loggedInUser: null,
@@ -32,7 +32,14 @@ model = {
       errorMessage: null,
     },
     feed: {
-      podium:['cats of the day', 'cats of the week', 'cats of the month',
+      currentPodium: 'day',
+      firstPlace: {catName: null,
+                  catImg: null},
+      secondPlace: {catName: null,
+                  catImg: null},
+      thirdPlace: {catName: null,
+                  catImg: null},
+      podiums:['cats of the day', 'cats of the week', 'cats of the month',
               'cats of the year', 'cats of all time'],
     },
     editProfile: {
