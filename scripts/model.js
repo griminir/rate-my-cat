@@ -27,8 +27,9 @@ model = {
       disclaimer: false,
     },
     logInInfo: {
-      logInUsername: '',
-      logInPassword: '',
+      logInUsername: null,
+      logInPassword: null,
+      errorMessage: null,
     },
     editProfile: {
       bio: '',
