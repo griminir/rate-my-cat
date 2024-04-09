@@ -31,6 +31,10 @@ model = {
       logInPassword: null,
       errorMessage: null,
     },
+    feed: {
+      podium:['cats of the day', 'cats of the week', 'cats of the month',
+              'cats of the year', 'cats of all time'],
+    },
     editProfile: {
       bio: '',
       profilePic: '',
