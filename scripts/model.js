@@ -20,6 +20,7 @@ let model = {
       addMoreCatPics: {
         pics: [],
       },
+      showSlide: 0,
     },
     userRegistration: {
       username: '',

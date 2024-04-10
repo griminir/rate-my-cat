@@ -14,7 +14,9 @@ function addPics(filesInput) {
   for (let i=0; i < filesInput.length; i++) {
     model.input.postCat.addNewCat.pics.push(URL.createObjectURL(filesInput[i]));
   }
+  addView();
 }
+
 
 function postCat() {
   const newCat = {
@@ -76,4 +78,16 @@ function addRace(race) {
          let raceIndex = model.input.postCat.addNewCat.race.indexOf(race);
          model.input.postCat.addNewCat.race.splice(raceIndex, 1);
       }
+}
+
+function showSlide(x) {
+  let slidesStyle = document.getElementById("slides");
+  model.input.postCat.showSlide += x;
+  if (model.input.postCat.showSlide === -1) {
+    model.input.postCat.showSlide = model.input.postCat.addNewCat.pics.length - 1;
+  } else if (model.input.postCat.showSlide === model.input.postCat.addNewCat.pics.length) {
+    model.input.postCat.showSlide = 0;
+  }
+  slidesStyle.style.transform = `translateX(-${model.input.postCat.showSlide}00%)`;
+  console.log(model.input.postCat.showSlide);
 }

@@ -55,3 +55,48 @@
   cursor: pointer;
   z-index: 1;
 }
+
+.previewPics {
+  width: 500px;
+  height: 500px;
+  overflow: hidden;
+  background-color: blue ;
+  border-radius: 5px;
+}
+
+.carousel {
+  position: relative;
+}
+#slides {
+  display: flex;
+  transition: transform 1s ease;
+  transform: translateX(0%);
+}
+.img {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  z-index: -999;
+}
+
+.btn1,
+.btn2 {
+  position: absolute;
+  cursor: pointer;
+  width: 50px;
+  color: white;
+  font-weight: bold;
+  font-size: 200%;
+  user-select: none;
+  height: 100%;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+}
+
+.btn1 {
+  left: 0;
+}
+.btn2 {
+  right: 0;
+}
