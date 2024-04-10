@@ -1,0 +1,16 @@
+.FVContainer {
+    text-align: center;
+}
+.FVPodiumPic3 > img {
+    width: 100px;
+}
+.FVPodiumPic1 > img {
+    width: 100px;
+}
+.FVPodiumPic2 > img {
+    width: 100px;
+}
+
+.FVFeedCatPics > img{
+ width: 150px;
+}

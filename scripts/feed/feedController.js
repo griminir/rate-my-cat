@@ -40,8 +40,12 @@ function getFeedLoop() {
 
     for (let i=0; i < cats.length; i++) {
         html += /*HTML*/ `<div class="FVPolariod">
-        <div><img src="${cats[i].pics[1]}"></div>
-        <div></div>
+        <div class="FVFeedCatPics"><img  src="${cats[i].pics[1]}"></div>
+        <div class="FVFeedCatName">${cats[i].name}</div>
+        <div class="FVFeedCatAgeRace">${cats[i].age} ${cats[i].race}</div>
+        <div class="FVFeedCatRating">${cats[i].rating} ★</div>
+        <div class="FVFeedCatInteractiveStars">Interactive stars</div>
+        <div class="FVFeedCatCommentBox">Comment box</div>
         
         
         `
