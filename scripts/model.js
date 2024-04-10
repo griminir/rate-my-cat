@@ -34,9 +34,9 @@ let model = {
     },
     feed: {
       currentPodium: 'day',
-      firstPlace: { catName: null, catImg: null },
-      secondPlace: { catName: null, catImg: null },
-      thirdPlace: { catName: null, catImg: null },
+      firstPlace: { catName: 'Oliver', catImg: 'img/catPictures/oliver1.png' },
+      secondPlace: { catName: 'Bianca', catImg: 'img/catPictures/bianca1.jpg' },
+      thirdPlace: { catName: 'Loki', catImg: 'img/catPictures/loki2.jpg' },
       podiums: [
         'cats of the day',
         'cats of the week',
