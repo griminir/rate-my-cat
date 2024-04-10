@@ -35,8 +35,18 @@ function getPodiumCats(currentPodium) {
 }
 
 function getFeedLoop() {
-    let reversedArray = model.data.cats.slice().reverse();
-    for (let i=0; i < reversedArray.length; i++) {
+    let cats = model.data.cats;
+    let html = '';
 
+    for (let i=0; i < cats.length; i++) {
+        html += /*HTML*/ `<div class="FVPolariod">
+        <div><img src="${cats[i].pics[1]}"></div>
+        <div></div>
+        
+        
+        `
+        
     }
+    return html;
+    
 }  // neste: gjøre ferdig for-loop til feed

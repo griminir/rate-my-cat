@@ -1,3 +1,4 @@
+
 function feedView() {
     document.getElementById('app').innerHTML = /*HTML*/ `
     <div class="FVContainer">
@@ -14,9 +15,7 @@ function feedView() {
         <div class="FVPodium2">2 plass</div>
         </div>
 
-    <div class="FVContainer">
-        <div>${getFeedLoop()}</div>
-    </div>
+    <div class="FVContainer">${getFeedLoop()}</div>
 
     `;
 
@@ -25,4 +24,3 @@ function feedView() {
 // id FVcatPic er bare midlertidig for å sjekke om funksjonen funker.
 // byttes ut med data av katter fra modellen etterhvert.
 
-// neste: gjøre ferdig getFeedLoop

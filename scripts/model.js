@@ -3,7 +3,7 @@ let model = {
     isLoggedIn: false,
     loggedInUser: null,
     admin: false,
-    page: '',
+    page: 'feed',
   },
   input: {
     postCat: {
@@ -88,7 +88,7 @@ let model = {
                 er kretsmester i Mario Kart 64 og har litt for høyrevridde meninger 
                 rundt nåværende norsk innvandringspolitikk`,
         rating: 10,
-        pics: [],
+        pics: ['img/catPictures/oliver1.png', 'img/catPictures/loki1.jpg'],
         comments: [
           {
             commenter: 'henrik', //model.data.users.username
