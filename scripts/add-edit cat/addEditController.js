@@ -92,3 +92,11 @@ function showSlide(x) {
   }
   slidesStyle.style.transform = `translateX(-${model.input.postCat.showSlide}00%)`;
 }
+
+function pickCat(catName) {
+  console.log(catName);
+}
+
+function getCatsDoB() {
+
+}

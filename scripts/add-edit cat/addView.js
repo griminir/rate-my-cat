@@ -4,7 +4,7 @@ function addView() {
         <h2>Add new pussy</h2>
             <div class="addImages">
                 <span class="plus-button">+</span>
-                <input id="fileInput" class="file-input" type='file' onchange=addPics(this.files) accept="image/*" multiple>
+                <input id="fileInput" class="file-input" type='file' onchange="addPics(this.files)" accept="image/*" multiple>
             </div>
             <div id="previewPictures" class="previewPics">
                 ${makePreviewPics() ?? ""}
