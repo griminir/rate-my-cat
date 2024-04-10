@@ -31,7 +31,7 @@ function signUpView() {
           <div class="SUP-error">${
             model.input.logInInfo.errorMessage ?? ''
           }</div>
-          <button class="SUP-button" onclick="" >Sign Up</button>
+          <button class="SUP-button" onclick="signUp()" >Sign Up</button>
           <div class="SUP-login-link">
             <p class="SUP-para">Have an account? <a onclick="changePage('')" class="SUP-link" href="#">Login</a></p>
           </div>

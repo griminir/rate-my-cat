@@ -12,7 +12,7 @@
 .SUP-signup-box {
   position: relative;
   width: 400px;
-  height: 450px;
+  height: 500px;
   background: #c9beff;
   /* background: transparent; */
   border: 2px solid rgba(255, 255, 255, 0.5);
@@ -25,7 +25,7 @@
 
 .SUP-error {
   color: red;
-  font-size: 1.5em;
+  font-size: 1em;
 }
 
 .SUP-h2 {

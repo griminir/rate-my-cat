@@ -1,9 +1,4 @@
 function profileView() {
-    let div = document.getElementById('app');
-    let html = /*html*/ `
-
-    
-
-
-
+  let div = document.getElementById('app');
+  let html = /*html*/ ``;
 }
