@@ -26,7 +26,7 @@ function logInView() {
           }</div>
           <button class="LIP-button" onclick="login()" >Login</button>
           <div class="LIP-register-link">
-            <p class="LIP-para">Don't have an account? <a onclick="" class="LIP-link" href="#">Register</a></p>
+            <p class="LIP-para">Don't have an account? <a onclick="changePage('signUp')" class="LIP-link" href="#">Register</a></p>
           </div>
         </div>
       </div>

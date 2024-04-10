@@ -5,7 +5,7 @@ function signUpView() {
       <div class="SUP-signup-box">
         <div action="">
           <h2 class="SUP-h2">
-            Sign UP
+            Sign Up
           </h2>
           <div class="SUP-input-box">
             <span class="SUP-icon"><ion-icon name="person"></ion-icon></span>
@@ -33,7 +33,7 @@ function signUpView() {
           }</div>
           <button class="SUP-button" onclick="" >Sign Up</button>
           <div class="SUP-login-link">
-            <p class="SUP-para">Don't have an account? <a onclick="" class="SUP-link" href="#">Register</a></p>
+            <p class="SUP-para">Have an account? <a onclick="changePage('')" class="SUP-link" href="#">Login</a></p>
           </div>
         </div>
       </div>
