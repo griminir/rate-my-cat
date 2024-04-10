@@ -45,10 +45,10 @@ function getFeedLoop() {
             <div class="FVFeedFirstText">
                 <div class="FVFeedCatName">${cats[i].name}</div>
                 <div class="FVFeedCatAgeRace">${cats[i].age}, ${model.data.catRaces[0]} </div> 
-                <div class="FVFeedCatRating">${cats[i].rating}★</div>
+                <div class="FVFeedCatRating">${cats[i].rating}<span class="FVStar">&#11088;</span></div>
             </div>
             <div class="FVFeedCatInteractiveStars">Interactive stars</div>
-            <div class="FVFeedCatCommentBox">Comment box</div>
+            <div class="FVFeedCatCommentBoxContainer"><textarea class="FVFeedCatCommentBox" placeholder="Enter your comment here..."></textarea></div>
         </div>
         `
         
