@@ -67,7 +67,7 @@ let model = {
       {
         username: 'altofar',
         password: 'password',
-        bio: '',
+        bio: 'test test test',
         profilePic: '',
       },
       {
