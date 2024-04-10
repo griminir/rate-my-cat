@@ -39,17 +39,22 @@ function getFeedLoop() {
     let html = '';
 
     for (let i=0; i < cats.length; i++) {
-        html += /*HTML*/ `<div class="FVPolariod">
-        <div class="FVFeedCatPics"><img  src="${cats[i].pics[cats[i].pics.length -1]}"></div>
-        <div class="FVFeedCatName">${cats[i].name}</div>
-        <div class="FVFeedCatAgeRace">${cats[i].age} ${cats[i].race}</div>
-        <div class="FVFeedCatRating">${cats[i].rating} ★</div>
-        <div class="FVFeedCatInteractiveStars">Interactive stars</div>
-        <div class="FVFeedCatCommentBox">Comment box</div>
-        
+        html += /*HTML*/ `
+        <div class="FVPolariod">
+            <div class="FVFeedCatPics"><img  src="${cats[i].pics[cats[i].pics.length -1]}"></div>
+            <div class="FVFeedFirstText">
+                <div class="FVFeedCatName">${cats[i].name}</div>
+                <div class="FVFeedCatAgeRace">${cats[i].age}, ${model.data.catRaces[0]} </div> 
+                <div class="FVFeedCatRating">${cats[i].rating}★</div>
+            </div>
+            <div class="FVFeedCatInteractiveStars">Interactive stars</div>
+            <div class="FVFeedCatCommentBox">Comment box</div>
+        </div>
         `
         
     }
     return html;
     
 }  // neste: gjøre ferdig for-loop til feed
+
+// endre cat race til ${cats[i].race[0]} når vi får den opp. Hardkoder race for nå, så alle er british shorthair 
