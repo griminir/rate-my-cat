@@ -3,7 +3,7 @@ let model = {
     isLoggedIn: false,
     loggedInUser: null,
     admin: false,
-    page: 'feed',
+    page: '',
   },
   input: {
     postCat: {
@@ -24,6 +24,7 @@ let model = {
     userRegistration: {
       username: '',
       password: '',
+      RepeatPassword: '',
       disclaimer: false,
     },
     logInInfo: {
