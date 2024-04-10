@@ -24,7 +24,7 @@ let model = {
     userRegistration: {
       username: '',
       password: '',
-      RepeatPassword: '',
+      repeatPassword: '',
       disclaimer: false,
     },
     logInInfo: {

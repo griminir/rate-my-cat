@@ -9,22 +9,22 @@ function signUpView() {
           </h2>
           <div class="SUP-input-box">
             <span class="SUP-icon"><ion-icon name="person"></ion-icon></span>
-            <input class="SUP-input" onchange="model.input.logInInfo.logInUsername=this.value" value="${
-              model.input.logInInfo.logInUsername ?? ''
+            <input class="SUP-input" onchange="model.input.userRegistration.username=this.value" value="${
+              model.input.userRegistration.username ?? ''
             }" type="text" required/>
             <label class="SUP-label">Username</label>
           </div>
           <div class="SUP-input-box">
             <span class="SUP-icon"><ion-icon name="lock-closed"></ion-icon></span>
-            <input class="SUP-input" onchange="model.input.logInInfo.logInPassword=this.value" value="${
-              model.input.logInInfo.logInPassword ?? ''
+            <input class="SUP-input" onchange="model.input.userRegistration.password=this.value" value="${
+              model.input.userRegistration.password ?? ''
             }" type="password" required/>
             <label class="SUP-label">Password</label>
           </div>
           <div class="SUP-input-box">
             <span class="SUP-icon"><ion-icon name="lock-closed"></ion-icon></span>
-            <input class="SUP-input" onchange="model.input.logInInfo.logInPassword=this.value" value="${
-              model.input.logInInfo.logInPassword ?? ''
+            <input class="SUP-input" onchange="model.input.userRegistration.repeatPassword=this.value" value="${
+              model.input.userRegistration.repeatPassword ?? ''
             }" type="password" required/>
             <label class="SUP-label">Repeat Password</label>
           </div>
