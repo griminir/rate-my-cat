@@ -1,7 +1,7 @@
 let model = {
   app: {
     isLoggedIn: false,
-    loggedInUser: 'aalto',
+    loggedInUser: null,
     admin: false,
     page: '',
   },
@@ -90,7 +90,7 @@ let model = {
     cats: [
       {
         id: 0,
-        owner: 'aalto', // model.data.users.username
+        owner: 'altofar', // model.data.users.username
         name: 'Oliver',
         age: 12,
         dateOfBirth: undefined,
@@ -113,7 +113,7 @@ let model = {
       },
       {
         id: 1,
-        owner: 'aalto', // model.data.users.username
+        owner: 'altofar', // model.data.users.username
         name: 'Bianca',
         age: 3,
         dateOfBirth: '2020-04-03',
