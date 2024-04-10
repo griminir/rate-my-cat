@@ -7,6 +7,14 @@ function getBirthday(catBirthday) {
 function getRace(catRace) {
   model.input.postCat.addNewCat.race = catRace;
 }
+function getLore(catLore) {
+  model.input.postCat.addNewCat.lore = catLore;
+}
+function addPics(filesInput) {
+  for (let i=0; i < filesInput.length; i++) {
+    model.input.postCat.addNewCat.pics.push(URL.createObjectURL(filesInput[i]));
+  }
+}
 
 function postCat() {
   const newCat = {
@@ -16,8 +24,8 @@ function postCat() {
     age: getAge(),
     dateOfBirth: model.input.postCat.addNewCat.dateOfBirth,
     race: model.input.postCat.addNewCat.race,
-    lore: ``,
-    pics: [],
+    lore: model.input.postCat.addNewCat.lore,
+    pics: model.input.postCat.addNewCat.pics,
   };
   model.data.cats.push(newCat);
   model.app.page = "feed";
@@ -69,4 +77,3 @@ function addRace(race) {
          model.input.postCat.addNewCat.race.splice(raceIndex, 1);
       }
 }
-
