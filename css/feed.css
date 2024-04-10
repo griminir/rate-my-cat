@@ -2,18 +2,38 @@
     text-align: center;
 }
 .FVPodiumContainer {
-    display:grid;
-    grid-template-columns: repeat(3, 1fr);
+    display:flex; 
+    align-items: flex-end;
+    justify-content: center;
+    margin: auto;
+    padding: 20px;
+    width: 600px;
 }
-.FVPodiumPic3 > img {
-    width: 100px;
+.FVPodium3, .FVPodium1, .FVPodium2 {
+    flex-direction: column;
+    width: 140px;
+    border-bottom: 2px solid black;
 }
-.FVPodiumPic1 > img {
-    width: 100px;
+.FVPodium3 {
+    height: 180px;
+    /* border: 1px solid black; */
+    
 }
-.FVPodiumPic2 > img {
-    width: 100px;
+.FVPodium1 {
+    height: 220px;
+    /* border: 1px solid black; */
+    
 }
+.FVPodium2 {
+    height: 200px;
+    /* border: 1px solid black; */
+    
+}
+
+.FVPodiumPic3 > img, .FVPodiumPic1 > img, .FVPodiumPic2 > img {
+    width: 120px;
+}
+
 
 .FVFeedCatPics > img{
  width: 150px;
