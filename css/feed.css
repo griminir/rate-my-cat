@@ -1,6 +1,10 @@
 .FVContainer {
     text-align: center;
 }
+.FVPodiumContainer {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+}
 .FVPodiumPic3 > img {
     width: 100px;
 }
@@ -13,4 +17,5 @@
 
 .FVFeedCatPics > img{
  width: 150px;
+ margin-top: 100px;
 }
