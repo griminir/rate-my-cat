@@ -3,7 +3,7 @@ let model = {
     isLoggedIn: false,
     loggedInUser: 'aalto',
     admin: false,
-    page: 'feed',
+    page: '',
   },
   input: {
     postCat: {
