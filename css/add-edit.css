@@ -57,11 +57,13 @@
 }
 
 .previewPics {
+  position: absolute;
+  margin-top: 67px; /* temprorary */
   width: 500px;
   height: 500px;
   overflow: hidden;
-  background-color: blue ;
   border-radius: 5px;
+  display: none;
 }
 
 .carousel {
@@ -92,6 +94,7 @@
   z-index: 999;
   display: flex;
   justify-content: center;
+  margin-top: 45%;
 }
 
 .btn1 {

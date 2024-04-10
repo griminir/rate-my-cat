@@ -6,7 +6,7 @@ function addView() {
                 <span class="plus-button">+</span>
                 <input id="fileInput" class="file-input" type='file' onchange=addPics(this.files) accept="image/*" multiple>
             </div>
-            <div class="previewPics">
+            <div id="previewPictures" class="previewPics">
                 ${makePreviewPics() ?? ""}
             </div>
         <div class="inputFields">
@@ -50,3 +50,5 @@ function makePreviewPics() {
     `;
     return previewDiv;
   }
+
+  

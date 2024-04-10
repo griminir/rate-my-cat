@@ -15,13 +15,15 @@ function addPics(filesInput) {
     model.input.postCat.addNewCat.pics.push(URL.createObjectURL(filesInput[i]));
   }
   addView();
+  let showPics = document.getElementById("previewPictures");
+  showPics.style.display = "block";
 }
 
 
 function postCat() {
   const newCat = {
     id: findMaxId() + 1,
-    owner: model.app.loggedinuser,
+    owner: model.app.loggedInUser,
     name: model.input.postCat.addNewCat.name,
     age: getAge(),
     dateOfBirth: model.input.postCat.addNewCat.dateOfBirth,
@@ -89,5 +91,4 @@ function showSlide(x) {
     model.input.postCat.showSlide = 0;
   }
   slidesStyle.style.transform = `translateX(-${model.input.postCat.showSlide}00%)`;
-  console.log(model.input.postCat.showSlide);
 }

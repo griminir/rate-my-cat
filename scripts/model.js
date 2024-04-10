@@ -1,7 +1,7 @@
 let model = {
   app: {
     isLoggedIn: false,
-    loggedInUser: null,
+    loggedInUser: 'aalto',
     admin: false,
     page: '',
   },
@@ -81,7 +81,7 @@ let model = {
     cats: [
       {
         id: 0,
-        owner: '', // model.data.users.username
+        owner: 'aalto', // model.data.users.username
         name: 'Oliver',
         age: 12,
         dateOfBirth: undefined,
@@ -91,6 +91,27 @@ let model = {
                 rundt nåværende norsk innvandringspolitikk`,
         rating: 10,
         pics: ['img/catPictures/oliver1.png', 'img/catPictures/loki1.jpg'],
+        comments: [
+          {
+            commenter: 'henrik', //model.data.users.username
+            comment: 'I love ur cat',
+          },
+          {
+            commenter: 'bob', // model.data.users.username
+            comment: 'I hate your cat grr',
+          },
+        ],
+      },
+      {
+        id: 1,
+        owner: 'aalto', // model.data.users.username
+        name: 'Bianca',
+        age: 3,
+        dateOfBirth: '2020-04-03',
+        race: [], // model.data.catraces[0]
+        lore: `Previously owned by norwegian mafia`,
+        rating: 10,
+        pics: ['img/catPictures/bianca1.jpg'],
         comments: [
           {
             commenter: 'henrik', //model.data.users.username
