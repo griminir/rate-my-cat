@@ -52,15 +52,24 @@
       function updateView() {
         if (model.app.page == 'feed') {
           feedView();
-        } else if (model.app.page == 'profile') {
+        } else if (
+          model.app.page == 'profile' &&
+          model.app.isLoggedIn === true
+        ) {
           profileView();
         } else if (model.app.page == 'signUp') {
           signUpView();
         } else if (model.app.page == 'catProfile') {
           catProfileView();
-        } else if (model.app.page == 'catEdit') {
+        } else if (
+          model.app.page == 'catEdit' &&
+          model.app.isLoggedIn === true
+        ) {
           editView();
-        } else if (model.app.page == 'catAdd') {
+        } else if (
+          model.app.page == 'catAdd' &&
+          model.app.isLoggedIn === true
+        ) {
           addView();
         } else {
           logInView();
