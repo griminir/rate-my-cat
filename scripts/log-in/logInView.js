@@ -1,6 +1,7 @@
 function logInView() {
   let div = document.getElementById('app');
   let html = /*html*/ `
+    ${makeHeader()}
     <section class="LIP-section">
       <div class="LIP-login-box">
         <div action="">
