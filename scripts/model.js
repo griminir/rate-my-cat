@@ -89,7 +89,7 @@ let model = {
       {
         username: 'lordluck',
         password: 'viktor',
-        bio: `Bloody bloody bloody. I don't have a pussy, 
+        bio: `Bladi bladi bladi. I don't have a pussy, 
         I'm just here to look at them.`,
         profilePic: '',
       },
@@ -199,7 +199,7 @@ let model = {
         ],
       },
       {
-        id: 3,
+        id: 4,
         owner: 'simon', // model.data.users.username
         name: 'Simba',
         age: 5,
