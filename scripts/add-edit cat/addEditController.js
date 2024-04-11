@@ -1,3 +1,5 @@
+// add controller
+
 function getName(catName) {
   model.input.postCat.addNewCat.name = catName;
 }
@@ -18,7 +20,6 @@ function addPics(filesInput) {
   let showPics = document.getElementById("previewPictures");
   showPics.style.display = "block";
 }
-
 
 function postCat() {
   const newCat = {
@@ -83,7 +84,7 @@ function addRace(race) {
 }
 
 function showSlide(x) {
-  let slidesStyle = document.getElementById("slides");
+  let slidesStyle = document.getElementById("ACslides");
   model.input.postCat.showSlide += x;
   if (model.input.postCat.showSlide === -1) {
     model.input.postCat.showSlide = model.input.postCat.addNewCat.pics.length - 1;
@@ -93,8 +94,10 @@ function showSlide(x) {
   slidesStyle.style.transform = `translateX(-${model.input.postCat.showSlide}00%)`;
 }
 
+// edit controller
+
 function pickCat(catName) {
-  console.log(catName);
+  model.input.postCat.addMoreCatPics.name = catName;
 }
 
 function getCatsDoB() {

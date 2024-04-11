@@ -18,6 +18,10 @@ let model = {
         pics: [],
       },
       addMoreCatPics: {
+        name: '',
+        dateOfBirth: null,
+        race: [],
+        lore: ``,
         pics: [],
       },
       showSlide: 0,

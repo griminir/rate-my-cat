@@ -38,14 +38,14 @@ function makePreviewPics() {
     let previewPictures = '';
     for (let pics of model.input.postCat.addNewCat.pics) {
       previewPictures += /*HTML*/ `
-      <img class="img" src="${pics}">
+      <img class="ACimg" src="${pics}">
       `;
     }
     let previewDiv = /*HTML*/ `
     <div class="ACcarousel">
     <div class="ACbtn1" id="previous" onclick='showSlide(-1)'>❮</div>
     <div class="ACbtn2" id="next" onclick='showSlide(1)'>❯</div>
-    <div id="slides">${previewPictures}</div>
+    <div id="ACslides">${previewPictures}</div>
     </div>
     `;
     return previewDiv;
