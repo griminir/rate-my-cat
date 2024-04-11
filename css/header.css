@@ -1,11 +1,57 @@
 .H-li .H-a .H-button {
-  font-weight: 500;
-  font-size: 16px;
-  color: #fff46f;
+  font-weight: bolder;
+}
+
+.H-a {
+  text-decoration: none;
+  font-size: 2em;
+  color: black;
 }
 
 .H-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0px 5%;
+  background: #b4f39d;
+  margin-bottom: 0;
+}
+
+.H-logo {
+  cursor: pointer;
+  height: 150px;
+}
+
+.H-nav-links {
+  list-style: none;
+}
+
+.H-nav-links .H-li {
+  display: inline-block;
+  padding: 0 100px;
+}
+
+.H-nav-links .H-li .H-a {
+  transition: all 0.3s ease 0s;
+}
+
+.H-nav-links .H-li .H-a:hover {
+  transition: all 0.3s ease 0s;
+}
+
+.H-nav-links .H-li .H-a:hover {
+  color: #c9beff;
+}
+
+.H-button {
+  padding: 9px 25px;
+  background-color: rgba(201, 190, 255, 1);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.H-button:hover {
+  background-color: rgba(201, 190, 255, 0.8);
 }
