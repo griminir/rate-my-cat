@@ -5,21 +5,26 @@ Vil ha tykke skygger i bunnen og på høyre. (4px)
 Bold text
 Litt småting i header. */
 .stylePolaroid {
-    display:flex;
-    flex-direction: column; 
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    margin-bottom: 10px;
-    width: 500px;
-    height: 650px;
-    border: 5px solid black;
-    border-radius: 10px;
-    font-size: 170%;
-    background-color: #89DCEB;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-bottom: 10px;
+  width: 500px;
+  height: 650px;
+  border: 5px solid black;
+  border-radius: 10px;
+  font-size: 170%;
+  background-color: #89dceb;
 }
 
 .styleStar {
-    text-shadow: 2px  2px 0 #000000;
-    font-size: 90%;
+  text-shadow: 2px 2px 0 #000000;
+  font-size: 90%;
+}
+
+body {
+  background-color: #fff46f;
+  margin: 0;
 }
