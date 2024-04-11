@@ -68,13 +68,13 @@ let model = {
       {
         username: 'altofar',
         password: 'password',
-        bio: `test test test`,
+        bio: `dinosauskjeks and dr. pepper is life <3`,
         profilePic: '',
       },
       {
         username: 'bob',
         password: 'bob123',
-        bio: ``,
+        bio: `I am a bot`,
         profilePic: '',
       },
       {
@@ -84,6 +84,25 @@ let model = {
               Que tu cuerpo es pa' darle alegría y cosa buena
               Dale a tu cuerpo alegría, Macarena
               Hey Macarena, ay`,
+        profilePic: '',
+      },
+      {
+        username: 'lordluck',
+        password: 'viktor',
+        bio: `Bloody bloody bloody. I don't have a pussy, 
+        I'm just here to look at them.`,
+        profilePic: '',
+      },
+      {
+        username: 'kitty',
+        password: 'hanne',
+        bio: `I LOVE HELLO KITTY <3`,
+        profilePic: '',
+      },
+      {
+        username: 'simonk',
+        password: 'simon',
+        bio: ``,
         profilePic: '',
       },
     ],
@@ -99,10 +118,14 @@ let model = {
                 er kretsmester i Mario Kart 64 og har litt for høyrevridde meninger 
                 rundt nåværende norsk innvandringspolitikk`,
         rating: 10,
-        pics: ['img/catPictures/oliver1.png'],
+        pics: ['img/catPictures/oliver1.png', 'img/catPictures/oliver2.jpg',
+        'img/catPictures/oliver3.jpg', 'img/catPictures/oliver4.jpg',
+        'img/catPictures/oliver5.jpg', 'img/catPictures/oliver6.jpg',
+        'img/catPictures/oliver7.jpg', 'img/catPictures/oliver8.jpg',
+        'img/catPictures/oliver9.jpg','img/catPictures/oliver10.jpg'],
         comments: [
           {
-            commenter: 'henrik', //model.data.users.username
+            commenter: 'kitty', //model.data.users.username
             comment: 'I love ur cat',
           },
           {
@@ -123,7 +146,7 @@ let model = {
         pics: ['img/catPictures/bianca1.jpg'],
         comments: [
           {
-            commenter: 'henrik', //model.data.users.username
+            commenter: 'kitty', //model.data.users.username
             comment: 'I love ur cat',
           },
           {
@@ -132,7 +155,7 @@ let model = {
           },
         ],
       },
-      {
+    {
         id: 2,
         owner: 'camillzy', // model.data.users.username
         name: 'Loki',
@@ -145,7 +168,50 @@ let model = {
         pics: ['img/catPictures/loki1.jpg', 'img/catPictures/loki2.jpg'],
         comments: [
           {
-            commenter: 'henrik', //model.data.users.username
+            commenter: 'kitty', //model.data.users.username
+            comment: 'I love ur cat',
+          },
+          {
+            commenter: 'bob', // model.data.users.username
+            comment: 'I hate your cat grr',
+          },
+        ],
+      },
+      {
+        id: 3,
+        owner: 'kitty', // model.data.users.username
+        name: 'Bianca',
+        age: 3,
+        dateOfBirth: '2020-04-03',
+        race: [], // model.data.catraces[0]
+        lore: `I am a cat.`,
+        rating: 10,
+        pics: ['img/catPictures/bianca1.jpg'],
+        comments: [
+          {
+            commenter: 'kitty', //model.data.users.username
+            comment: 'I love ur cat',
+          },
+          {
+            commenter: 'bob', // model.data.users.username
+            comment: 'I hate your cat grr',
+          },
+        ],
+      },
+      {
+        id: 3,
+        owner: 'simon', // model.data.users.username
+        name: 'Simba',
+        age: 5,
+        dateOfBirth: '2019-04-03',
+        race: [], // model.data.catraces[0]
+        lore: `Used to live in Africa before some random dude picked me up
+                and took me to Norway. It's cold here. Big L.`,
+        rating: 10,
+        pics: ['img/catPictures/simba1.jpg'],
+        comments: [
+          {
+            commenter: 'kitty', //model.data.users.username
             comment: 'I love ur cat',
           },
           {
