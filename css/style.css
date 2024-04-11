@@ -1,6 +1,25 @@
 /* Beholde gul, lilla og mintgrønn. 
-Liker bakgrunnen, men det er for myte som skjer i bakgrunnen. En ide, kan være å blurre bakgrunnen.
+Liker bakgrunnen, men det er for mye som skjer i bakgrunnen. En ide, kan være å blurre bakgrunnen.
 Vil ha tykke skygger i bunnen og på høyre. (4px) 
 
 Bold text
 Litt småting i header. */
+.stylePolaroid {
+    display:flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 10px;
+    width: 500px;
+    height: 650px;
+    border: 5px solid black;
+    border-radius: 10px;
+    font-size: 170%;
+    background-color: #89DCEB;
+}
+
+.styleStar {
+    text-shadow: 2px  2px 0 #000000;
+    font-size: 90%;
+}

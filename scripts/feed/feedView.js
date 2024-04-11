@@ -40,6 +40,28 @@ function feedView() {
     `;
 
 }
+function getFeedLoop() {
+    let cats = model.data.cats;
+    let html = '';
+
+    for (let i=0; i < cats.length; i++) {
+        html += /*HTML*/ `
+        <div class="stylePolaroid">
+            <div class="FVFeedCatPics"><img  src="${cats[i].pics[cats[i].pics.length -1]}"></div>
+            <div class="FVFeedFirstText">
+                <div class="FVFeedCatName">${cats[i].name}</div>
+                <div class="FVFeedCatAgeRace">${cats[i].age}, ${model.data.catRaces[0]} </div> 
+                <div class="FVFeedCatRating">${cats[i].rating}<span class="styleStar">&#11088;</span></div>
+            </div>
+            <div class="FVFeedCatInteractiveStars">Interactive stars</div>
+            <div class="FVFeedCatCommentBoxContainer"><textarea class="FVFeedCatCommentBox" placeholder="Enter your comment here..."></textarea></div>
+        </div>
+        `
+        
+    }
+    return html;
+    
+}
 
 // id FVcatPic er bare midlertidig for å sjekke om funksjonen funker.
 // byttes ut med data av katter fra modellen etterhvert.

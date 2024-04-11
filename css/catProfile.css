@@ -1,0 +1,31 @@
+.CPContainer {
+    display: flex;
+}
+.CPLoreContainer, .CPCommentsContainer  {  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 20px;
+    border: 5px solid black;
+    border-radius: 10px;
+    height: 650px;
+
+}
+.CPLoreContainer {
+    width: 400px;
+
+}
+.CPCommentsContainer {
+    width: 400px;
+}
+
+.CPLoreHeader {
+    font-size: 150%;
+    font-weight: bold;
+}
+
+/* Styled in main:
+Star 
+Polaroid
+*/

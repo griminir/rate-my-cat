@@ -86,26 +86,6 @@
     font-size: 140%;
 }
 
-
-
-
-
-
-.FVPolariod {
-    display:flex;
-    flex-direction: column; 
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    margin-bottom: 10px;
-    width: 500px;
-    height: 650px;
-    border: 5px solid black;
-    border-radius: 10px;
-    font-size: 170%;
-    background-color: #89DCEB;
-}
-
 .FVFeedCatPics > img{
     width: 450px;
     border: solid 4px black;
@@ -133,10 +113,7 @@
  .FVFeedCatRating {
     margin-left: 30px;
 }   
-.FVStar {
-    text-shadow: 2px  2px 0 #000000;
-    font-size: 90%;
-}
+
 .FVFeedCatCommentBox {
     resize: none;
     overflow: hidden;
@@ -153,3 +130,6 @@
 .FVFeedCatCommentBox:hover {
     background-color: #F8C5D5;
 }
+/* Styled in main:
+Star
+Polaroid */
