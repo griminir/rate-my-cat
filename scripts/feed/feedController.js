@@ -37,3 +37,19 @@ function getPodiumCats(currentPodium) {
   // neste: gjøre ferdig for-loop til feed
 
 // endre cat race til ${cats[i].race[0]} når vi får den opp. Hardkoder race for nå, så alle er british shorthair 
+
+function makeInteractiveStars() {
+    let html = "";
+    let numberOfStars = 10;
+    for (let i=0; i < numberOfStars; i++) {
+        html += /*HTML*/ `
+        <span class="FVStar">
+        
+        </span>
+        `;
+    }
+    return html;
+}
+
+// filled in star: &#9733;
+// empty star: &#9734;
