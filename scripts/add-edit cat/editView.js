@@ -1,26 +1,26 @@
 function editView() {
   document.getElementById("app").innerHTML = /*HTML*/ `
-      <div class="addCatContainer">
+      <div class="ACaddCatContainer">
           <h2>Add new pussy pics</h2>
-              <div class="addImages">
-                  <span class="plus-button">+</span>
-                  <input id="fileInput" class="file-input" type='file' onchange="editPics(this.files)" accept="image/*" multiple>
+              <div class="ACaddImages">
+                  <span class="ACplus-button">+</span>
+                  <input id="fileInput" class="ACfile-input" type='file' onchange="editPics(this.files)" accept="image/*" multiple>
               </div>
-              <div id="previewPictures" class="previewPics">
+              <div id="previewPictures" class="ACpreviewPics">
                   ${makePreviewPics() ?? ""}
               </div>
-          <div class="inputFields">
+          <div class="ACinputFields">
           <select id="dropdown-select" onchange="pickCat(this.value)">
             ${makePickYourCatHtml()}
             </select>
             ${getCatsDoB()}
               <label>Race:</label> 
               <button onclick='toggleRaces()'>Edit race</button>
-                  <div id="catRaces" class="races">
+                  <div id="catRaces" class="ACraces">
                   ${makeDropDownRaceHtml()}
                   </div>
           </div>
-          <textarea class="catLoreField" type='text' onchange="getLore(this.value)" placeholder="Add pussy lore"></textarea>
+          <textarea class="ACcatLoreField" type='text' onchange="getLore(this.value)" placeholder="Add pussy lore"></textarea>
           <button onclick='postCat()'>Post my pussy</button>
       </div>
       `;

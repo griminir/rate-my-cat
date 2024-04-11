@@ -1,24 +1,24 @@
 function addView() {
   document.getElementById("app").innerHTML = /*HTML*/ `
-    <div class="addCatContainer">
+    <div class="ACaddCatContainer">
         <h2>Add new pussy</h2>
-            <div class="addImages">
-                <span class="plus-button">+</span>
-                <input id="fileInput" class="file-input" type='file' onchange="addPics(this.files)" accept="image/*" multiple>
+            <div class="ACaddImages">
+                <span class="ACplus-button">+</span>
+                <input id="fileInput" class="ACfile-input" type='file' onchange="addPics(this.files)" accept="image/*" multiple>
             </div>
-            <div id="previewPictures" class="previewPics">
+            <div id="previewPictures" class="ACpreviewPics">
                 ${makePreviewPics() ?? ""}
             </div>
-        <div class="inputFields">
-            <input class="inputItems" type='text' onchange="getName(this.value)" placeholder="Name">
-            <input class="inputItems" type='date' onchange="getBirthday(this.value)">
+        <div class="ACinputFields">
+            <input class="ACinputItems" type='text' onchange="getName(this.value)" placeholder="Name">
+            <input class="ACinputItems" type='date' onchange="getBirthday(this.value)">
             <label>Race:</label> 
             <button onclick='toggleRaces()'>Pick race</button>
-                <div id="catRaces" class="races">
+                <div id="catRaces" class="ACraces">
                 ${makeDropDownRaceHtml()}
                 </div>
         </div>
-        <textarea class="catLoreField" type='text' onchange="getLore(this.value)" placeholder="Add pussy lore"></textarea>
+        <textarea class="ACcatLoreField" type='text' onchange="getLore(this.value)" placeholder="Add pussy lore"></textarea>
         <button onclick='postCat()'>Post my pussy</button>
     </div>
     `;
@@ -42,9 +42,9 @@ function makePreviewPics() {
       `;
     }
     let previewDiv = /*HTML*/ `
-    <div class="carousel">
-    <div class="btn1" id="previous" onclick='showSlide(-1)'>❮</div>
-    <div class="btn2" id="next" onclick='showSlide(1)'>❯</div>
+    <div class="ACcarousel">
+    <div class="ACbtn1" id="previous" onclick='showSlide(-1)'>❮</div>
+    <div class="ACbtn2" id="next" onclick='showSlide(1)'>❯</div>
     <div id="slides">${previewPictures}</div>
     </div>
     `;
