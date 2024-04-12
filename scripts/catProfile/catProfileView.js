@@ -7,7 +7,7 @@ function catProfileView() {
             
             <div>
             <span class="CPLoreHeader">Pussy Lore</span><br>
-            ${cats[0].lore}</div>
+            ${cats[0].lore ?? 'This cat has done nothing of significance'}</div>
             <button>Report problem</button>
         </div>
         <div class="stylePolaroid">
