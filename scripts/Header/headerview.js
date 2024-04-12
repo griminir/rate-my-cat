@@ -11,9 +11,11 @@ function makeHeader() {
           <li class="H-li"><a onclick="loggedInCheck3()" class="H-a" href="#">Edit Pussy</a></li>
         </ul>
       </nav>
+      
       <button onclick="changePage('')" class="H-button">Login</button>
     </header>
   `;
 
   return html;
 }
+// need to change button to log off
