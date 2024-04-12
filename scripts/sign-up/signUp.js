@@ -1,6 +1,7 @@
 function signUpView() {
   let div = document.getElementById('app');
   let html = /*html*/ `
+  ${makeHeader()}
     <section class="SUP-section">
       <div class="SUP-signup-box">
         <div action="">

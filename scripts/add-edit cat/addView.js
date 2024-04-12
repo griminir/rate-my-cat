@@ -1,5 +1,6 @@
 function addView() {
-  document.getElementById("app").innerHTML = /*HTML*/ `
+  document.getElementById('app').innerHTML = /*HTML*/ `
+  ${makeHeader()}
     <div class="ACaddCatContainer">
         <h2>Add new pussy</h2>
             <div class="ACaddImages">
@@ -7,7 +8,7 @@ function addView() {
                 <input id="fileInput" class="ACfile-input" type='file' onchange="addPics(this.files)" accept="image/*" multiple>
             </div>
             <div id="previewPictures" class="ACpreviewPics">
-                ${makePreviewPics() ?? ""}
+                ${makePreviewPics() ?? ''}
             </div>
         <div class="ACinputFields">
             <input class="ACinputItems" type='text' onchange="getName(this.value)" placeholder="Name">
@@ -25,7 +26,7 @@ function addView() {
 }
 
 function makeDropDownRaceHtml() {
-  let catRacesHtml = "";
+  let catRacesHtml = '';
   for (let race of model.data.catRaces) {
     catRacesHtml += /*HTML*/ `
         <label><input id="${race}" type="checkbox" onchange="addRace(this.value)" value="${race}"> ${race}</label><br>
@@ -35,20 +36,18 @@ function makeDropDownRaceHtml() {
 }
 
 function makePreviewPics() {
-    let previewPictures = '';
-    for (let pics of model.input.postCat.addNewCat.pics) {
-      previewPictures += /*HTML*/ `
+  let previewPictures = '';
+  for (let pics of model.input.postCat.addNewCat.pics) {
+    previewPictures += /*HTML*/ `
       <img class="ACimg" src="${pics}">
       `;
-    }
-    let previewDiv = /*HTML*/ `
+  }
+  let previewDiv = /*HTML*/ `
     <div class="ACcarousel">
     <div class="ACbtn1" id="previous" onclick='showSlide(-1)'>❮</div>
     <div class="ACbtn2" id="next" onclick='showSlide(1)'>❯</div>
     <div id="ACslides">${previewPictures}</div>
     </div>
     `;
-    return previewDiv;
-  }
-
-  
+  return previewDiv;
+}
