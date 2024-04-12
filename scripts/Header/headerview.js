@@ -1,7 +1,8 @@
 function makeHeader() {
   let html = /*html*/ `
     <header class="H-header">
-      <img class="H-logo" src="img/RMP_transparent_color_border.png" alt="logo" onclick="changePage('feed')" />
+      <audio id="easterEgg" src="audio/cursedEasterEgg.mp3"></audio>
+      <img class="H-logo" src="img/RMP_transparent_color_border.png" alt="logo" onclick="easterEgg()" />
       <nav class="H-nav">
         <ul class="H-nav-links">
           <li class="H-li"><a class="H-a" onclick="loggedInCheck1()" href="#">${

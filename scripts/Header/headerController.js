@@ -21,3 +21,15 @@ function loggedInCheck3() {
     changePage('');
   }
 }
+
+function easterEgg() {
+  if (model.app.page === 'feed') {
+    playSound();
+  } else {
+    changePage('feed');
+  }
+}
+
+function playSound() {
+  document.getElementById('easterEgg').play();
+}
