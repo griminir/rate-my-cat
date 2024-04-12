@@ -13,7 +13,7 @@ function makeHeader() {
         </ul>
       </nav>
       
-      <button onclick="changePage('')" class="H-button">Login</button>
+      ${makeLoginButton()}
     </header>
   `;
 

@@ -33,3 +33,17 @@ function easterEgg() {
 function playSound() {
   document.getElementById('easterEgg').play();
 }
+
+function makeLoginButton() {
+  html = ``;
+  if (model.app.isLoggedIn === false) {
+    html = `<button onclick="changePage('')" class="H-button">Login</button>`;
+    return html;
+  } else if (model.app.isLoggedIn === true) {
+    model.app.isLoggedIn = false;
+    model.app.loggedInUser = null;
+    model.app.admin = false;
+    html = `<button onclick="changePage('')" class="H-button">Sign Out</button>`;
+    return html;
+  }
+}
