@@ -117,7 +117,7 @@ let model = {
         name: 'Oliver',
         age: 12,
         dateOfBirth: undefined,
-        race: [], // model.data.catraces[0]
+        race: ['British Shorthair'], // model.data.catraces[0]
         lore: `Han ble arrestert for skattesvindel og heleri i 2017, 
                 er kretsmester i Mario Kart 64 og har litt for høyrevridde meninger 
                 rundt nåværende norsk innvandringspolitikk`,
@@ -144,7 +144,7 @@ let model = {
         name: 'Bianca',
         age: 3,
         dateOfBirth: '2020-04-03',
-        race: [], // model.data.catraces[0]
+        race: ['Unknown'], // model.data.catraces[0]
         lore: `Previously owned by norwegian mafia`,
         rating: 10,
         pics: ['img/catPictures/bianca1.jpg'],
@@ -165,7 +165,7 @@ let model = {
         name: 'Loki',
         age: 6,
         dateOfBirth: null,
-        race: [], // model.data.catraces[0]
+        race: ['Unknown'], // model.data.catraces[0]
         lore: `Hun kaster opp jenvlig fordi hun har sensitiv tarm, men er veldig glad i sokkelo.
               Hun terroriserer oss om natta, men på dagtid er hun bare søt. `,
         rating: 8.5,
@@ -187,7 +187,7 @@ let model = {
         name: 'Bianca',
         age: 3,
         dateOfBirth: '2020-04-03',
-        race: [], // model.data.catraces[0]
+        race: ['Unknown'], // model.data.catraces[0]
         lore: `I am a cat.`,
         rating: 10,
         pics: ['img/catPictures/bianca1.jpg'],
@@ -208,7 +208,7 @@ let model = {
         name: 'Simba',
         age: 5,
         dateOfBirth: '2019-04-03',
-        race: [], // model.data.catraces[0]
+        race: ['Unknown'], // model.data.catraces[0]
         lore: `Used to live in Africa before some random dude picked me up
                 and took me to Norway. It's cold here. Big L.`,
         rating: 10,
