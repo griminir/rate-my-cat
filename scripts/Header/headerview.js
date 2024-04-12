@@ -19,4 +19,3 @@ function makeHeader() {
 
   return html;
 }
-// need to change button to log off

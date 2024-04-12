@@ -40,10 +40,14 @@ function makeLoginButton() {
     html = `<button onclick="changePage('')" class="H-button">Login</button>`;
     return html;
   } else if (model.app.isLoggedIn === true) {
-    model.app.isLoggedIn = false;
-    model.app.loggedInUser = null;
-    model.app.admin = false;
-    html = `<button onclick="changePage('')" class="H-button">Sign Out</button>`;
+    html = `<button onclick="signOut()" class="H-button">Sign Out</button>`;
     return html;
   }
+}
+
+function signOut() {
+  model.app.isLoggedIn = false;
+  model.app.loggedInUser = null;
+  model.app.admin = false;
+  changePage('');
 }
