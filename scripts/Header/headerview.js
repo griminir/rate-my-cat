@@ -8,10 +8,10 @@ function makeHeader() {
             model.app.loggedInUser ?? 'Profile'
           }</a></li>
           <li class="H-li"><a onclick="loggedInCheck2()" class="H-a" href="#">Add Pussy</a></li>
-          <li class="H-li"><a onclick='loggedInCheck3()' class="H-a" href="#">Edit Pussy</a></li>
+          <li class="H-li"><a onclick="loggedInCheck3()" class="H-a" href="#">Edit Pussy</a></li>
         </ul>
       </nav>
-      <button class="H-button">Login</button>
+      <button onclick="changePage('')" class="H-button">Login</button>
     </header>
   `;
 

@@ -1,134 +1,151 @@
 .FVContainer {
-    text-align: center;
+  text-align: center;
+}
+.FVPodiumDropDown {
+  margin: 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+  height: 30px;
+  font-weight: bold;
 }
 .FVPodiumContainer {
-    display:flex; 
-    align-items: flex-end;
-    justify-content: center;
-    margin: auto;
-    padding: 20px;
-    width: 600px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin: auto;
+  padding: 20px;
+  width: 600px;
+  margin-bottom: 10px;
 }
-.FVPodium2, .FVPodium1, .FVPodium3 {
-    flex-direction: column;
-    width: 140px;
-    
+.FVPodium2,
+.FVPodium1,
+.FVPodium3 {
+  flex-direction: column;
+  width: 140px;
 }
 .FVPodium2 {
-    height: 200px;
-    margin-right: 5px;
+  height: 200px;
+  margin-right: 5px;
 }
 
 .FVPodium1 {
-    height: 220px;
+  height: 220px;
 }
 
 .FVPodium3 {
-    height: 180px;
-    margin-left: 5px;
+  height: 180px;
+  margin-left: 5px;
 }
 
-.FVPodiumPic2 > img, .FVPodiumPic1 > img, .FVPodiumPic3 > img {
-    width: 120px;
-    border: 5px #C9BEFF ridge;
-    border-radius: 3px;
+.FVPodiumPic2 > img,
+.FVPodiumPic1 > img,
+.FVPodiumPic3 > img {
+  width: 120px;
+  border: 5px #c9beff ridge;
+  border-radius: 3px;
 }
-.FVPodiumPic2 > img:hover, .FVPodiumPic1 > img:hover, .FVPodiumPic3 > img:hover {
-    border: 7px #C9BEFF ridge;
-    cursor: pointer;
+.FVPodiumPic2 > img:hover,
+.FVPodiumPic1 > img:hover,
+.FVPodiumPic3 > img:hover {
+  border: 7px #c9beff ridge;
+  cursor: pointer;
 }
 
-
-.FVPodiumNameNum2, .FVPodiumNameNum1, .FVPodiumNameNum3 {
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    border: 3px solid #937eff;
-    border-radius: 3px;
-    background-color: #C9BEFF;
-    
+.FVPodiumNameNum2,
+.FVPodiumNameNum1,
+.FVPodiumNameNum3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  border: 3px solid #937eff;
+  border-radius: 3px;
+  background-color: #c9beff;
 }
 
 .FVPodiumNameNum2 {
-    height: 70px;
+  height: 80px;
+  font-family: 'Black Han Sans', sans-serif;
 }
 .FVPodiumNameNum1 {
-    height: 90px;
+  height: 100px;
+  font-family: 'Black Han Sans', sans-serif;
 }
 .FVPodiumNameNum3 {
-    height: 50px;
+  height: 60px;
+  font-family: 'Black Han Sans', sans-serif;
 }
 
 /* .FVPodiumName2, .FVPodiumName1, .FVPodiumName3  {
    
 } */
 .FVPodiumName2 {
-    font-size: 130%;
+  font-size: 130%;
 }
 .FVPodiumName1 {
-    font-size: 150%;
+  font-size: 150%;
 }
 .FVPodiumName3 {
-    font-size: 120%;
+  font-size: 120%;
 }
 
-.FVPodiumNum2, .FVPodiumNum1, .FVPodiumNum3 {
-    font-weight: bold;
-    
-}
+/* .FVPodiumNum2,
+.FVPodiumNum1,
+.FVPodiumNum3 {
+  font-weight: bold;
+} */
 .FVPodiumNum2 {
-    font-size: 160%;
+  font-size: 160%;
 }
 .FVPodiumNum1 {
-    font-size: 200%;
+  font-size: 200%;
 }
 .FVPodiumNum3 {
-    font-size: 140%;
+  font-size: 140%;
 }
 
-.FVFeedCatPics > img{
-    width: 450px;
-    border: solid 4px black;
-    border-radius: 3px;
+.FVFeedCatPics > img {
+  width: 450px;
+  border: solid 4px black;
+  border-radius: 3px;
 }
-.FVFeedCatPics > img:hover{
-    cursor: pointer;
-    border: solid 5px black;
+.FVFeedCatPics > img:hover {
+  cursor: pointer;
+  border: solid 5px black;
 }
 
 .FVFeedFirstText {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 15px;
 }
-.FVFeedCatName{
-    margin-right: 30px;
-    font-weight: bold;
-} 
+.FVFeedCatName {
+  margin-right: 30px;
+  font-weight: bold;
+}
 .FVFeedCatAgeRace {
-    color: rgb(54, 54, 54);
-    font-size: 90%;
+  color: rgb(54, 54, 54);
+  font-size: 90%;
 }
- .FVFeedCatRating {
-    margin-left: 30px;
-}   
+.FVFeedCatRating {
+  margin-left: 30px;
+}
 
 .FVFeedCatCommentBox {
-    resize: none;
-    overflow: hidden;
-    outline: none;
-    width: 330px;
-    height: 30px;
-    padding: 15px;
-    background-color: #ffdde7;
-    border: 4px solid black;
-    border-radius: 50px;
-    margin-top: 5px;
-    font-family: Arial, sans-serif;
+  resize: none;
+  overflow: hidden;
+  outline: none;
+  width: 330px;
+  height: 30px;
+  padding: 15px;
+  background-color: #ffdde7;
+  border: 4px solid black;
+  border-radius: 50px;
+  margin-top: 5px;
+  font-family: Arial, sans-serif;
 }
 .FVFeedCatCommentBox:hover {
-    background-color: #F8C5D5;
+  background-color: #f8c5d5;
 }
 /* Styled in main:
 Star

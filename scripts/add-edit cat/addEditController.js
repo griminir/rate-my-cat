@@ -13,12 +13,12 @@ function getLore(catLore) {
   model.input.postCat.addNewCat.lore = catLore;
 }
 function addPics(filesInput) {
-  for (let i=0; i < filesInput.length; i++) {
+  for (let i = 0; i < filesInput.length; i++) {
     model.input.postCat.addNewCat.pics.push(URL.createObjectURL(filesInput[i]));
   }
   addView();
-  let showPics = document.getElementById("previewPictures");
-  showPics.style.display = "block";
+  let showPics = document.getElementById('previewPictures');
+  showPics.style.display = 'block';
 }
 
 function postCat() {
@@ -33,7 +33,7 @@ function postCat() {
     pics: model.input.postCat.addNewCat.pics,
   };
   model.data.cats.push(newCat);
-  model.app.page = "feed";
+  model.app.page = 'feed';
 
   // console log to see
   console.log(model.data.cats);
@@ -65,30 +65,33 @@ function getAge() {
 }
 
 function toggleRaces() {
-  let racesDiv = document.getElementById("catRaces");
-  if (racesDiv.style.display === "block") {
-    racesDiv.style.display = "none";
+  let racesDiv = document.getElementById('catRaces');
+  if (racesDiv.style.display === 'block') {
+    racesDiv.style.display = 'none';
   } else {
-    racesDiv.style.display = "block";
+    racesDiv.style.display = 'block';
   }
 }
 
 function addRace(race) {
-    let checkBox = document.getElementById(race);
-    if (checkBox.checked === true){
-        model.input.postCat.addNewCat.race.push(race);
-      } else {
-         let raceIndex = model.input.postCat.addNewCat.race.indexOf(race);
-         model.input.postCat.addNewCat.race.splice(raceIndex, 1);
-      }
+  let checkBox = document.getElementById(race);
+  if (checkBox.checked === true) {
+    model.input.postCat.addNewCat.race.push(race);
+  } else {
+    let raceIndex = model.input.postCat.addNewCat.race.indexOf(race);
+    model.input.postCat.addNewCat.race.splice(raceIndex, 1);
+  }
 }
 
 function showSlide(x) {
-  let slidesStyle = document.getElementById("ACslides");
+  let slidesStyle = document.getElementById('ACslides');
   model.input.postCat.showSlide += x;
   if (model.input.postCat.showSlide === -1) {
-    model.input.postCat.showSlide = model.input.postCat.addNewCat.pics.length - 1;
-  } else if (model.input.postCat.showSlide === model.input.postCat.addNewCat.pics.length) {
+    model.input.postCat.showSlide =
+      model.input.postCat.addNewCat.pics.length - 1;
+  } else if (
+    model.input.postCat.showSlide === model.input.postCat.addNewCat.pics.length
+  ) {
     model.input.postCat.showSlide = 0;
   }
   slidesStyle.style.transform = `translateX(-${model.input.postCat.showSlide}00%)`;
@@ -98,8 +101,73 @@ function showSlide(x) {
 
 function pickCat(catName) {
   model.input.postCat.addMoreCatPics.name = catName;
+  let cat = model.data.cats.find(
+    (cat) =>
+      model.input.postCat.addMoreCatPics.name === cat.name &&
+      model.app.loggedInUser === cat.owner
+  );
+  getPreviousBirthday(cat);
+  getPreviousLore(cat);
 }
 
-function getCatsDoB() {
-
+function getPreviousBirthday(cat) {
+  document.getElementById('catsDoB').innerHTML = /*HTML*/ `
+  <input class="ACinputItems" type='date' onchange="updateBirthday(this.value)" value="${cat.dateOfBirth}">
+  `;
 }
+
+function getPreviousLore(cat) {
+  document.getElementById('catLore').innerHTML = cat.lore;
+}
+
+function updateLore(catLore) {
+  model.input.postCat.addMoreCatPics.lore = catLore;
+}
+function updateBirthday(catBirth) {
+  model.input.postCat.addMoreCatPics.dateOfBirth = catBirth;
+}
+
+function editPics(filesInput) {
+  for (let i = 0; i < filesInput.length; i++) {
+    model.input.postCat.addMoreCatPics.pics.push(
+      URL.createObjectURL(filesInput[i])
+    );
+  }
+  document.getElementById('previewPictures').innerHTML =
+    makePreviewPicsOnEditView();
+  let showPics = document.getElementById('previewPictures');
+  showPics.style.display = 'block';
+}
+
+function updateCat() {
+  let cat = model.data.cats.find(
+    (cat) =>
+      model.input.postCat.addMoreCatPics.name === cat.name &&
+      model.app.loggedInUser === cat.owner
+  );
+  cat.lore = model.input.postCat.addMoreCatPics.lore;
+  cat.dateOfBirth = model.input.postCat.addMoreCatPics.dateOfBirth;
+  cat.pics.push(model.input.postCat.addMoreCatPics.pics);
+  model.app.page = 'feed';
+  // log to see
+  console.log(model.data.cats);
+}
+
+function showSlideEditPage(x) {
+  let slidesStyle = document.getElementById('ACslides');
+  model.input.postCat.showSlide += x;
+  if (model.input.postCat.showSlide === -1) {
+    model.input.postCat.showSlide =
+      model.input.postCat.addMoreCatPics.pics.length - 1;
+  } else if (
+    model.input.postCat.showSlide ===
+    model.input.postCat.addMoreCatPics.pics.length
+  ) {
+    model.input.postCat.showSlide = 0;
+  }
+  slidesStyle.style.transform = `translateX(-${model.input.postCat.showSlide}00%)`;
+}
+
+// to do:
+// - Age doesnt update when updating cat/adding new pics
+// - Race doesn't update yet either

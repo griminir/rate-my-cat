@@ -8,21 +8,21 @@ function editView() {
                   <input id="fileInput" class="ACfile-input" type='file' onchange="editPics(this.files)" accept="image/*" multiple>
               </div>
               <div id="previewPictures" class="ACpreviewPics">
-                  ${makePreviewPics() ?? ''}
               </div>
           <div class="ACinputFields">
           <select id="dropdown-select" onchange="pickCat(this.value)">
+          <option type="checkbox" value="Pick your cat"> Pick your cat</option>
             ${makePickYourCatHtml()}
             </select>
-            ${getCatsDoB()}
+            Birthday: <span id="catsDoB">undefined</span>
               <label>Race:</label> 
               <button onclick='toggleRaces()'>Edit race</button>
                   <div id="catRaces" class="ACraces">
                   ${makeDropDownRaceHtml()}
                   </div>
           </div>
-          <textarea class="ACcatLoreField" type='text' onchange="getLore(this.value)" placeholder="Add pussy lore"></textarea>
-          <button onclick='postCat()'>Post my pussy</button>
+          <textarea id="catLore" class="ACcatLoreField" type='text' onchange="updateLore(this.value)" placeholder="Add pussy lore"></textarea>
+          <button onclick='updateCat()'>Post my pussy</button>
       </div>
       `;
 }
@@ -48,4 +48,21 @@ function makePickYourCatHtml() {
           `;
   }
   return myCatsHtml;
+}
+
+function makePreviewPicsOnEditView() {
+  let previewPictures = '';
+  for (let pics of model.input.postCat.addMoreCatPics.pics) {
+    previewPictures += /*HTML*/ `
+    <img class="ACimg" src="${pics}">
+    `;
+  }
+  let previewDiv = /*HTML*/ `
+  <div class="ACcarousel">
+  <div class="ACbtn1" id="previous" onclick='showSlideEditPage(-1)'>❮</div>
+  <div class="ACbtn2" id="next" onclick='showSlideEditPage(1)'>❯</div>
+  <div id="ACslides">${previewPictures}</div>
+  </div>
+  `;
+  return previewDiv;
 }
