@@ -44,7 +44,7 @@ function saveNewUser() {
   model.data.users.push({
     username: model.input.userRegistration.username,
     password: model.input.userRegistration.password,
-    bio: '',
+    bio: ``,
     profilePic: '',
   });
 }
