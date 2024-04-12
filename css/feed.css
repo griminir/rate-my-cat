@@ -64,15 +64,15 @@
 
 .FVPodiumNameNum2 {
   height: 80px;
-  font-family: 'Black Han Sans', sans-serif;
+  font-family: "Black Han Sans", sans-serif;
 }
 .FVPodiumNameNum1 {
   height: 100px;
-  font-family: 'Black Han Sans', sans-serif;
+  font-family: "Black Han Sans", sans-serif;
 }
 .FVPodiumNameNum3 {
   height: 60px;
-  font-family: 'Black Han Sans', sans-serif;
+  font-family: "Black Han Sans", sans-serif;
 }
 
 /* .FVPodiumName2, .FVPodiumName1, .FVPodiumName3  {
@@ -150,3 +150,25 @@
 /* Styled in main:
 Star
 Polaroid */
+
+.FVFeedCatInteractiveStars {
+  display: flex;
+}
+
+/* .FVStars {
+  padding: 3px;
+} */
+
+.FVFeedCatInteractiveStars div {
+  width: 40px;
+  height: 40px;
+  background-image: url("/img/star-empty.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.FVFeedCatInteractiveStars div:hover {
+  background-image: url("/img/star-filled-in.png");
+}

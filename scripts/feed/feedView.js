@@ -58,7 +58,7 @@ function getFeedLoop() {
   for (let i = 0; i < cats.length; i++) {
     html += /*HTML*/ `
         <div class="stylePolaroid">
-            <div class="FVFeedCatPics"><img  src="${
+            <div class="FVFeedCatPics"><img onclick="changePage('catProfile')" src="${
               cats[i].pics[cats[i].pics.length - 1]
             }"></div>
             <div class="FVFeedFirstText">
@@ -70,7 +70,7 @@ function getFeedLoop() {
                   cats[i].rating
                 }<span class="styleStar">&#11088;</span></div>
             </div>
-            <div class="FVFeedCatInteractiveStars">${makeInteractiveStars()}</div>
+            <div class="FVFeedCatInteractiveStars">${makeInteractiveStars(cats[i], cats[i].rating)}</div>
             <div class="FVFeedCatCommentBoxContainer"><textarea class="FVFeedCatCommentBox" placeholder="Enter your comment here..."></textarea></div>
         </div>
         `;
