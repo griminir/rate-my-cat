@@ -8,7 +8,6 @@ function getCurrentPodium(index) {
     if (index === 0) currentPodium = 'day';
     else if (index === 1) currentPodium = 'week';
     else if (index === 2) currentPodium = 'month';
-    else if (index === 3) currentPodium = 'year';
     else currentPodium = 'all time';
 
     console.log(currentPodium);
@@ -26,15 +25,8 @@ function getPodiumCats(currentPodium) {
     else if (currentPodium === 'month') {
         picDiv.innerHTML = 'bilde month'
     }
-    else if (currentPodium === 'year') {
-        picDiv.innerHTML = 'bilde year'
-    }
     else {
         picDiv.innerHTML = 'bilde all time'
     }
 }
-
-  // neste: gjøre ferdig for-loop til feed
-
-// endre cat race til ${cats[i].race[0]} når vi får den opp. Hardkoder race for nå, så alle er british shorthair 
-
+ //hei

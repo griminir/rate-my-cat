@@ -46,7 +46,6 @@ let model = {
         'cats of the day',
         'cats of the week',
         'cats of the month',
-        'cats of the year',
         'cats of all time',
       ],
     },

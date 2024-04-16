@@ -63,9 +63,7 @@ function getFeedLoop() {
             }"></div>
             <div class="FVFeedFirstText">
                 <div class="FVFeedCatName">${cats[i].name}</div>
-                <div class="FVFeedCatAgeRace">${cats[i].age}, ${
-      model.data.catRaces[0]
-    } </div> 
+                <div class="FVFeedCatAgeRace">${cats[i].age}, ${cats[i].race} </div> 
                 <div class="FVFeedCatRating">${
                   cats[i].rating
                 }<span class="styleStar">&#11088;</span></div>
