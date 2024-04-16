@@ -13,10 +13,12 @@ Litt småting i header. */
   margin-bottom: 10px;
   width: 500px;
   height: 650px;
-  border: 5px solid black;
+  border: 4px solid black;
   border-radius: 10px;
   font-size: 170%;
   background-color: #89dceb;
+  border-bottom: 12px solid black;
+  border-right: 12px solid black;
 }
 
 .styleStar {
