@@ -58,17 +58,17 @@ function getFeedLoop() {
   for (let i = 0; i < cats.length; i++) {
     html += /*HTML*/ `
         <div class="stylePolaroid">
-            <div class="FVFeedCatPics"><img onclick="changePage('catProfile')" src="${
+            <div class="FVFeedCatPics"><img onclick="pickCat('${cats[i].id}');changePage('catProfile');" src="${
               cats[i].pics[cats[i].pics.length - 1]
             }"></div>
             <div class="FVFeedFirstText">
                 <div class="FVFeedCatName">${cats[i].name}</div>
                 <div class="FVFeedCatAgeRace">${cats[i].age}, ${cats[i].race} </div> 
                 <div class="FVFeedCatRating">${
-                  cats[i].rating
+                  getRatingAverage(cats[i].id)
                 }<span class="styleStar">&#11088;</span></div>
             </div>
-            <div class="FVFeedCatInteractiveStars">${makeInteractiveStars(cats[i], cats[i].rating)}</div>
+            <div class="FVFeedCatInteractiveStars">${makeInteractiveStars(cats[i].id)}</div>
             <div class="FVFeedCatCommentBoxContainer"><textarea class="FVFeedCatCommentBox" placeholder="Enter your comment here..."></textarea></div>
         </div>
         `;
@@ -76,8 +76,3 @@ function getFeedLoop() {
   return html;
 }
 
-// id FVcatPic er bare midlertidig for å sjekke om funksjonen funker.
-// byttes ut med data av katter fra modellen etterhvert.
-// har nå bytta med hardkoda bilder inn i podiumet og endra class-navn til FVPodiumPic.
-// har lagt inn de hardkoda bildene i modell nå, men mangler logikk på hvordan man skal vise top rated katter.
-//må huske på å legge til navn også på podium, men vet ikke helt hvordan cssen blir.

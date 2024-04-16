@@ -2,7 +2,7 @@ function addView() {
   document.getElementById('app').innerHTML = /*HTML*/ `
   ${makeHeader()}
     <div class="ACaddCatContainer">
-        <h2>Add new pussy</h2>
+        <h2>Add new meow</h2>
             <div class="ACaddImages">
                 <span class="ACplus-button">+</span>
                 <input id="fileInput" class="ACfile-input" type='file' onchange="addPics(this.files)" accept="image/*" multiple>
@@ -19,8 +19,8 @@ function addView() {
                 ${makeDropDownRaceHtml()}
                 </div>
         </div>
-        <textarea class="ACcatLoreField" type='text' onchange="getLore(this.value)" placeholder="Add pussy lore"></textarea>
-        <button onclick='postCat()'>Post my pussy</button>
+        <textarea class="ACcatLoreField" type='text' onchange="getLore(this.value)" placeholder="Add meow lore"></textarea>
+        <button onclick='postCat()'>Post my meow</button>
     </div>
     `;
 }

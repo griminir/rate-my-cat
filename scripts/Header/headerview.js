@@ -8,8 +8,8 @@ function makeHeader() {
           <li class="H-li"><a class="H-a" onclick="loggedInCheck('profile')" href="#">${
             model.app.loggedInUser ?? 'Profile'
           }</a></li>
-          <li class="H-li"><a onclick="loggedInCheck('catAdd')" class="H-a" href="#">Add Pussy</a></li>
-          <li class="H-li"><a onclick="loggedInCheck('catEdit')" class="H-a" href="#">Edit Pussy</a></li>
+          <li class="H-li"><a onclick="loggedInCheck('catAdd')" class="H-a" href="#">Add Meow</a></li>
+          <li class="H-li"><a onclick="loggedInCheck('catEdit')" class="H-a" href="#">Edit Meow</a></li>
         </ul>
       </nav>
       

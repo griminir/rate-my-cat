@@ -31,6 +31,8 @@ function postCat() {
     race: model.input.postCat.addNewCat.race,
     lore: model.input.postCat.addNewCat.lore,
     pics: model.input.postCat.addNewCat.pics,
+    rating: [],
+    updated: new Date().toISOString().slice(0, 19).replace('T', ' '),
   };
   model.data.cats.push(newCat);
   model.app.page = 'feed';
@@ -111,13 +113,13 @@ function pickCat(catName) {
 }
 
 function getPreviousBirthday(cat) {
-  document.getElementById('catsDoB').innerHTML = /*HTML*/ `
-  <input class="ACinputItems" type='date' onchange="updateBirthday(this.value)" value="${cat.dateOfBirth}">
-  `;
+  // document.getElementById('catsDoB').innerHTML = /*HTML*/ `
+  // <input class="ACinputItems" type='date' onchange="updateBirthday(this.value)" value="${cat.dateOfBirth}">
+  // `;
 }
 
 function getPreviousLore(cat) {
-  document.getElementById('catLore').innerHTML = cat.lore;
+  // document.getElementById('catLore').innerHTML = cat.lore;
 }
 
 function updateLore(catLore) {
@@ -148,6 +150,7 @@ function updateCat() {
   cat.lore = model.input.postCat.addMoreCatPics.lore;
   cat.dateOfBirth = model.input.postCat.addMoreCatPics.dateOfBirth;
   cat.pics.push(model.input.postCat.addMoreCatPics.pics);
+  cat.updated = new Date().toISOString().slice(0, 19).replace('T', ' ');
   model.app.page = 'feed';
   // log to see
   console.log(model.data.cats);

@@ -2,7 +2,7 @@ function editView() {
   document.getElementById('app').innerHTML = /*HTML*/ `
   ${makeHeader()}
       <div class="ACaddCatContainer">
-          <h2>Add new pussy pics</h2>
+          <h2>Add new meow pics</h2>
               <div class="ACaddImages">
                   <span class="ACplus-button">+</span>
                   <input id="fileInput" class="ACfile-input" type='file' onchange="editPics(this.files)" accept="image/*" multiple>
@@ -21,8 +21,8 @@ function editView() {
                   ${makeDropDownRaceHtml()}
                   </div>
           </div>
-          <textarea id="catLore" class="ACcatLoreField" type='text' onchange="updateLore(this.value)" placeholder="Add pussy lore"></textarea>
-          <button onclick='updateCat()'>Post my pussy</button>
+          <textarea id="catLore" class="ACcatLoreField" type='text' onchange="updateLore(this.value)" placeholder="Add meow lore"></textarea>
+          <button onclick='updateCat()'>Post my meow</button>
       </div>
       `;
 }
