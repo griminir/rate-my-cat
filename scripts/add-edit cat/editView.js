@@ -10,11 +10,13 @@ function editView() {
               <div id="previewPictures" class="ACpreviewPics">
               </div>
           <div class="ACinputFields">
-          <select id="dropdown-select" onchange="pickCat(this.value)">
-          <option type="checkbox" value="Pick your cat"> Pick your cat</option>
+          <select id="dropdown-select" onchange="pickLastCat(this.value)">
+          <option type="checkbox">${model.input.postCat.addMoreCatPics.name}</option>
             ${makePickYourCatHtml()}
             </select>
-            Birthday: <span id="catsDoB">undefined</span>
+            Birthday: <span id="catsDoB">
+            <input class="ACinputItems" type='date' onchange="updateBirthday(this.value)" value="${getCatDoB()}">
+            </span>
               <label>Race:</label> 
               <button onclick='toggleRaces()'>Edit race</button>
                   <div id="catRaces" class="ACraces">
@@ -26,6 +28,8 @@ function editView() {
       </div>
       `;
 }
+
+
 
 function makeDropDownRaceHtml() {
   let catRacesHtml = '';

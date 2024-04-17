@@ -1,9 +1,9 @@
 let model = {
   app: {
-    isLoggedIn: false,
-    loggedInUser: null,
+    isLoggedIn: true,
+    loggedInUser: 'aaltofar',
     admin: false,
-    page: '',
+    page: 'catEdit',
     displayedUser: '',
     displayedCat: null,
   },
@@ -21,7 +21,7 @@ let model = {
         updated: null,
       },
       addMoreCatPics: {
-        name: '',
+        name: 'Pick your cat',
         dateOfBirth: null,
         race: [],
         lore: ``,

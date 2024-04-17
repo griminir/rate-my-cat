@@ -101,26 +101,33 @@ function showSlide(x) {
 
 // edit controller
 
-function pickCat(catName) {
+function pickLastCat(catName) {
   model.input.postCat.addMoreCatPics.name = catName;
   let cat = model.data.cats.find(
     (cat) =>
       model.input.postCat.addMoreCatPics.name === cat.name &&
       model.app.loggedInUser === cat.owner
   );
-  getPreviousBirthday(cat);
-  getPreviousLore(cat);
+  getCatDoB();
+  editView();
+  console.log(cat);
 }
 
-function getPreviousBirthday(cat) {
-  // document.getElementById('catsDoB').innerHTML = /*HTML*/ `
-  // <input class="ACinputItems" type='date' onchange="updateBirthday(this.value)" value="${cat.dateOfBirth}">
-  // `;
+
+
+function getCatDoB() {
+  let cat = model.data.cats.find(
+    (cat) =>
+      model.input.postCat.addMoreCatPics.name === cat.name &&
+      model.app.loggedInUser === cat.owner
+  );
+  if (cat == undefined) {
+    return undefined;
+  } else {
+    return cat.dateOfBirth;
+  }
 }
 
-function getPreviousLore(cat) {
-  // document.getElementById('catLore').innerHTML = cat.lore;
-}
 
 function updateLore(catLore) {
   model.input.postCat.addMoreCatPics.lore = catLore;
