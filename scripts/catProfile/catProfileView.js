@@ -1,6 +1,8 @@
 function catProfileView() {
   let cat = model.data.cats;
-  let catId = model.app.displayedCat;
+  // let catId = model.app.displayedCat;
+  let catId = 2;
+
   document.getElementById('app').innerHTML = /*HTML*/ `
     ${makeHeader()}
     <div class="CPContainer">

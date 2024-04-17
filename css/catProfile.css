@@ -2,7 +2,9 @@
     display: flex;
     padding: 2% 20%;
 }
-.CPLoreContainer, .CPCommentsContainer  {  
+
+.CPLoreContainer,
+.CPCommentsContainer {
     display: flex;
     flex-direction: column;
     margin: 10px;
@@ -10,12 +12,16 @@
     border: 5px solid black;
     border-radius: 10px;
     height: 610px;
+    border-bottom: 12px solid black;
+    border-right: 10px solid black;
 }
+
 .CPLoreContainer {
     width: 400px;
     justify-content: space-between;
 
 }
+
 .CPCommentsContainer {
     display: flex;
     flex-direction: column;
@@ -26,9 +32,11 @@
     font-size: 150%;
     font-family: 'Black Han Sans', sans-serif;
 }
+
 .CPLoreText {
     font-size: 120%;
 }
+
 .CPLoreButton {
     border: 3px solid black;
     border-radius: 5px;
@@ -36,44 +44,55 @@
     width: 150px;
     background-color: #F8C5D5;
     font-family: 'Black Han Sans', sans-serif;
+    border-bottom: 7px solid black;
+    border-right: 5px solid black;
 }
+
 .CPLoreButton:hover {
-    border: 4px solid black;
+    border-bottom: 8px solid black;
+    border-right: 6px solid black;
     background-color: #fdb3cb;
-    
+
 }
-.CPImg > img {
+
+.CPImg>img {
     border: solid 4px black;
     border-radius: 3px;
     margin-left: 7px;
     margin-right: 7px;
+    width: 450px;
 }
 
 .CPPolaroidFirstText {
     display: flex;
-    
 }
+
 .CPName {
     margin-right: 140px;
     font-family: 'Black Han Sans', sans-serif;
 }
+
 .CPRatingStar {
     margin-left: 140px;
     font-family: 'Black Han Sans', sans-serif;
 }
+
 .CPAgeRace {
     color: rgb(54, 54, 54);
     font-size: 90%;
 }
+
 .CPCommentsHeader {
     font-size: 150%;
     font-family: 'Black Han Sans', sans-serif;
 }
+
 .CPCommenter {
     font-size: 110%;
     margin-bottom: 40px;
     font-weight: 500;
 }
+
 .CPComment {
     font-style: italic;
     margin-bottom: 40px;
