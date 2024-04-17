@@ -1,9 +1,9 @@
 let model = {
   app: {
     isLoggedIn: true,
-    loggedInUser: 'aaltofar',
+    loggedInUser: '',
     admin: false,
-    page: 'catEdit',
+    page: '',
     displayedUser: '',
     displayedCat: null,
   },
@@ -11,7 +11,7 @@ let model = {
     postCat: {
       addNewCat: {
         id: null,
-        owner: '', 
+        owner: '',
         name: '',
         age: null,
         dateOfBirth: null,
@@ -60,12 +60,12 @@ let model = {
     viewCat: {
       rating: null,
       comment: {
-        commenter: '', 
+        commenter: '',
         comment: '',
       },
     },
     reportIssue: {
-      reportee: '', 
+      reportee: '',
       reportedUser: null,
       reportReason: '',
     },
@@ -76,7 +76,7 @@ let model = {
         username: 'aaltofar',
         password: 'password',
         bio: `dinosauskjeks and dr. pepper is life <3`,
-        profilePic: '',
+        profilePic: 'img/profilePictures/marius.JPG',
       },
       {
         username: 'bob',
@@ -116,118 +116,125 @@ let model = {
     cats: [
       {
         id: 0,
-        owner: 'aaltofar', 
+        owner: 'aaltofar',
         name: 'Oliver',
         age: 12,
         dateOfBirth: '2020-04-03',
-        race: ['British Shorthair'], 
+        race: ['British Shorthair'],
         lore: `Han ble arrestert for skattesvindel og heleri i 2017, 
                 er kretsmester i Mario Kart 64 og har litt for høyrevridde meninger 
                 rundt nåværende norsk innvandringspolitikk`,
-        rating: [10, 10, 10, 10,],
-        pics: ['img/catPictures/oliver1.png', 'img/catPictures/oliver2.jpg',
-        'img/catPictures/oliver3.jpg', 'img/catPictures/oliver4.jpg',
-        'img/catPictures/oliver5.jpg', 'img/catPictures/oliver6.jpg',
-        'img/catPictures/oliver7.jpg', 'img/catPictures/oliver8.jpg',
-        'img/catPictures/oliver9.jpg','img/catPictures/oliver10.jpg'],
+        rating: [10, 10, 10, 10],
+        pics: [
+          'img/catPictures/oliver1.png',
+          'img/catPictures/oliver2.jpg',
+          'img/catPictures/oliver3.jpg',
+          'img/catPictures/oliver4.jpg',
+          'img/catPictures/oliver5.jpg',
+          'img/catPictures/oliver6.jpg',
+          'img/catPictures/oliver7.jpg',
+          'img/catPictures/oliver8.jpg',
+          'img/catPictures/oliver9.jpg',
+          'img/catPictures/oliver10.jpg',
+        ],
         updated: '2024-03-02 10:00:00',
         comments: [
           {
-            commenter: 'kitty', 
+            commenter: 'kitty',
             comment: 'I love ur cat',
           },
           {
-            commenter: 'bob', 
+            commenter: 'bob',
             comment: 'I hate your cat grr',
           },
         ],
       },
       {
         id: 1,
-        owner: 'aaltofar', 
+        owner: 'aaltofar',
         name: 'Bianca',
         age: 3,
         dateOfBirth: '2020-04-03',
-        race: ['Unknown'], 
+        race: ['Unknown'],
         lore: `Previously owned by norwegian mafia`,
-        rating: [10, 7, 5,],
+        rating: [10, 7, 5],
         pics: ['img/catPictures/bianca1.jpg'],
         updated: '2024-03-03 11:00:00',
         comments: [
           {
-            commenter: 'kitty', 
+            commenter: 'kitty',
             comment: 'I love ur cat',
           },
           {
-            commenter: 'bob', 
+            commenter: 'bob',
             comment: 'I is that even a cat?',
           },
         ],
       },
-    {
+      {
         id: 2,
-        owner: 'camillzy', 
+        owner: 'camillzy',
         name: 'Loki',
         age: 6,
         dateOfBirth: null,
-        race: ['Unknown'], 
+        race: ['Unknown'],
         lore: `Hun kaster opp jenvlig fordi hun har sensitiv tarm, men er veldig glad i sokkelo.
               Hun terroriserer oss om natta, men på dagtid er hun bare søt. `,
-        rating: [8,9,],
+        rating: [8, 9],
         pics: ['img/catPictures/loki1.jpg', 'img/catPictures/loki2.jpg'],
         updated: '2024-02-03 09:00:00',
         comments: [
           {
-            commenter: 'kitty', 
+            commenter: 'kitty',
             comment: 'I love ur cat',
           },
           {
-            commenter: 'bob', 
+            commenter: 'bob',
             comment: 'I hate your cat grr',
           },
         ],
       },
       {
         id: 3,
-        owner: 'kitty', 
+        owner: 'kitty',
         name: 'Bianca',
         age: 3,
         dateOfBirth: '2020-04-03',
-        race: ['Unknown'], 
+        race: ['Unknown'],
         lore: `I am a cat.`,
-        rating: [10, 8, 7, 3, 10,],
+        rating: [10, 8, 7, 3, 10],
         pics: ['img/catPictures/bianca1.jpg'],
         updated: '2024-01-03 10:00:00',
         comments: [
           {
-            commenter: 'kitty', 
+            commenter: 'kitty',
             comment: 'I love ur cat',
           },
           {
-            commenter: 'bob', 
+            commenter: 'bob',
             comment: 'I hate your cat grr',
           },
         ],
       },
       {
         id: 4,
-        owner: 'simon', 
+        owner: 'simon',
         name: 'Simba',
         age: 5,
         dateOfBirth: '2019-04-03',
-        race: ['Unknown'], 
+        race: ['Unknown'],
         lore: `Used to live in Africa before some random dude picked me up
                 and took me to Norway. It's cold here. Big L.`,
-        rating: [10, 5, 10, 8, 8, 9,],
+        rating: [10, 5, 10, 8, 8, 9],
         pics: ['img/catPictures/simba1.jpg'],
         updated: '2024-02-02 10:00:00',
         comments: [
           {
-            commenter: 'kitty', 
+            commenter: 'kitty',
             comment: 'I love ur cat',
           },
           {
-            commenter: 'bob', 
+            commenter: 'bob',
             comment: 'I hate your cat grr',
           },
         ],
@@ -250,5 +257,6 @@ let model = {
       'Norwegian Forest',
       'Unknown',
     ],
+    showSlide: 0,
   },
 };
