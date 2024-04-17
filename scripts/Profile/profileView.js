@@ -1,10 +1,11 @@
 function profileView() {
   let div = document.getElementById('app');
   let html = /*html*/ `
+  ${makeHeader()}
   <section class="PF-profile">
     <div class="PF-container">
-      <div class="PF-username">${model.app.loggedInUser}</div>
-      <h4 class="PF-bio">${getUserBio()}</h4>
+      <h2 class="PF-username">${model.app.loggedInUser}</h2>
+      <div class="PF-bio">${getUserBio()}</div>
     </div>
     <div class="PF-container"> 
       <img class="PF-profilePic" src="${getUserPic()}"/>
@@ -12,7 +13,7 @@ function profileView() {
     </div>
   </section>
   <section class="PF-cats">
-    ${getUserCatsLoop()}
+    cats here
   </section>
 `;
   div.innerHTML = html;
