@@ -53,6 +53,7 @@
     <script src="scripts/catProfile/catProfileView.js"></script>
     <script src="scripts/sign-up/signUp.js"></script>
     <script src="scripts/Profile/profileView.js"></script>
+    <script src="scripts/Profile/editingProfile/profileEditView.js"></script>
 
     <script src="scripts/commonController.js"></script>
     <script src="scripts/Header/headerController.js"></script>
@@ -63,6 +64,7 @@
     <script src="scripts/profile/profileController.js"></script>
     <script src="scripts/catProfile/catProfileController.js"></script>
     <script src="scripts/Profile/profileController.js"></script>
+    <script src="scripts/Profile/editingProfile/profileEditController.js"></script>
     <script>
       updateView();
       function updateView() {
@@ -87,6 +89,11 @@
           model.app.isLoggedIn === true
         ) {
           addView();
+        } else if (
+          model.app.page == 'profileEdit' &&
+          model.app.isLoggedIn === true
+        ) {
+          profileEditView();
         } else {
           logInView();
         }

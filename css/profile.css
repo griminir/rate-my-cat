@@ -16,10 +16,10 @@
 .PF-profilePic {
   height: 300px;
   margin-bottom: 25px;
-  border: 4px solid black;
+  border: 6px solid black;
   border-radius: 50%;
-  border-bottom: 12px solid black;
-  border-right: 10px solid black;
+  /* border-bottom: 10px solid black;
+  border-right: 10px solid black; */
 }
 
 .PF-editButton {
@@ -31,6 +31,9 @@
   border: 3px solid black;
   border-bottom: 8px solid black;
   border-right: 6px solid black;
+}
+.PF-editButton:hover {
+  cursor: pointer;
 }
 
 .PF-cats {
@@ -62,6 +65,9 @@
   border: solid 4px black;
   border-radius: 3px;
 }
+.PimgDiv > img:hover {
+  cursor: pointer;
+}
 
 /* .stylePolaroid {
   display: flex;
@@ -79,3 +85,29 @@
   border-bottom: 12px solid black;
   border-right: 10px solid black;
 } */
+
+.PE-bio {
+  resize: none;
+  padding: 10px;
+  border: 4px solid black;
+  border-bottom: 12px solid black;
+  border-right: 10px solid black;
+  border-radius: 10px;
+  width: 300px;
+  height: 200px;
+  background-color: #ffe0ea;
+}
+.PE-editButton {
+  background-color: #89dceb;
+  padding: 10px 25px;
+  border-radius: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  border: 3px solid black;
+  border-bottom: 8px solid black;
+  border-right: 6px solid black;
+}
+.PE-editButton:hover {
+  background-color: #a4e2ec;
+  cursor: pointer;
+}

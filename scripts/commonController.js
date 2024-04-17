@@ -1,7 +1,6 @@
 function pickCat(clickedCat) {
   model.app.displayedCat = clickedCat;
-  model.app.page = 'catProfile';
-  updateView();
+  changePage('catProfile');
 }
 
 function changePage(page) {

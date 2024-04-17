@@ -9,7 +9,7 @@ function profileView() {
     </div>
     <div class="PF-container"> 
       <img class="PF-profilePic" src="${getUserPic()}"/>
-      <button class="PF-editButton" onclick="editProfile()">edit</button>
+      <button class="PF-editButton" onclick="changePage('profileEdit')">edit</button>
     </div>
   </section>
   <div class="PF-cats">
