@@ -20,3 +20,26 @@
   border-bottom: 12px solid black;
   border-right: 10px solid black;
 }
+
+.PF-editButton {
+  background-color: #89dceb;
+  padding: 10px 25px;
+  border-radius: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  border: 3px solid black;
+  border-bottom: 8px solid black;
+  border-right: 6px solid black;
+}
+
+.PF-cats {
+  padding-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.PF-username {
+  font-size: 36px;
+  padding-bottom: 50px;
+}

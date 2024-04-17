@@ -1,7 +1,7 @@
 let model = {
   app: {
-    isLoggedIn: true,
-    loggedInUser: '',
+    isLoggedIn: false,
+    loggedInUser: null,
     admin: false,
     page: '',
     displayedUser: '',

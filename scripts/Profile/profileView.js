@@ -13,7 +13,7 @@ function profileView() {
     </div>
   </section>
   <section class="PF-cats">
-    ${getUserCatsLoop()}
+    cats here
   </section>
 `;
   div.innerHTML = html;
