@@ -1,7 +1,7 @@
 function catProfileView() {
   let cat = model.data.cats;
-  // let catId = model.app.displayedCat;
-  let catId = 2;
+  let catId = model.app.displayedCat;
+  // let catId = 2;
 
   document.getElementById('app').innerHTML = /*HTML*/ `
     ${makeHeader()}
@@ -10,7 +10,9 @@ function catProfileView() {
             
             <div>
               <h3 class="CPLoreHeader">Meow Lore</h3><br>
-              <span class="CPLoreText">${cat[catId].lore ?? 'This cat has done nothing of significance'}</span>
+              <span class="CPLoreText">${
+                cat[catId].lore ?? 'This cat has done nothing of significance'
+              }</span>
             </div>
             <button class="CPLoreButton" >Report problem</button>
         </div>
