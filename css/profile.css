@@ -17,6 +17,7 @@
   height: 300px;
   margin-bottom: 25px;
   border: 4px solid black;
+  border-radius: 50%;
   border-bottom: 12px solid black;
   border-right: 10px solid black;
 }
@@ -35,11 +36,46 @@
 .PF-cats {
   padding-top: 100px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-around;
 }
 
 .PF-username {
   font-size: 36px;
   padding-bottom: 50px;
 }
+.Ppolaroid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 400px;
+  border: 4px solid black;
+  border-radius: 10px;
+  font-size: 170%;
+  background-color: #89dceb;
+  border-bottom: 12px solid black;
+  border-right: 10px solid black;
+}
+.PimgDiv > img {
+  width: 250px;
+  border: solid 4px black;
+  border-radius: 3px;
+}
+
+/* .stylePolaroid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-bottom: 10px;
+  width: 500px;
+  height: 650px;
+  border: 4px solid black;
+  border-radius: 10px;
+  font-size: 170%;
+  background-color: #89dceb;
+  border-bottom: 12px solid black;
+  border-right: 10px solid black;
+} */

@@ -23,7 +23,7 @@ function catProfileView() {
             <div class="CPPolaroidFirstText">
               <span class="CPName">${cat[catId].name}</span>
               <span class="CPRatingStar">
-                <span class="CPRating">${cat[catId].rating}</span>
+                <span class="CPRating">${getRatingAverage(cat[catId].id)}</span>
                 <span class="styleStar">&#11088;</span>
               </span>
             </div>

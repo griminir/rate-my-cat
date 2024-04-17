@@ -18,4 +18,11 @@ function getUserPic() {
   }
 }
 
-function getUserCatsLoop() {}
+function profileGetUserCatsLoop(rightOwner) {
+  let cats = model.data.cats;
+  rightOwner = model.app.loggedInUser;
+  let rightCats = cats.filter((cat) => cat.owner.includes(rightOwner));
+  return rightCats;
+}
+
+//sette rightOwner til hvem enn sin profil du er inne på.

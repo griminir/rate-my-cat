@@ -9,12 +9,34 @@ function profileView() {
     </div>
     <div class="PF-container"> 
       <img class="PF-profilePic" src="${getUserPic()}"/>
-      <button class="PF-editButton" onclick="edit()">edit</button>
+      <button class="PF-editButton" onclick="editProfile()">edit</button>
     </div>
   </section>
-  <section class="PF-cats">
-    cats here
-  </section>
+  <div class="PF-cats">
+    ${profileCatDisplay()}
+  </div>
 `;
   div.innerHTML = html;
 }
+
+function profileCatDisplay() {
+  let cat = profileGetUserCatsLoop();
+  let html = '';
+
+  for (let i = 0; i < cat.length; i++) {
+    html += /*HTML*/ `
+  <div class="Ppolaroid">
+    <div class="PimgDiv"><img onclick="pickCat('${cat[i].id}')" src="${
+      cat[i].pics[0]
+    }"/></div>
+    <div class="PcatName">${cat[i].name}</div>
+    <div class="CPRating">${getRatingAverage(cat[i].id)}</div>
+    </div>
+    `;
+  }
+  return html;
+}
+
+//hvorfor funker ikke getRatingAverage
+//onclick på linje 29 funker ikke
+// undefined før bildene vises

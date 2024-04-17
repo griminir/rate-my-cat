@@ -58,21 +58,24 @@ function getFeedLoop() {
   for (let i = 0; i < cats.length; i++) {
     html += /*HTML*/ `
         <div class="stylePolaroid">
-            <div class="FVFeedCatPics"><img onclick="pickCat('${cats[i].id}');changePage('catProfile');" src="${
-              cats[i].pics[cats[i].pics.length - 1]
-            }"></div>
+            <div class="FVFeedCatPics"><img onclick="pickCat('${
+              cats[i].id
+            }');" src="${cats[i].pics[cats[i].pics.length - 1]}"></div>
             <div class="FVFeedFirstText">
                 <div class="FVFeedCatName">${cats[i].name}</div>
-                <div class="FVFeedCatAgeRace">${cats[i].age}, ${cats[i].race} </div> 
-                <div class="FVFeedCatRating">${
-                  getRatingAverage(cats[i].id)
-                }<span class="styleStar">&#11088;</span></div>
+                <div class="FVFeedCatAgeRace">${cats[i].age}, ${
+      cats[i].race
+    } </div> 
+                <div class="FVFeedCatRating">${getRatingAverage(
+                  cats[i].id
+                )}<span class="styleStar">&#11088;</span></div>
             </div>
-            <div class="FVFeedCatInteractiveStars">${makeInteractiveStars(cats[i].id)}</div>
+            <div class="FVFeedCatInteractiveStars">${makeInteractiveStars(
+              cats[i].id
+            )}</div>
             <div class="FVFeedCatCommentBoxContainer"><textarea class="FVFeedCatCommentBox" placeholder="Enter your comment here..."></textarea></div>
         </div>
         `;
   }
   return html;
 }
-
