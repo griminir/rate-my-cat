@@ -1,7 +1,7 @@
 let model = {
   app: {
-    isLoggedIn: true,
-    loggedInUser: '',
+    isLoggedIn: false,
+    loggedInUser: null,
     admin: false,
     page: '',
     displayedUser: '',
@@ -155,7 +155,7 @@ let model = {
         name: 'Bianca',
         age: 3,
         dateOfBirth: '2020-04-03',
-        race: ['Unknown'],
+        race: ['Unknown',], 
         lore: `Previously owned by norwegian mafia`,
         rating: [10, 7, 5],
         pics: ['img/catPictures/bianca1.jpg'],

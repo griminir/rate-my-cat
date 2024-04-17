@@ -6,9 +6,9 @@ function getName(catName) {
 function getBirthday(catBirthday) {
   model.input.postCat.addNewCat.dateOfBirth = catBirthday;
 }
-function getRace(catRace) {
-  model.input.postCat.addNewCat.race = catRace;
-}
+// function getRace(catRace) {
+//   model.input.postCat.addNewCat.race = catRace;
+// }
 function getLore(catLore) {
   model.input.postCat.addNewCat.lore = catLore;
 }
@@ -36,6 +36,7 @@ function postCat() {
   };
   model.data.cats.push(newCat);
   model.app.page = 'feed';
+  model.input.postCat.showSlide = 0;
 
   // console log to see
   console.log(model.data.cats);
@@ -109,11 +110,23 @@ function pickLastCat(catName) {
       model.app.loggedInUser === cat.owner
   );
   getCatDoB();
+  getCatsLore();
   editView();
   console.log(cat);
 }
 
-
+function getCatsLore() {
+  let cat = model.data.cats.find(
+    (cat) =>
+      model.input.postCat.addMoreCatPics.name === cat.name &&
+      model.app.loggedInUser === cat.owner
+  );
+  if (cat == undefined) {
+    return undefined;
+  } else {
+    return cat.lore;
+  }
+}
 
 function getCatDoB() {
   let cat = model.data.cats.find(
@@ -159,6 +172,8 @@ function updateCat() {
   cat.pics.push(model.input.postCat.addMoreCatPics.pics);
   cat.updated = new Date().toISOString().slice(0, 19).replace('T', ' ');
   model.app.page = 'feed';
+  model.input.postCat.showSlide = 0;
+
   // log to see
   console.log(model.data.cats);
 }
@@ -180,4 +195,4 @@ function showSlideEditPage(x) {
 
 // to do:
 // - Age doesnt update when updating cat/adding new pics
-// - Race doesn't update yet either
+

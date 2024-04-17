@@ -1,5 +1,5 @@
 .ACaddCatContainer {
-  background-color: whitesmoke;
+  background-color: #c9beff;
   width: 600px;
   margin: auto;
   display: flex;
@@ -11,7 +11,7 @@
 
 .ACaddImages {
   border-radius: 5px;
-  background-color: #c9beff;
+  background-color: #e4deff;
   width: 500px;
   height: 500px;
   display: flex;

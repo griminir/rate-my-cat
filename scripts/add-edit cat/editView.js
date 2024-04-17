@@ -23,7 +23,9 @@ function editView() {
                   ${makeDropDownRaceHtml()}
                   </div>
           </div>
-          <textarea id="catLore" class="ACcatLoreField" type='text' onchange="updateLore(this.value)" placeholder="Add meow lore"></textarea>
+          <textarea id="catLore" class="ACcatLoreField" type='text' onchange="updateLore(this.value)" placeholder="Add meow lore">
+          ${getCatsLore() ?? 'Add meow lore'}
+          </textarea>
           <button onclick='updateCat()'>Post my meow</button>
       </div>
       `;
@@ -35,10 +37,26 @@ function makeDropDownRaceHtml() {
   let catRacesHtml = '';
   for (let race of model.data.catRaces) {
     catRacesHtml += /*HTML*/ `
-          <label><input id="${race}" type="checkbox" onchange="addRace(this.value)" value="${race}"> ${race}</label><br>
+          <label><input id="${race}" type="checkbox" onchange="addRace(this.value)" value="${race}" ${checkRaceIfTrue(race)}> ${race}</label><br>
           `;
   }
   return catRacesHtml;
+}
+
+function checkRaceIfTrue(race) {
+  if (model.input.postCat.addMoreCatPics.name === "Pick your cat") {
+    return;
+  } else {
+    let cat = model.data.cats.find(
+      (cat) =>
+        model.input.postCat.addMoreCatPics.name === cat.name &&
+        model.app.loggedInUser === cat.owner
+    );
+    if (cat.race.includes(race)) {
+      return "checked";
+    } 
+
+  }
 }
 
 function makePickYourCatHtml() {
