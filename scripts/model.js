@@ -3,7 +3,7 @@ let model = {
     isLoggedIn: true,
     loggedInUser: 'aaltofar',
     admin: true,
-    page: 'catEdit',
+    page: 'profileEdit',
     displayedUser: '',
     displayedCat: null,
   },

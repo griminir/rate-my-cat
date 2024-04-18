@@ -8,7 +8,9 @@ function profileEditView() {
       <textarea onchange="model.input.editProfile.bio=this.value" value="model.input.editProfile.bio" class="PE-bio">${getUserBio()}</textarea>
     </div>
     <div class="PF-container"> 
-      <div class="PE-profilePic" onclick="getProfilePicFromPC()"><input id="PEFileInput" class="PEFile-input" type='file' onchange="newProfilePic(this.file)" accept="image/profilePictures/*"><ion-icon class="PEIcon" name="build"></ion-icon></div>
+      <div class="PE-profilePic"><input id="PEFileInput" class="PEFile-input" type='file' onchange="newProfilePic(this.files)" accept="image/*"><ion-icon class="PEIcon" name="build"></ion-icon>
+      ${getNewProfilePic() ?? ''}
+      </div>
       <button class="PE-editButton" onclick="saveNewProfile()">save</button>
     </div>
   </section>
@@ -20,3 +22,9 @@ function profileEditView() {
 }
 
 /* <img class="PE-profilePic" src="${getUserPic()}"/><img class="PE-profilePic" src="${getUserPic()}"/> */
+
+function getNewProfilePic() {
+  return /*HTML*/ `
+  <img src="${model.input.editProfile.profilePic}">
+  `;
+}

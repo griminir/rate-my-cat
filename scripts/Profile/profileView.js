@@ -30,7 +30,9 @@ function profileCatDisplay() {
       cat[i].pics[0]
     }"/></div>
     <div class="PcatName">${cat[i].name}</div>
-    <div class="CPRating">${getRatingAverage(cat[i].id)}</div>
+    <div class="CPRating">${getRatingAverage(
+      cat[i].id
+    )}<span class="styleStar">&#11088;</span></div>
     </div>
     `;
   }
