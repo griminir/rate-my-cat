@@ -14,13 +14,13 @@ function addView() {
             <input class="ACinputItems" type='text' onchange="getName(this.value)" placeholder="Name">
             <input class="ACinputItems" type='date' onchange="getBirthday(this.value)">
             <label>Race:</label> 
-            <button onclick='toggleRaces()'>Pick race</button>
+            <button class="ACButton" onclick='toggleRaces()'>Pick race</button>
                 <div id="catRaces" class="ACraces">
                 ${makeDropDownRaceHtml()}
                 </div>
         </div>
         <textarea class="ACcatLoreField" type='text' onchange="getLore(this.value)" placeholder="Add meow lore"></textarea>
-        <button onclick='postCat()'>Post my meow</button>
+        <button class="ACButton" onclick='postCat()'>Post my meow</button>
     </div>
     `;
 }

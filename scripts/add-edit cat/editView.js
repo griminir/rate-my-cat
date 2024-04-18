@@ -11,14 +11,16 @@ function editView() {
               </div>
           <div class="ACinputFields">
           <select id="dropdown-select" onchange="pickLastCat(this.value)">
-          <option type="checkbox">${model.input.postCat.addMoreCatPics.name}</option>
+          <option type="checkbox">${
+            model.input.postCat.addMoreCatPics.name
+          }</option>
             ${makePickYourCatHtml()}
             </select>
             Birthday: <span id="catsDoB">
             <input class="ACinputItems" type='date' onchange="updateBirthday(this.value)" value="${getCatDoB()}">
             </span>
               <label>Race:</label> 
-              <button onclick='toggleRaces()'>Edit race</button>
+              <button class="ECButton" onclick='toggleRaces()'>Edit race</button>
                   <div id="catRaces" class="ACraces">
                   ${makeDropDownRaceHtml()}
                   </div>
@@ -26,25 +28,25 @@ function editView() {
           <textarea id="catLore" class="ACcatLoreField" type='text' onchange="updateLore(this.value)" placeholder="Add meow lore">
           ${getCatsLore() ?? 'Add meow lore'}
           </textarea>
-          <button onclick='updateCat()'>Post my meow</button>
+          <button class="ECButton" onclick='updateCat()'>Post my meow</button>
       </div>
       `;
 }
-
-
 
 function makeDropDownRaceHtml() {
   let catRacesHtml = '';
   for (let race of model.data.catRaces) {
     catRacesHtml += /*HTML*/ `
-          <label><input id="${race}" type="checkbox" onchange="addRace(this.value)" value="${race}" ${checkRaceIfTrue(race)}> ${race}</label><br>
+          <label><input id="${race}" type="checkbox" onchange="addRace(this.value)" value="${race}" ${checkRaceIfTrue(
+      race
+    )}> ${race}</label><br>
           `;
   }
   return catRacesHtml;
 }
 
 function checkRaceIfTrue(race) {
-  if (model.input.postCat.addMoreCatPics.name === "Pick your cat") {
+  if (model.input.postCat.addMoreCatPics.name === 'Pick your cat') {
     return;
   } else {
     let cat = model.data.cats.find(
@@ -53,9 +55,8 @@ function checkRaceIfTrue(race) {
         model.app.loggedInUser === cat.owner
     );
     if (cat.race.includes(race)) {
-      return "checked";
-    } 
-
+      return 'checked';
+    }
   }
 }
 

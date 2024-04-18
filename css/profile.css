@@ -15,6 +15,7 @@
 
 .PF-profilePic {
   height: 300px;
+  width: 300px;
   margin-bottom: 25px;
   border: 6px solid black;
   border-radius: 50%;
@@ -110,4 +111,29 @@
 .PE-editButton:hover {
   background-color: #a4e2ec;
   cursor: pointer;
+}
+
+.PE-profilePic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 300px;
+  margin-bottom: 25px;
+  border: 6px solid black;
+  border-radius: 50%;
+  background-color: #ffe0ea;
+  /* border-bottom: 10px solid black;
+  border-right: 10px solid black; */
+}
+.PE-profilePic:hover {
+  cursor: pointer;
+  background-color: #fcb1c9;
+  /* border-bottom: 10px solid black;
+  border-right: 10px solid black; */
+}
+.PEIcon {
+  font-size: 350%;
+}
+.PEFile-input {
 }

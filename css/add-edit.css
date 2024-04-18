@@ -7,6 +7,9 @@
   align-items: center;
   padding: 10px;
   border-radius: 5px;
+  border: 4px solid black;
+  border-bottom: 12px solid black;
+  border-right: 10px solid black;
 }
 
 .ACaddImages {
@@ -21,6 +24,21 @@
 
 .ACinputFields {
   padding: 10px;
+}
+.ACinputFields > input {
+  padding: 5px;
+  border: 3px solid black;
+  border-radius: 3px;
+}
+.ACinputFields > select {
+  padding: 5px;
+  border: 3px solid black;
+  border-radius: 3px;
+}
+.ACinputItems {
+  padding: 5px;
+  border: 3px solid black;
+  border-radius: 3px;
 }
 
 .ACraces {
@@ -40,7 +58,10 @@
   width: 500px;
   height: 60px;
   margin: 10px;
-  resize:none;
+  resize: none;
+  border: 4px solid black;
+  border-bottom: 12px solid black;
+  border-right: 10px solid black;
 }
 .ACplus-button {
   position: absolute;
@@ -103,4 +124,36 @@
 }
 .ACbtn2 {
   right: 0;
+}
+
+.ACButton {
+  padding: 9px 25px;
+  background-color: #9edce7;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  font-family: 'Black Han Sans', sans-serif;
+  border: 3px solid black;
+  border-bottom: 8px solid black;
+  border-right: 6px solid black;
+}
+.ACButton:hover {
+  background-color: #89dceb;
+}
+
+.ECButton {
+  padding: 9px 25px;
+  background-color: #fadbe5;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  font-family: 'Black Han Sans', sans-serif;
+  border: 3px solid black;
+  border-bottom: 8px solid black;
+  border-right: 6px solid black;
+}
+.ECButton:hover {
+  background-color: #f8c5d5;
 }

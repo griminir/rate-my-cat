@@ -5,10 +5,10 @@ function profileEditView() {
   <section class="PF-profile">
     <div class="PF-container">
       <h2 class="PF-username">${model.app.loggedInUser}</h2>
-      <textarea onchange="model.input.editProfile.bio=this.value" class="PE-bio">${getUserBio()}</textarea>
+      <textarea onchange="model.input.editProfile.bio=this.value" value="model.input.editProfile.bio" class="PE-bio">${getUserBio()}</textarea>
     </div>
     <div class="PF-container"> 
-      <img class="PF-profilePic" src="${getUserPic()}"/>
+      <div class="PE-profilePic" onclick="getProfilePicFromPC()"><input id="PEFileInput" class="PEFile-input" type='file' onchange="newProfilePic(this.file)" accept="image/profilePictures/*"><ion-icon class="PEIcon" name="build"></ion-icon></div>
       <button class="PE-editButton" onclick="saveNewProfile()">save</button>
     </div>
   </section>
@@ -18,3 +18,5 @@ function profileEditView() {
 `;
   div.innerHTML = html;
 }
+
+/* <img class="PE-profilePic" src="${getUserPic()}"/><img class="PE-profilePic" src="${getUserPic()}"/> */
