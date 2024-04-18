@@ -18,7 +18,11 @@ function catProfileView() {
         </div>
 
         <div class="stylePolaroid">
-            <div class="CPImg"><img src="${cat[catId].pics[0]}"></div>
+            <div class="CPImg">
+            <div class="CPArrowBtn" onclick="CPswapPic(-1)">❮</div>
+            <div class="CPArrowBtn" onclick="CPswapPic(1)">❯</div>
+            <img src="${cat[catId].pics[model.data.showSlide]}">
+            </div>
 
             <div class="CPPolaroidFirstText">
               <span class="CPName">${cat[catId].name}</span>
@@ -41,4 +45,18 @@ function catProfileView() {
     </div>
     
     `;
+}
+
+function CPswapPic(toPage) {
+  let catId = model.app.displayedCat;
+  let pics = model.data.cats[catId].pics;
+  let showSlide = model.data.showSlide;
+  if (toPage == -1 && showSlide == 0) {
+    model.data.showSlide = pics.length - 1;
+  } else if (toPage == 1 && showSlide == pics.length - 1) {
+    model.data.showSlide = 0;
+  } else {
+    model.data.showSlide += toPage;
+  }
+  updateView();
 }

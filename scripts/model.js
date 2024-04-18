@@ -3,9 +3,9 @@ let model = {
     isLoggedIn: true,
     loggedInUser: 'aaltofar',
     admin: true,
-    page: 'profileEdit',
+    page: 'catProfile',
     displayedUser: '',
-    displayedCat: null,
+    displayedCat: 0,
   },
   input: {
     postCat: {
