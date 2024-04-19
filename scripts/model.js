@@ -291,12 +291,12 @@ let model = {
         name: 'Simba',
         age: 3,
         dateOfBirth: '2023-09-01',
-        race: ['Bengal', 'Norwegian Forest', ],
+        race: ['Bengal', 'Norwegian Forest'],
         lore: `Halvt bengal/skogskatt. Jeg digger nabokatten Findus, vi er bestevenner. 
         Og esker, esker får jeg aldri nok av! 
         Ellers er det gøy å plage å plage husholdningens slaver.`,
         rating: [null],
-        pics: ['img/catPictures/2simba1.png',],
+        pics: ['img/catPictures/2simba1.png'],
         updated: '2024-19-04 11:00:00',
         comments: [
           {
@@ -315,10 +315,15 @@ let model = {
         name: 'Max',
         age: 1,
         dateOfBirth: '2023-01-05',
-        race: ['Uncat',],
+        race: ['Uncat'],
         lore: `Max lusker i skyggene når katten din er ute.`,
         rating: [null],
-        pics: ['img/catPictures/max1.png','img/catPictures/max2.png','img/catPictures/max3.png','img/catPictures/max4.png'],
+        pics: [
+          'img/catPictures/max1.png',
+          'img/catPictures/max2.png',
+          'img/catPictures/max3.png',
+          'img/catPictures/max4.png',
+        ],
         updated: '2024-19-04 12:00:00',
         comments: [
           {
@@ -337,10 +342,13 @@ let model = {
         name: 'Theodore',
         age: 3,
         dateOfBirth: '2019-08-01',
-        race: ['Unknown',],
-        lore: ``,
+        race: ['Unknown'],
+        lore: null,
         rating: [null],
-        pics: ['img/catPictures/theodore1.jpg','img/catPictures/theodore2.jpg',],
+        pics: [
+          'img/catPictures/theodore1.jpg',
+          'img/catPictures/theodore2.jpg',
+        ],
         updated: '2024-19-04 12:00:00',
         comments: [
           {
@@ -359,10 +367,10 @@ let model = {
         name: 'Camilla',
         age: 4,
         dateOfBirth: '2018-05-19',
-        race: ['Unknown',],
-        lore: ``,
+        race: ['Unknown'],
+        lore: null,
         rating: [null],
-        pics: ['img/catPictures/camilla1.jpg','img/catPictures/camilla2.jpg',],
+        pics: ['img/catPictures/camilla1.jpg', 'img/catPictures/camilla2.jpg'],
         updated: '2024-19-04 13:00:00',
         comments: [
           {
