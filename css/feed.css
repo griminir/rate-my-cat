@@ -153,22 +153,44 @@ Polaroid */
 
 .FVFeedCatInteractiveStars {
   display: flex;
+  flex-direction: row-reverse;  
+ float: right;
 }
+
+/* .FVFeedCatInteractiveStars:hover {
+  flex-direction: row;
+} */
 
 /* .FVStars {
   padding: 3px;
 } */
 
-.FVFeedCatInteractiveStars div {
-  width: 40px;
-  height: 40px;
-  background-image: url("/img/star-empty.png");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
+/* .FVFeedCatInteractiveStars div::before {
+  position: relative;
+  content: url("/img/star-empty.png");
   cursor: pointer;
 }
 
-.FVFeedCatInteractiveStars div:hover {
-  background-image: url("/img/star-filled-in.png");
+.FVFeedCatInteractiveStars div:hover:before,
+.FVFeedCatInteractiveStars div:hover ~ div:before {
+  position: relative;
+  content: url("/img/star-filled-in.png");
+} */
+
+
+.FVFeedCatInteractiveStars div {
+  position: relative;
+  content: url("/img/star-empty.png");
+  cursor: pointer;
 }
+
+.FVFeedCatInteractiveStars .filled{
+  content: url("/img/star-filled-in.png");
+}
+.FVFeedCatInteractiveStars div:hover,
+.FVFeedCatInteractiveStars div:hover ~ div {
+  content: url("/img/star-filled-in.png");
+}
+
+
+

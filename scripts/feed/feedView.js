@@ -71,7 +71,7 @@ function getFeedLoop() {
                 )}<span class="styleStar">&#11088;</span></div>
             </div>
             <div class="FVFeedCatInteractiveStars">${makeInteractiveStars(
-              cats[i].id
+              cats[i].id, getRatingAverage(cats[i].id)
             )}</div>
             <div class="FVFeedCatCommentBoxContainer"><textarea class="FVFeedCatCommentBox" placeholder="Enter your comment here..."></textarea></div>
         </div>
