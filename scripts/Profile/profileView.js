@@ -26,7 +26,7 @@ function profileCatDisplay() {
   for (let i = 0; i < cat.length; i++) {
     html += /*HTML*/ `
   <div class="Ppolaroid">
-    <div class="PimgDiv"><img onclick="pickCat('${cat[i].id}')" src="${
+    <div class="PimgDiv"><img onclick="${model.app.displayedCat = cat[i].id};pickCat('${cat[i].id}')" src="${
       cat[i].pics[0]
     }"/></div>
     <div class="PcatName">${cat[i].name}</div>
