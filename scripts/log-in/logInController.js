@@ -4,7 +4,7 @@ function login() {
   if (username == null) {
     model.input.logInInfo.errorMessage = 'Wrong username and/or password';
   } else {
-    if (username == 'altofar') {
+    if (username == 'aaltofar') {
       model.app.admin = true;
     }
     model.app.page = 'feed';
