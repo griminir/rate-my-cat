@@ -2,8 +2,8 @@ let model = {
   app: {
     isLoggedIn: true,
     loggedInUser: 'aaltofar',
-    admin: false,
-    page: "feed",
+    admin: true,
+    page: "catProfile",
     displayedUser: "",
     displayedCat: 0,
   },

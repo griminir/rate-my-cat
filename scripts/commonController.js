@@ -8,7 +8,7 @@ function changePage(page) {
   updateView();
 }
 
-function makeInteractiveStars(catId, catsRating) {
+function makeInteractiveStars(catId) {
   let html = "";
   let numberOfStars = 1;
   let myRating = model.data.ratings.find(
@@ -30,20 +30,20 @@ function makeInteractiveStars(catId, catsRating) {
         html += /*HTML*/ `
       
         
-        <div id="stars" onclick="giveRating(${i})"></div>
+        <div id="stars" onclick="giveRating(${i}, ${catId})"></div>
         `;
         exitFilledStars--;
       }else{
         html += /*HTML*/ `
         
-        <div id="stars" onclick="giveRating(${i})" class="filled"></div>
+        <div id="stars" onclick="giveRating(${i}, ${catId})" class="filled"></div>
       
       `;
       }
     } else {
       html += /*HTML*/ `
       
-      <div id="stars" onclick="giveRating(${i})"></div>
+      <div id="stars" onclick="giveRating(${i}, ${catId})"></div>
       
       `;
     }
@@ -66,9 +66,35 @@ function getRatingAverage(catId) {
   } else return sum;
 }
 
-function giveRating(rating) {
-  console.log(rating);
-}
+function giveRating(rating, catId) {
+  let myRating = model.data.ratings.find(
+    (rating) =>
+      rating.ratedByUser === model.app.loggedInUser &&
+      rating.ratedCatId === catId
+  );
+  if (myRating) {
+    myRating.rating = rating;
+  } else {
+    model.data.ratings.push(
+      {
+        ratedCatId: catId,
+        ratedByUser: model.app.loggedInUser,
+        rating: rating,
+      }
+    )
+  };
+  updateView();
+  }
+
+  function changeCatId() {
+    let cats = model.data.cats;
+    for (let i = 0; i < cats.length; i++) {
+      let catIndex = cats.indexOf(cats[i]);
+      model.data.cats[i].id = catIndex;
+    }
+
+  }
+
 
 // function pickHoverRating(star, catId) {
 //   model.input.feed.hoverRating.cat = catId;

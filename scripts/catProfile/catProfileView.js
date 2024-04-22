@@ -18,6 +18,7 @@ function catProfileView() {
         </div>
 
         <div class="stylePolaroid">
+        <button onclick='deleteCat(${catId})'>X</button>
             <div class="CPImg">
             <div class="CPArrowBtn" onclick="CPswapPic(-1)">❮</div>
             <div class="CPArrowBtn" onclick="CPswapPic(1)">❯</div>
