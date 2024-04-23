@@ -63,7 +63,9 @@ function getRatingAverage(catId) {
   model.data.cats[catId].rating = sum;
   if (sum == 10.0) {
     return 10;
-  } else return sum;
+  } else if (ratings.length === 0) {
+    return 0;
+  }else return sum;
 }
 
 function giveRating(rating, catId) {

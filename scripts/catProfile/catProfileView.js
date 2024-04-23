@@ -36,13 +36,15 @@ function catProfileView() {
             <div class="CPAgeRace">
             ${cat[catId].age} years, ${cat[catId].race}
             </div>
-            <div class="CPInteractiveStars">Interactive stars</div>
+            <div class="styleCatInteractiveStars">${makeInteractiveStars(
+              cat[catId].id, getRatingAverage(cat[catId].id)
+            )}</div>
         </div>
         <div class="CPCommentsContainer">
         <h3 class="CPCommentsHeader">Comments</h3>
         <div class="CPCommentsLoop">${getCommentLoop(catId)}</div>
-        <div class="CPCommentButtonContainer"><input class="CPcommentField" onchange="model.input.viewCat.comment=this.value" type="text" placeholder= "comment..." />
-        <button onclick="postComment()" class="CPcommentButton">⤳</button></div>
+        <div class="CPCommentButtonContainer"><input class="CPcommentField" onchange="model.input.viewCat.comment.comment=this.value"  type="text" placeholder= "comment..." />
+        <button onclick="postComment(${catId})" class="CPcommentButton">⤳</button></div>
         </div>
         
     </div>

@@ -9,7 +9,7 @@ Litt småting i header. */
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: auto;
+  margin: 10px;
   margin-bottom: 10px;
   width: 500px;
   height: 650px;
@@ -30,4 +30,22 @@ body {
   background-color: #fff46f;
   margin: 0;
   font-family: 'Work Sans', sans-serif;
+}
+.styleCatInteractiveStars {
+  display: flex;
+  flex-direction: row-reverse;  
+  float: right;
+}
+.styleCatInteractiveStars div {
+  position: relative;
+  content: url("/img/star-empty.png");
+  cursor: pointer;
+}
+
+.styleCatInteractiveStars .filled{
+  content: url("/img/star-filled-in.png");
+}
+.styleCatInteractiveStars div:hover,
+.styleCatInteractiveStars div:hover ~ div {
+  content: url("/img/star-filled-in.png");
 }

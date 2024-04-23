@@ -19,6 +19,7 @@
   margin-bottom: 25px;
   border: 6px solid black;
   border-radius: 50%;
+  object-fit: cover;
   /* border-bottom: 10px solid black;
   border-right: 10px solid black; */
 }
@@ -123,6 +124,7 @@
   border: 6px solid black;
   border-radius: 50%;
   background-color: #ffe0ea;
+  
   /* border-bottom: 10px solid black;
   border-right: 10px solid black; */
 }
@@ -145,4 +147,12 @@
   height: 100%;
   cursor: pointer;
   z-index: 1;
+}
+
+.PE-uploadImg {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  
 }

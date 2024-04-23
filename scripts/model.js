@@ -3,7 +3,7 @@ let model = {
     isLoggedIn: true,
     loggedInUser: 'aaltofar',
     admin: true,
-    page: "catProfile",
+    page: "feed",
     displayedUser: "",
     displayedCat: 0,
   },
@@ -438,8 +438,10 @@ let model = {
       "Norwegian Forest",
       "Unknown",
       "Portugisisk vannkatt",
-      "Uncat",
+      "Uncat"
+      ,
     ],
     showSlide: 0,
+    img: ['img/misc/bubble.png',]
   },
 };

@@ -68,6 +68,7 @@
     <script>
       updateView();
       function updateView() {
+        model.input.viewCat.deleteCat = false;
         if (model.app.page == 'feed') {
           feedView();
         } else if (

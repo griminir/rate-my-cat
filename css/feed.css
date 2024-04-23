@@ -107,6 +107,7 @@
   width: 450px;
   border: solid 4px black;
   border-radius: 3px;
+  margin-top: 10px;
 }
 .FVFeedCatPics > img:hover {
   cursor: pointer;
@@ -131,7 +132,7 @@
   margin-left: 30px;
 }
 
-.FVFeedCatCommentBox {
+/* .FVFeedCatCommentBox {
   resize: none;
   overflow: hidden;
   outline: none;
@@ -146,16 +147,14 @@
 }
 .FVFeedCatCommentBox:hover {
   background-color: #f8c5d5;
+} */
+.FVCommentBubble {
+  height: 50px;
+
 }
 /* Styled in main:
 Star
 Polaroid */
-
-.FVFeedCatInteractiveStars {
-  display: flex;
-  flex-direction: row-reverse;  
- float: right;
-}
 
 /* .FVFeedCatInteractiveStars:hover {
   flex-direction: row;
@@ -177,20 +176,11 @@ Polaroid */
   content: url("/img/star-filled-in.png");
 } */
 
-
-.FVFeedCatInteractiveStars div {
-  position: relative;
-  content: url("/img/star-empty.png");
-  cursor: pointer;
+.FVFeedPolaroidLoop {
+  display: flex;
+  justify-content: center;
 }
 
-.FVFeedCatInteractiveStars .filled{
-  content: url("/img/star-filled-in.png");
-}
-.FVFeedCatInteractiveStars div:hover,
-.FVFeedCatInteractiveStars div:hover ~ div {
-  content: url("/img/star-filled-in.png");
-}
 
 
 

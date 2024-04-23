@@ -57,6 +57,7 @@ function getFeedLoop() {
 
   for (let i = 0; i < cats.length; i++) {
     html += /*HTML*/ `
+    <div class="FVFeedPolaroidLoop">
         <div class="stylePolaroid">
             <div class="FVFeedCatPics"><img onclick="pickCat('${
               cats[i].id
@@ -64,16 +65,16 @@ function getFeedLoop() {
             <div class="FVFeedFirstText">
                 <div class="FVFeedCatName">${cats[i].name}</div>
                 <div class="FVFeedCatAgeRace">${cats[i].age}, ${
-      cats[i].race
+      cats[i].race[0]
     } </div> 
                 <div class="FVFeedCatRating">${getRatingAverage(
                   cats[i].id
                 )}<span class="styleStar">&#11088;</span></div>
             </div>
-            <div class="FVFeedCatInteractiveStars">${makeInteractiveStars(
+            <div class="styleCatInteractiveStars">${makeInteractiveStars(
               cats[i].id, getRatingAverage(cats[i].id)
             )}</div>
-            <div class="FVFeedCatCommentBoxContainer"><textarea class="FVFeedCatCommentBox" placeholder="Enter your comment here..."></textarea></div>
+            <img class="FVCommentBubble" src="${model.data.img[0]}"></div>
         </div>
         `;
   }

@@ -40,13 +40,14 @@ function trulyDeleteCat(catId) {
 }
 
 function postComment(catId) {
-  commenter = model.app.loggedInUser;
-  comment = model.input.viewCat.comment;
-  cat = model.data.cats;
+  const theCommenter = model.app.loggedInUser;
+  let theComment = model.input.viewCat.comment.comment;
+  
 
   model.data.cats[catId].comments.push({
-    commenter: commenter,
-    comment: comment,
+    commenter: theCommenter,
+    comment: theComment,
   })
+  model.input.viewCat.comment.comment = null
   updateView();
 }
