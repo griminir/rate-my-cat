@@ -40,7 +40,9 @@ function catProfileView() {
         </div>
         <div class="CPCommentsContainer">
         <h3 class="CPCommentsHeader">Comments</h3>
-        ${getCommentLoop(catId)}
+        <div class="CPCommentsLoop">${getCommentLoop(catId)}</div>
+        <div class="CPCommentButtonContainer"><input class="CPcommentField" onchange="model.input.viewCat.comment=this.value" type="text" placeholder= "comment..." />
+        <button onclick="postComment()" class="CPcommentButton">⤳</button></div>
         </div>
         
     </div>

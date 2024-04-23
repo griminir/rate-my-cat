@@ -12,6 +12,15 @@ function getCommentLoop(catId) {
 }
 
 function deleteCat(catId) {
+  if (!model.input.viewCat.deleteCat) {
+    alert('Are you sure you want to delete your cat? click the delete button again to confirm')
+  } else {
+    trulyDeleteCat(catId);
+    model.input.viewCat.deleteCat = false;
+  }
+}
+
+function trulyDeleteCat(catId) {
   let cat = model.data.cats.find((cat) => cat.owner === model.app.loggedInUser && cat.id === catId);
   if (cat.owner === model.app.loggedInUser || model.app.admin === true) {
     // delete cat from cats
@@ -28,4 +37,16 @@ function deleteCat(catId) {
   model.app.displayedCat = null;
   changeCatId();
   changePage('feed');
+}
+
+function postComment(catId) {
+  commenter = model.app.loggedInUser;
+  comment = model.input.viewCat.comment;
+  cat = model.data.cats;
+
+  model.data.cats[catId].comments.push({
+    commenter: commenter,
+    comment: comment,
+  })
+  updateView();
 }

@@ -67,6 +67,7 @@ let model = {
         commenter: "",
         comment: "",
       },
+      deleteCat: false,
     },
     reportIssue: {
       reportee: "",
