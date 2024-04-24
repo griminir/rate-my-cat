@@ -2,43 +2,109 @@
 // finne average rating til hver katt som har blitt rate'a den siste uka
 // kjør getTopThree på det arrayet
 
-function sortPodium() {
-  // return [...model.data.ratings].sort(function (a, b) {
-  //   return new Date(b.date) - new Date(a.date);
-  // });
-  return [...model.data.ratings].sort(function (a, b) {
-    return b.rating - a.rating;
-  });
-} // denne funksjonen returnerer et array ved hjelp av spread (...). Så sorterer den det "nye"
+// function sortPodium() {
+//   // return [...model.data.ratings].sort(function (a, b) {
+//   //   return new Date(b.date) - new Date(a.date);
+//   // });
+//   return [...model.data.ratings].sort(function (a, b) {
+//     return b.rating - a.rating;
+//   });
+// } // denne funksjonen returnerer et array ved hjelp av spread (...). Så sorterer den det "nye"
 // arrayet ved å sjekke a og b (som er objekter i arrayet) opp mot hverandre. Den høyeste ratingen blir først.
 
-function getArrayOfPastWeekRatedCats() {
-  const today = new Date();
-  const pastWeekStart = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);
+// function getPodiumAverageRating() {
+//   let combinedRatings = combineRatings(getArrayForPodium());
+//   let averageRatedCats = [];
+//   for (let cat of combinedRatings) {
+//     // model.data.ratings.map((rating) => {
+//     //   const cat = model.data.cats.find((cat) => cat.id === rating.ratedCatId);
+
+//     let sum = 0;
+//     let catsRating = [];
+//     catsRating.push(cat.rating);
+//     // catsRating.forEach((rating) => (sum += rating));
+//     // sum = sum / catsRating.length;
+
+//     averageRatedCats.push({
+//       catId: cat.ratedCatId,
+//       averageRating: catsRating.reduce((a, b) => a + b) / catsRating.length,
+//     });
+//   }
+//   return getTopThreeCats(averageRatedCats);
+// }
+
+function getArrayForPodium() {
+  const today = new Date(); // = Wed Apr 24 2024 12:40:10 GMT+0200 (Central European Summer Time)
+  const dateToCheckFrom = new Date(
+    today.getTime() -
+      model.input.feed.podiums[model.input.feed.currentPodium] *
+        24 *
+        60 *
+        60 *
+        1000
+  );
   return model.data.ratings.filter(
-    (rating) => new Date(rating.date) >= pastWeekStart
+    (rating) => new Date(rating.date) >= dateToCheckFrom
   );
 }
 
-function getWeeklyAverageRating() {
-  const sortedArrayOfPastWeekCats = getArrayOfPastWeekRatedCats();
-  let averageRatedCatsWeek = [];
-  for (let cat of sortedArrayOfPastWeekCats) {
-    let sum = 0;
-    let catsRating = [];
-    catsRating.push(cat.rating);
-    catsRating.forEach((rating) => (sum += rating));
-    sum = sum / catsRating.length;
-    averageRatedCatsWeek.push({
-      catId: cat.ratedCatId,
-      averageRating: sum,
-    });
+function combineRatings(ratings) {
+  let cats = [...model.data.cats];
+  for (let i = 0; i < ratings.length; i++) {
+    const rating = ratings[i];
+    for (let n = 0; n < cats.length; n++) {
+      const cat = array[n];
+      if (rating.ratedCatId == cat.catId) cat.ratings.push(rating);
+    }
   }
-  return averageRatedCatsWeek
+  return cats;
+}
+
+function getPodiumAverageRating() {
+  let cats = combineRatings(getArrayForPodium());
+  cats.forEach((cat) => {
+    const sum = cat.ratings.reduce((cat, rating) => cat + rating, 0);
+    cat.averageRating = sum / cat.ratings.length;
+  });
+
+  return getTopThreeCats(cats);
+}
+
+function getTopThreeCats(arr) {
+  return arr
     .sort(function (a, b) {
       return b.averageRating - a.averageRating;
     })
     .splice(0, 3);
+}
+function makePodiumOptions() {
+  let html =
+    /*HTML*/
+    `<option selected value="3">${model.input.feed.podiums[3].name}</option>`;
+  for (let i = 0; i < model.input.feed.podiums.length - 1; i++) {
+    const podium = model.input.feed.podiums[i];
+    html += /*HTML*/ `<option ${
+      model.input.feed.currentPodium == i ? 'selected' : ''
+    } value="${i}">${podium.name}</option>`;
+  }
+  return html;
+}
+
+function drawPodium() {
+  let html = '';
+  let cats = getPodiumAverageRating();
+  for (let i = 0; i < cats.length; i++) {
+    html += /*HTML*/ `
+  <div class="FVPodium${i + 1}">
+    <div class="FVPodiumPic"><img src="${cats[i].pics[0]}"></div>
+    <div class="FVPodiumNameNum${i + 1}">
+      <div class="FVPodiumName${i + 1}">${cats[i].name}</div>
+      <div class="FVPodiumNum">${i + 1}</div>
+    </div>
+  </div>
+`;
+  }
+  return html;
 }
 
 function feedView() {
@@ -48,48 +114,16 @@ function feedView() {
     ${makeHeader()}
 
     <div class="FVContainer">
-        <select class="FVPodiumDropDown" onchange="getCurrentPodium(this.selectedIndex)">${podiumSelect()}</select>
+    <h2>${
+      model.input.feed.podiums[model.input.feed.currentPodium].name
+    }</h2>    
+    <select class="FVPodiumDropDown" onchange="setCurrentPodium(this.value)">${makePodiumOptions()}</select>
         
         
         <div class="FVPodiumContainer">
-        
-        <div class="FVPodium2">
-                <div class="FVPodiumPic2"><img src="${
-                  feed.secondPlace.catImg
-                }"></div>
-                    <div class="FVPodiumNameNum2">
-                        <div class="FVPodiumName2">${
-                          feed.secondPlace.catName
-                        }</div>
-                        <div class="FVPodiumNum2">2</div>
-                    </div>
-            </div>
-            
-            <div class="FVPodium1">
-                <div class="FVPodiumPic1"><img src="${
-                  feed.firstPlace.catImg
-                }"></div>
-                    <div class="FVPodiumNameNum1">
-                        <div class="FVPodiumName1">${
-                          feed.firstPlace.catName
-                        }</div>
-                        <div class="FVPodiumNum1">1</div>
-                    </div>
-            </div>
-            
-            <div class="FVPodium3">
-                <div class="FVPodiumPic3"><img src="${
-                  feed.thirdPlace.catImg
-                }"></div>
-                    <div class="FVPodiumNameNum3">
-                        <div class="FVPodiumName3">${
-                          feed.thirdPlace.catName
-                        }</div>
-                        <div class="FVPodiumNum3">3</div>
-                    </div>
-            </div>
+        ${drawPodium()}
         </div>
-
+          <h1><u>FEED</u></h1>
             <div class="FVFeedContainer">${getFeedLoop()}</div>
     </div>
     `;

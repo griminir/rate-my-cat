@@ -9,94 +9,96 @@
   font-weight: bold;
 }
 .FVPodiumContainer {
-  display: flex;
+  /* display: flex;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: center; */
+  display: grid;
+  grid-template: 3, 1fr;
+  grid-template-areas: 'item2 item1 item3';
   margin: auto;
   padding: 20px;
   width: 600px;
-  margin-bottom: 10px;
+  margin-bottom: 50px;
 }
-.FVPodium2,
+
 .FVPodium1,
+.FVPodium2,
 .FVPodium3 {
   flex-direction: column;
   width: 140px;
+  align-self: end;
+  justify-self: center;
 }
+
 .FVPodium2 {
-  height: 200px;
-  margin-right: 5px;
+  justify-self: end;
 }
-
-.FVPodium1 {
-  height: 220px;
-}
-
 .FVPodium3 {
-  height: 180px;
-  margin-left: 5px;
-}
-
-.FVPodiumPic2 > img,
-.FVPodiumPic1 > img,
-.FVPodiumPic3 > img {
-  width: 120px;
-  border: 5px #c9beff ridge;
-  border-radius: 3px;
-}
-.FVPodiumPic2 > img:hover,
-.FVPodiumPic1 > img:hover,
-.FVPodiumPic3 > img:hover {
-  border: 7px #c9beff ridge;
-  cursor: pointer;
-}
-
-.FVPodiumNameNum2,
-.FVPodiumNameNum1,
-.FVPodiumNameNum3 {
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  border: 3px solid #937eff;
-  border-radius: 3px;
-  background-color: #c9beff;
+  justify-self: start;
 }
 
 .FVPodiumNameNum2 {
   height: 80px;
-  font-family: "Black Han Sans", sans-serif;
 }
 .FVPodiumNameNum1 {
   height: 100px;
-  font-family: "Black Han Sans", sans-serif;
 }
 .FVPodiumNameNum3 {
   height: 60px;
-  font-family: "Black Han Sans", sans-serif;
+}
+.FVPodium2 {
+  height: 200px;
+  font-size: 130%;
+  grid-area: item2;
+}
+
+.FVPodium1 {
+  height: 220px;
+  font-size: 150%;
+  grid-area: item1;
+}
+
+.FVPodium3 {
+  height: 180px;
+  font-size: 120%;
+  grid-area: item3;
+}
+
+.FVPodiumPic > img {
+  width: 120px;
+  border: 5px #c9beff ridge;
+  border-radius: 3px;
+}
+.FVPodiumPic > img:hover {
+  border: 7px #c9beff ridge;
+  cursor: pointer;
+}
+
+.FVPodiumNameNum1,
+.FVPodiumNameNum2,
+.FVPodiumNameNum3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 3px solid #937eff;
+  border-radius: 3px;
+  background-color: #c9beff;
+  font-family: 'Black Han Sans', sans-serif;
 }
 
 /* .FVPodiumName2, .FVPodiumName1, .FVPodiumName3  {
    
 } */
-.FVPodiumName2 {
-  font-size: 130%;
-}
-.FVPodiumName1 {
-  font-size: 150%;
-}
-.FVPodiumName3 {
-  font-size: 120%;
-}
 
 /* .FVPodiumNum2,
 .FVPodiumNum1,
 .FVPodiumNum3 {
   font-weight: bold;
 } */
-.FVPodiumNum2 {
+.FVPodiumNum1 {
   font-size: 160%;
 }
-.FVPodiumNum1 {
+.FVPodiumNum2 {
   font-size: 200%;
 }
 .FVPodiumNum3 {
@@ -150,7 +152,6 @@
 } */
 .FVCommentBubble {
   height: 50px;
-
 }
 /* Styled in main:
 Star
@@ -180,7 +181,3 @@ Polaroid */
   display: flex;
   justify-content: center;
 }
-
-
-
-

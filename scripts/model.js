@@ -42,15 +42,15 @@ let model = {
       errorMessage: null,
     },
     feed: {
-      currentPodium: 'day',
+      currentPodium: 1,
       firstPlace: { catName: 'Oliver', catImg: 'img/catPictures/oliver1.png' },
       secondPlace: { catName: 'Bianca', catImg: 'img/catPictures/bianca1.jpg' },
       thirdPlace: { catName: 'Loki', catImg: 'img/catPictures/loki2.jpg' },
       podiums: [
-        'cats of the day',
-        'cats of the week',
-        'cats of the month',
-        'cats of all time',
+        { name: 'cats of the day', value: 1 },
+        { name: 'cats of the week', value: 7 },
+        { name: 'cats of the month', value: 30 },
+        { name: 'cats of all time', value: null },
       ],
       hoverRating: {
         cat: null,
@@ -153,7 +153,7 @@ let model = {
         lore: `Han ble arrestert for skattesvindel og heleri i 2017, 
                 er kretsmester i Mario Kart 64 og har litt for høyrevridde meninger 
                 rundt nåværende norsk innvandringspolitikk`,
-        rating: [10, 10, 10, 10],
+        ratings: [],
         pics: [
           'img/catPictures/oliver1.png',
           'img/catPictures/oliver2.jpg',
@@ -186,7 +186,7 @@ let model = {
         dateOfBirth: '2020-04-03',
         race: ['Unknown'],
         lore: `Previously owned by norwegian mafia`,
-        rating: [10, 7, 5],
+        ratings: [],
         pics: ['img/catPictures/bianca1.jpg'],
         updated: '2024-03-03 11:00:00',
         comments: [
@@ -209,7 +209,7 @@ let model = {
         race: ['Unknown'],
         lore: `Hun kaster opp jenvlig fordi hun har sensitiv tarm, men er veldig glad i sokkelo.
               Hun terroriserer oss om natta, men på dagtid er hun bare søt. `,
-        rating: [8, 9],
+        ratings: [],
         pics: ['img/catPictures/loki1.jpg', 'img/catPictures/loki2.jpg'],
         updated: '2024-02-03 09:00:00',
         comments: [
@@ -231,7 +231,7 @@ let model = {
         dateOfBirth: '2020-04-03',
         race: ['Unknown'],
         lore: `I am a cat.`,
-        rating: [10, 8, 7, 3, 10],
+        ratings: [],
         pics: ['img/catPictures/bianca1.jpg'],
         updated: '2024-01-03 10:00:00',
         comments: [
@@ -254,7 +254,7 @@ let model = {
         race: ['Unknown'],
         lore: `Used to live in Africa before some random dude picked me up
                 and took me to Norway. It's cold here. Big L.`,
-        rating: [10, 5, 10, 8, 8, 9],
+        ratings: [],
         pics: ['img/catPictures/simba1.jpg'],
         updated: '2024-02-02 10:00:00',
         comments: [
@@ -276,7 +276,7 @@ let model = {
         dateOfBirth: '2021-01-01',
         race: ['Portugisisk vannkatt'],
         lore: `katte så smart, den ble til en hund`,
-        rating: [null],
+        ratings: [],
         pics: ['img/catPictures/frøya1.png', 'img/catPictures/frøya2.png'],
         updated: '2024-19-04 10:00:00',
         comments: [
@@ -300,7 +300,7 @@ let model = {
         lore: `Halvt bengal/skogskatt. Jeg digger nabokatten Findus, vi er bestevenner. 
         Og esker, esker får jeg aldri nok av! 
         Ellers er det gøy å plage å plage husholdningens slaver.`,
-        rating: [null],
+        ratings: [],
         pics: ['img/catPictures/2simba1.png'],
         updated: '2024-19-04 11:00:00',
         comments: [
@@ -322,7 +322,7 @@ let model = {
         dateOfBirth: '2023-01-05',
         race: ['Uncat'],
         lore: `Max lusker i skyggene når katten din er ute.`,
-        rating: [null],
+        ratings: [],
         pics: [
           'img/catPictures/max1.png',
           'img/catPictures/max2.png',
@@ -349,7 +349,7 @@ let model = {
         dateOfBirth: '2019-08-01',
         race: ['Unknown'],
         lore: null,
-        rating: [null],
+        ratings: [],
         pics: [
           'img/catPictures/theodore1.jpg',
           'img/catPictures/theodore2.jpg',
@@ -374,7 +374,7 @@ let model = {
         dateOfBirth: '2018-05-19',
         race: ['Unknown'],
         lore: null,
-        rating: [null],
+        ratings: [],
         pics: ['img/catPictures/camilla1.jpg', 'img/catPictures/camilla2.jpg'],
         updated: '2024-19-04 13:00:00',
         comments: [
