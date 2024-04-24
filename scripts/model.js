@@ -391,32 +391,37 @@ let model = {
     ],
     ratings: [
       {
-        date: 'Wed Apr 24 2024 10:21:11 GMT+0200 (Central European Summer Time)',
+        date: 'Wed Apr 01 2024 10:21:11 GMT+0200 (Central European Summer Time)',
         ratedCatId: 0,
         ratedByUser: 'aaltofar',
         rating: 10,
       },
       {
+        date: 'Wed Apr 09 2024 10:21:11 GMT+0200 (Central European Summer Time)',
         ratedCatId: 5,
         ratedByUser: 'aaltofar',
         rating: 5,
       },
       {
+        date: 'Wed Apr 21 2024 10:21:11 GMT+0200 (Central European Summer Time)',
         ratedCatId: 3,
         ratedByUser: 'bob',
         rating: 7,
       },
       {
+        date: 'Wed Apr 22 2024 10:21:11 GMT+0200 (Central European Summer Time)',
         ratedCatId: 0,
         ratedByUser: 'bob',
         rating: 10,
       },
       {
+        date: 'Wed Apr 24 2023 10:21:11 GMT+0200 (Central European Summer Time)',
         ratedCatId: 1,
         ratedByUser: 'aaltofar',
         rating: 6,
       },
       {
+        date: 'Wed Apr 24 2023 10:21:11 GMT+0200 (Central European Summer Time)',
         ratedCatId: 2,
         ratedByUser: 'aaltofar',
         rating: 4,

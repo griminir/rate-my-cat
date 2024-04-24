@@ -1,7 +1,44 @@
+// lage et sorted array av alle kattene som har blitt rate'a den siste uka
+// finne average rating til hver katt som har blitt rate'a den siste uka
+// kjør getTopThree på det arrayet
+
 function sortPodium() {
+  // return [...model.data.ratings].sort(function (a, b) {
+  //   return new Date(b.date) - new Date(a.date);
+  // });
   return [...model.data.ratings].sort(function (a, b) {
-    return new Date(b.date) - new Date(a.date);
+    return b.rating - a.rating;
   });
+} // denne funksjonen returnerer et array ved hjelp av spread (...). Så sorterer den det "nye"
+// arrayet ved å sjekke a og b (som er objekter i arrayet) opp mot hverandre. Den høyeste ratingen blir først.
+
+function getArrayOfPastWeekRatedCats() {
+  const today = new Date();
+  const pastWeekStart = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);
+  return model.data.ratings.filter(
+    (rating) => new Date(rating.date) >= pastWeekStart
+  );
+}
+
+function getWeeklyAverageRating() {
+  const sortedArrayOfPastWeekCats = getArrayOfPastWeekRatedCats();
+  let averageRatedCatsWeek = [];
+  for (let cat of sortedArrayOfPastWeekCats) {
+    let sum = 0;
+    let catsRating = [];
+    catsRating.push(cat.rating);
+    catsRating.forEach((rating) => (sum += rating));
+    sum = sum / catsRating.length;
+    averageRatedCatsWeek.push({
+      catId: cat.ratedCatId,
+      averageRating: sum,
+    });
+  }
+  return averageRatedCatsWeek
+    .sort(function (a, b) {
+      return b.averageRating - a.averageRating;
+    })
+    .splice(0, 3);
 }
 
 function feedView() {
@@ -81,7 +118,9 @@ function getFeedLoop() {
               cats[i].id,
               getRatingAverage(cats[i].id)
             )}</div>
-            <img class="FVCommentBubble" src="${model.data.img[0]}"></div>
+            <img onclick="pickCat('${
+              cats[i].id
+            }');" class="FVCommentBubble" src="${model.data.img[0]}"></div>
         </div>
         `;
   }
