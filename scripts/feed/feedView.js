@@ -1,3 +1,9 @@
+function sortPodium() {
+  return [...model.data.ratings].sort(function (a, b) {
+    return new Date(b.date) - new Date(a.date);
+  });
+}
+
 function feedView() {
   let feed = model.input.feed;
 
@@ -72,7 +78,8 @@ function getFeedLoop() {
                 )}<span class="styleStar">&#11088;</span></div>
             </div>
             <div class="styleCatInteractiveStars">${makeInteractiveStars(
-              cats[i].id, getRatingAverage(cats[i].id)
+              cats[i].id,
+              getRatingAverage(cats[i].id)
             )}</div>
             <img class="FVCommentBubble" src="${model.data.img[0]}"></div>
         </div>

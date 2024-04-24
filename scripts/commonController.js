@@ -1,6 +1,6 @@
 function pickCat(clickedCat) {
   model.app.displayedCat = clickedCat;
-  changePage("catProfile");
+  changePage('catProfile');
 }
 
 function changePage(page) {
@@ -9,7 +9,7 @@ function changePage(page) {
 }
 
 function makeInteractiveStars(catId) {
-  let html = "";
+  let html = '';
   let numberOfStars = 1;
   let myRating = model.data.ratings.find(
     (rating) =>
@@ -33,7 +33,7 @@ function makeInteractiveStars(catId) {
         <div id="stars" onclick="giveRating(${i}, ${catId})"></div>
         `;
         exitFilledStars--;
-      }else{
+      } else {
         html += /*HTML*/ `
         
         <div id="stars" onclick="giveRating(${i}, ${catId})" class="filled"></div>
@@ -52,7 +52,6 @@ function makeInteractiveStars(catId) {
   return html;
 }
 
-
 function getRatingAverage(catId) {
   let ratings = model.data.ratings.filter(
     (rating) => rating.ratedCatId === catId
@@ -65,7 +64,7 @@ function getRatingAverage(catId) {
     return 10;
   } else if (ratings.length === 0) {
     return 0;
-  }else return sum;
+  } else return sum;
 }
 
 function giveRating(rating, catId) {
@@ -77,26 +76,23 @@ function giveRating(rating, catId) {
   if (myRating) {
     myRating.rating = rating;
   } else {
-    model.data.ratings.push(
-      {
-        ratedCatId: catId,
-        ratedByUser: model.app.loggedInUser,
-        rating: rating,
-      }
-    )
-  };
+    model.data.ratings.push({
+      ratedCatId: catId,
+      ratedByUser: model.app.loggedInUser,
+      rating: rating,
+      date: new Date(),
+    });
+  }
   updateView();
+}
+
+function changeCatId() {
+  let cats = model.data.cats;
+  for (let i = 0; i < cats.length; i++) {
+    let catIndex = cats.indexOf(cats[i]);
+    model.data.cats[i].id = catIndex;
   }
-
-  function changeCatId() {
-    let cats = model.data.cats;
-    for (let i = 0; i < cats.length; i++) {
-      let catIndex = cats.indexOf(cats[i]);
-      model.data.cats[i].id = catIndex;
-    }
-
-  }
-
+}
 
 // function pickHoverRating(star, catId) {
 //   model.input.feed.hoverRating.cat = catId;
