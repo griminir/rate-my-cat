@@ -37,41 +37,47 @@ function getArrayForPodium() {
   const today = new Date(); // = Wed Apr 24 2024 12:40:10 GMT+0200 (Central European Summer Time)
   const dateToCheckFrom = new Date(
     today.getTime() -
-      model.input.feed.podiums[model.input.feed.currentPodium] *
+      model.input.feed.podiums[model.input.feed.currentPodium].value *
         24 *
         60 *
         60 *
         1000
   );
-  return model.data.ratings.filter(
+  return [...model.data.ratings].filter(
     (rating) => new Date(rating.date) >= dateToCheckFrom
   );
 }
 
 function combineRatings(ratings) {
-  let cats = [...model.data.cats];
+  // console.log(ratings);
+  // ratings er et array med kattene som har blitt rate'a den siste x perioden av objekter
+  let cats = Array.from(model.data.cats); // cats er en kopi av cats arrayet
+  console.table(cats);
+  console.table(ratings);
   for (let i = 0; i < ratings.length; i++) {
-    const rating = ratings[i];
+    const rating = ratings[i]; // rating blir satt til ett enkelt objekt med 4 properties
     for (let n = 0; n < cats.length; n++) {
-      const cat = array[n];
-      if (rating.ratedCatId == cat.catId) cat.ratings.push(rating);
+      const cat = cats[n]; // cat blir til objektet som er katten, cat = oliver objektet
+      if (rating.ratedCatId === cat.id) cat.ratings.push(rating.rating); // pusher rating objektet inn i oliver sitt objekt
+      if (cat.ratings.length == 0) cat.ratings.push(0);
     }
   }
+  console.log(model.data.cats);
   return cats;
 }
 
 function getPodiumAverageRating() {
   let cats = combineRatings(getArrayForPodium());
   cats.forEach((cat) => {
-    const sum = cat.ratings.reduce((cat, rating) => cat + rating, 0);
+    const sum = cat.ratings.reduce((sum, rating) => sum + rating, 0);
     cat.averageRating = sum / cat.ratings.length;
   });
-
+  console.log(getTopThreeCats(cats));
   return getTopThreeCats(cats);
 }
 
 function getTopThreeCats(arr) {
-  return arr
+  return [...arr]
     .sort(function (a, b) {
       return b.averageRating - a.averageRating;
     })

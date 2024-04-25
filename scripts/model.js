@@ -42,10 +42,7 @@ let model = {
       errorMessage: null,
     },
     feed: {
-      currentPodium: 1,
-      firstPlace: { catName: 'Oliver', catImg: 'img/catPictures/oliver1.png' },
-      secondPlace: { catName: 'Bianca', catImg: 'img/catPictures/bianca1.jpg' },
-      thirdPlace: { catName: 'Loki', catImg: 'img/catPictures/loki2.jpg' },
+      currentPodium: 0,
       podiums: [
         { name: 'cats of the day', value: 1 },
         { name: 'cats of the week', value: 7 },
@@ -181,7 +178,7 @@ let model = {
       {
         id: 1,
         owner: 'aaltofar',
-        name: 'Bianca',
+        name: 'Bianca-imposter',
         age: 3,
         dateOfBirth: '2020-04-03',
         race: ['Unknown'],
@@ -391,25 +388,25 @@ let model = {
     ],
     ratings: [
       {
-        date: 'Wed Apr 01 2024 10:21:11 GMT+0200 (Central European Summer Time)',
+        date: 'Mon Apr 01 2024 10:21:11 GMT+0200 (Central European Summer Time)',
         ratedCatId: 0,
         ratedByUser: 'aaltofar',
         rating: 10,
       },
       {
-        date: 'Wed Apr 09 2024 10:21:11 GMT+0200 (Central European Summer Time)',
+        date: 'Tue Apr 09 2024 10:21:11 GMT+0200 (Central European Summer Time)',
         ratedCatId: 5,
         ratedByUser: 'aaltofar',
         rating: 5,
       },
       {
-        date: 'Wed Apr 21 2024 10:21:11 GMT+0200 (Central European Summer Time)',
+        date: 'Sun Apr 21 2024 10:21:11 GMT+0200 (Central European Summer Time)',
         ratedCatId: 3,
         ratedByUser: 'bob',
         rating: 7,
       },
       {
-        date: 'Wed Apr 22 2024 10:21:11 GMT+0200 (Central European Summer Time)',
+        date: 'Mon Apr 22 2024 10:21:11 GMT+0200 (Central European Summer Time)',
         ratedCatId: 0,
         ratedByUser: 'bob',
         rating: 10,
@@ -425,6 +422,66 @@ let model = {
         ratedCatId: 2,
         ratedByUser: 'aaltofar',
         rating: 4,
+      },
+      {
+        date: 'Thu Apr 18 2024 10:21:11 GMT+0200 (Central European Summer Time)',
+        ratedCatId: 6,
+        ratedByUser: 'kitty',
+        rating: 7,
+      },
+      {
+        date: 'Wed Apr 24 2024 10:21:11 GMT+0200 (Central European Summer Time)',
+        ratedCatId: 6,
+        ratedByUser: 'bob',
+        rating: 1,
+      },
+      {
+        date: 'Wed Apr 24 2024 10:21:11 GMT+0200 (Central European Summer Time)',
+        ratedCatId: 6,
+        ratedByUser: 'lordluck',
+        rating: 8,
+      },
+      {
+        date: 'Thu Apr 25 2024 12:35:00 GMT+0200 (Central European Summer Time)',
+        ratedCatId: 2,
+        ratedByUser: 'lordluck',
+        rating: 10,
+      },
+      {
+        date: 'Wed Apr 24 2024 10:21:11 GMT+0200 (Central European Summer Time)',
+        ratedCatId: 3,
+        ratedByUser: 'lordluck',
+        rating: 3,
+      },
+      {
+        date: 'Wed Apr 24 2024 10:21:11 GMT+0200 (Central European Summer Time)',
+        ratedCatId: 7,
+        ratedByUser: 'lordluck',
+        rating: 8,
+      },
+      {
+        date: 'Wed Apr 24 2024 10:21:11 GMT+0200 (Central European Summer Time)',
+        ratedCatId: 4,
+        ratedByUser: 'bob',
+        rating: 10,
+      },
+      {
+        date: 'Tue Apr 23 2024 10:21:11 GMT+0200 (Central European Summer Time)',
+        ratedCatId: 5,
+        ratedByUser: 'bob',
+        rating: 3,
+      },
+      {
+        date: 'Wed Apr 24 2024 10:21:11 GMT+0200 (Central European Summer Time)',
+        ratedCatId: 9,
+        ratedByUser: 'bob',
+        rating: 6,
+      },
+      {
+        date: 'Wed Apr 24 2024 10:21:11 GMT+0200 (Central European Summer Time)',
+        ratedCatId: 9,
+        ratedByUser: 'lordluck',
+        rating: 3,
       },
     ],
     catRaces: [
