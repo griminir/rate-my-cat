@@ -23,9 +23,9 @@ function profileEditView() {
 
 /* <img class="PE-profilePic" src="${getUserPic()}"/><img class="PE-profilePic" src="${getUserPic()}"/> */
 
-//witchcraft dont touch 
+//was witchcraft, terje saved us
 function getNewProfilePic() {
-  if(!model.input.editProfile.profilePic !== "") {
+  if(model.input.editProfile.profilePic) {
     return /*HTML*/ `
     <img onclick="document.getElementById('PEFileInput').click()" class="PE-uploadImg" src="${model.input.editProfile.profilePic}">
     `;

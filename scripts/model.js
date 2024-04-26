@@ -42,12 +42,12 @@ let model = {
       errorMessage: null,
     },
     feed: {
-      currentPodium: 0,
+      currentPodium: 3,
       podiums: [
         { name: 'cats of the day', value: 1 },
         { name: 'cats of the week', value: 7 },
         { name: 'cats of the month', value: 30 },
-        { name: 'cats of all time', value: null },
+        { name: 'cats of all time', value: 19838, },
       ],
       hoverRating: {
         cat: null,
@@ -388,6 +388,7 @@ let model = {
     ],
     ratings: [
       {
+        // date: '2024-04-01 10:21:11',
         date: 'Mon Apr 01 2024 10:21:11 GMT+0200 (Central European Summer Time)',
         ratedCatId: 0,
         ratedByUser: 'aaltofar',

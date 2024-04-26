@@ -5,6 +5,7 @@ function pickCat(clickedCat) {
 
 function changePage(page) {
   model.app.page = page;
+  model.data.showSlide = 0;
   updateView();
 }
 
