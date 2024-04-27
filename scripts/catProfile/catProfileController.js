@@ -55,3 +55,8 @@ function postComment(catId) {
   model.input.viewCat.comment.comment = null;
   updateView();
 }
+function playMeowAudio () {
+  let meow = new Audio('audio/funny-meow-110120.mp3');
+  meow.volume = 0.1;
+  meow.play();
+  }

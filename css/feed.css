@@ -1,6 +1,13 @@
 .FVContainer {
   text-align: center;
+  background-image: url("/img/background1.png");
+  background-size: contain;
 }
+
+.FVContainer>h1,h2 {
+  font-family: 'Black Han Sans', sans-serif;
+}
+
 .FVPodiumDropDown {
   margin: 20px;
   border: 2px solid black;
@@ -125,6 +132,8 @@
 .FVFeedCatName {
   margin-right: 30px;
   font-weight: bold;
+  font-family: 'Black Han Sans', sans-serif;
+  margin-bottom: -4px;
 }
 .FVFeedCatAgeRace {
   color: rgb(54, 54, 54);
@@ -151,7 +160,8 @@
   background-color: #f8c5d5;
 } */
 .FVCommentBubble {
-  height: 50px;
+  /* height: 50px; */
+  width: 94%;
 }
 /* Styled in main:
 Star

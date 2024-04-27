@@ -144,7 +144,7 @@ function getFeedLoop() {
         <div class="stylePolaroid">
             <div class="FVFeedCatPics"><img onclick="pickCat('${
               cats[i].id
-            }');" src="${cats[i].pics[cats[i].pics.length - 1]}"></div>
+            }'); playPurrAudio();" src="${cats[i].pics[cats[i].pics.length - 1]}"></div>
             <div class="FVFeedFirstText">
                 <div class="FVFeedCatName">${cats[i].name}</div>
                 <div class="FVFeedCatAgeRace">${cats[i].age}, ${

@@ -4,6 +4,12 @@ Vil ha tykke skygger i bunnen og på høyre. (4px)
 
 Bold text
 Litt småting i header. */
+body {
+  background-color: #fff46f;
+  margin: 0;
+  font-family: 'Work Sans', sans-serif;
+}
+
 .stylePolaroid {
   display: flex;
   flex-direction: column;
@@ -26,11 +32,6 @@ Litt småting i header. */
   font-size: 90%;
 }
 
-body {
-  background-color: #fff46f;
-  margin: 0;
-  font-family: 'Work Sans', sans-serif;
-}
 .styleCatInteractiveStars {
   display: flex;
   flex-direction: row-reverse;  

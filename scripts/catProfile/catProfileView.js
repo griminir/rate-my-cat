@@ -7,7 +7,7 @@ function catProfileView() {
     ${makeHeader()}
     <div class="CPContainer">
         <div class="CPLoreContainer">
-            
+        
             <div>
               <h3 class="CPLoreHeader">Meow Lore</h3><br>
               <span class="CPLoreText">${
@@ -21,7 +21,7 @@ function catProfileView() {
         <button class="CPdelete" onclick='deleteCat(${catId})'>X</button>
             <div class="CPImg">
             <div class="CPArrowBtn" onclick="CPswapPic(-1)">❮</div>
-            <img src="${cat[catId].pics[model.data.showSlide]}">
+            <img onclick="playMeowAudio ()"src="${cat[catId].pics[model.data.showSlide]}">
             <div class="CPArrowBtn" onclick="CPswapPic(1)">❯</div>
             </div>
 

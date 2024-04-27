@@ -38,7 +38,6 @@ function makeInteractiveStars(catId) {
         html += /*HTML*/ `
         
         <div id="stars" onclick="giveRating(${i}, ${catId})" class="filled"></div>
-      
       `;
       }
     } else {
@@ -77,14 +76,25 @@ function giveRating(rating, catId) {
   if (myRating) {
     myRating.rating = rating;
   } else {
-    model.data.ratings.push({
-      ratedCatId: catId,
-      ratedByUser: model.app.loggedInUser,
-      rating: rating,
-      date: new Date(),
-    });
+    if (model.app.isLoggedIn) {
+      model.data.ratings.push({
+        ratedCatId: catId,
+        ratedByUser: model.app.loggedInUser,
+        rating: rating,
+        date: new Date(),
+      });
+    } else {
+      playWahWahAudio();
+      setTimeout(function() {alert('Please log in to rate a cat!')},100);
+    }
   }
   updateView();
+}
+
+function playWahWahAudio() {
+    let wah = new Audio('audio/wah-wah.mp3');
+    wah.volume = 0.1;
+    wah.play();
 }
 
 function changeCatId() {

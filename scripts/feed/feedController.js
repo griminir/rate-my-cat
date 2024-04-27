@@ -15,4 +15,9 @@ function getPodiumCats(currentPodium) {
     picDiv.innerHTML = 'bilde all time';
   }
 }
-//hei
+
+function playPurrAudio () {
+  let purr = new Audio('audio/purring-cat-156459.mp3');
+  purr.volume = 0.1;
+  purr.play();
+  }
