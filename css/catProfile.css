@@ -70,6 +70,15 @@ background-size: cover;
 
 .CPPolaroidFirstText {
   display: flex;
+  width: 92%;
+}
+
+.CPRatedTimes {
+  font-size: 70%;
+  align-self: end;
+  margin-right: 20px;
+  margin-top: -5px;
+  margin-bottom: 2px;
 }
 
 .CPName {

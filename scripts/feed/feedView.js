@@ -5,14 +5,14 @@ function feedView() {
   ${makeHeader()}
   
   <div class="FVContainer">
-  <h2>${feed.podiums[feed.currentPodium].name}</h2>    
+  <h2><u>${feed.podiums[feed.currentPodium].name}</u></h2>    
   <select class="FVPodiumDropDown" onchange="setCurrentPodium(this.value)">${makePodiumOptions()}</select>
   
   
   <div class="FVPodiumContainer">
   ${drawPodium()}
   </div>
-  <h1><u>FEED</u></h1>
+  <h1 class="FE-headline"><u>FEED</u></h1>
   <div class="FVFeedContainer">${getFeedLoop()}</div>
   </div>
   `;
@@ -135,34 +135,32 @@ function getTopThreeCats(arr) {
 }
 
 function getFeedLoop() {
-  let cats = model.data.cats;
+  let cats = sortCatsForFeedLoop();
   let html = "";
-
   for (let i = 0; i < cats.length; i++) {
     html += /*HTML*/ `
     <div class="FVFeedPolaroidLoop">
-        <div class="stylePolaroid">
-            <div class="FVFeedCatPics"><img onclick="pickCat('${
-              cats[i].id
-            }'); playPurrAudio();" src="${cats[i].pics[cats[i].pics.length - 1]}"></div>
-            <div class="FVFeedFirstText">
-                <div class="FVFeedCatName">${cats[i].name}</div>
-                <div class="FVFeedCatAgeRace">${cats[i].age}, ${
-      cats[i].race[0]
-    } </div> 
-                <div class="FVFeedCatRating">${getRatingAverage(
-                  cats[i].id
-                )}<span class="styleStar">&#11088;</span></div>
+      <div class="stylePolaroid">
+        <div class="FVFeedCatPics"><img onclick="pickCat('${cats[i].id}'); playPurrAudio();" 
+        src="${cats[i].pics[cats[i].pics.length - 1]}"></div>
+        <div class="FVFeedFirstText">
+          <div class="FVFeedCatName">${cats[i].name}</div>
+          <div class="FVFeedCatAgeRace">${cats[i].age} y/o</div> 
+          <div class="FVFeedCatRating">${getRatingAverage(cats[i].id)}<span class="styleStar">&#11088;</span>
             </div>
-            <div class="styleCatInteractiveStars">${makeInteractiveStars(
-              cats[i].id,
-              getRatingAverage(cats[i].id)
-            )}</div>
-            <img onclick="pickCat('${
-              cats[i].id
-            }');" class="FVCommentBubble" src="${model.data.img[0]}"></div>
         </div>
+        <div class="FVFeedRatedTimes">rated ${cats[i].timesRated} times</div>
+    <div class="styleCatInteractiveStars">${makeInteractiveStars(cats[i].id, getRatingAverage(cats[i].id))}</div>
+      <img onclick="pickCat('${cats[i].id}');" class="FVCommentBubble" src="${model.data.img[0]}"></div>
+    </div>
         `;
   }
   return html;
+}
+
+function sortCatsForFeedLoop() {
+  return [...model.data.cats]
+    .sort(function (a, b) {
+      return new Date(b.updated).getTime() - new Date(a.updated).getTime();
+    });
 }

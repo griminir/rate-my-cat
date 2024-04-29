@@ -56,6 +56,7 @@ function getRatingAverage(catId) {
   let ratings = model.data.ratings.filter(
     (rating) => rating.ratedCatId === catId
   );
+  model.data.cats[catId].timesRated = ratings.length;
   let sum = 0;
   ratings.forEach((rating) => (sum += rating.rating));
   sum = (sum / ratings.length).toFixed(1);

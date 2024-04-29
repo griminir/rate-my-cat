@@ -32,9 +32,10 @@ function catProfileView() {
                 <span class="styleStar">&#11088;</span>
               </span>
             </div>
+            <div class="CPRatedTimes">rated ${cat[catId].timesRated} times</div>
 
             <div class="CPAgeRace">
-            ${cat[catId].age} years, ${cat[catId].race}
+            ${cat[catId].age} y/o, ${cat[catId].race}
             </div>
             <div class="styleCatInteractiveStars">${makeInteractiveStars(
               cat[catId].id, getRatingAverage(cat[catId].id)

@@ -44,10 +44,10 @@ let model = {
     feed: {
       currentPodium: 3,
       podiums: [
-        { name: 'cats of the day', value: 1 },
-        { name: 'cats of the week', value: 7 },
-        { name: 'cats of the month', value: 30 },
-        { name: 'cats of all time', value: 19838, },
+        { name: 'Cats of the day', value: 1 },
+        { name: 'Cats of the week', value: 7 },
+        { name: 'Cats of the month', value: 30 },
+        { name: 'Cats of all time', value: 19838, },
       ],
       hoverRating: {
         cat: null,
@@ -164,6 +164,7 @@ let model = {
           'img/catPictures/oliver10.jpg',
         ],
         updated: '2024-03-02 10:00:00',
+        timesRated: 2,
         comments: [
           {
             commenter: 'kitty',
@@ -186,6 +187,7 @@ let model = {
         ratings: [],
         pics: ['img/catPictures/bianca1.jpg'],
         updated: '2024-03-03 11:00:00',
+        timesRated: 1,
         comments: [
           {
             commenter: 'kitty',
@@ -209,6 +211,7 @@ let model = {
         ratings: [],
         pics: ['img/catPictures/loki1.jpg', 'img/catPictures/loki2.jpg'],
         updated: '2024-02-03 09:00:00',
+        timesRated: 2,
         comments: [
           {
             commenter: 'kitty',
@@ -231,6 +234,7 @@ let model = {
         ratings: [],
         pics: ['img/catPictures/bianca1.jpg'],
         updated: '2024-01-03 10:00:00',
+        timesRated: 2,
         comments: [
           {
             commenter: 'kitty',
@@ -254,6 +258,7 @@ let model = {
         ratings: [],
         pics: ['img/catPictures/simba1.jpg'],
         updated: '2024-02-02 10:00:00',
+        timesRated: 1,
         comments: [
           {
             commenter: 'kitty',
@@ -275,7 +280,8 @@ let model = {
         lore: `katte så smart, den ble til en hund`,
         ratings: [],
         pics: ['img/catPictures/frøya1.png', 'img/catPictures/frøya2.png'],
-        updated: '2024-19-04 10:00:00',
+        updated: '2024-04-19 10:00:00',
+        timesRated: 2,
         comments: [
           {
             commenter: 'kitty',
@@ -299,7 +305,8 @@ let model = {
         Ellers er det gøy å plage å plage husholdningens slaver.`,
         ratings: [],
         pics: ['img/catPictures/2simba1.png'],
-        updated: '2024-19-04 11:00:00',
+        updated: '2024-04-18 11:00:00',
+        timesRated: 3,
         comments: [
           {
             commenter: 'kitty',
@@ -326,7 +333,8 @@ let model = {
           'img/catPictures/max3.png',
           'img/catPictures/max4.png',
         ],
-        updated: '2024-19-04 12:00:00',
+        updated: '2024-04-17 12:00:00',
+        timesRated: 1,
         comments: [
           {
             commenter: 'kitty',
@@ -351,7 +359,8 @@ let model = {
           'img/catPictures/theodore1.jpg',
           'img/catPictures/theodore2.jpg',
         ],
-        updated: '2024-19-04 12:00:00',
+        updated: '2024-04-16 12:00:00',
+        timesRated: null,
         comments: [
           {
             commenter: 'kitty',
@@ -373,7 +382,8 @@ let model = {
         lore: null,
         ratings: [],
         pics: ['img/catPictures/camilla1.jpg', 'img/catPictures/camilla2.jpg'],
-        updated: '2024-19-04 13:00:00',
+        updated: '2024-04-10 13:00:00',
+        timesRated: 2,
         comments: [
           {
             commenter: 'kitty',

@@ -25,14 +25,15 @@
   margin: auto;
   padding: 20px;
   width: 600px;
-  margin-bottom: 50px;
+  margin-bottom: 180px;
+  margin-top: 20px;
 }
 
 .FVPodium1,
 .FVPodium2,
 .FVPodium3 {
   flex-direction: column;
-  width: 140px;
+  width: 155px;
   align-self: end;
   justify-self: center;
 }
@@ -72,7 +73,7 @@
 }
 
 .FVPodiumPic > img {
-  width: 120px;
+  width: 125px;
   border: 5px #c9beff ridge;
   border-radius: 3px;
 }
@@ -124,6 +125,7 @@
 }
 
 .FVFeedFirstText {
+  width: 92%;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -141,6 +143,14 @@
 }
 .FVFeedCatRating {
   margin-left: 30px;
+}
+
+.FVFeedRatedTimes {
+  font-size: 70%;
+  align-self: end;
+  margin-right: 20px;
+  margin-top: -18px;
+  margin-bottom: 5px;
 }
 
 /* .FVFeedCatCommentBox {
@@ -162,6 +172,7 @@
 .FVCommentBubble {
   /* height: 50px; */
   width: 94%;
+  cursor: pointer;
 }
 /* Styled in main:
 Star
