@@ -1,6 +1,7 @@
 function catProfileView() {
   let cat = model.data.cats;
   let catId = model.app.displayedCat;
+  let catIndex = model.data.cats.findIndex(cat => cat.id == catId);
   // let catId = 2;
 
   document.getElementById('app').innerHTML = /*HTML*/ `
@@ -11,41 +12,41 @@ function catProfileView() {
             <div>
               <h3 class="CPLoreHeader">Meow Lore</h3><br>
               <span class="CPLoreText">${
-                cat[catId].lore ?? 'This cat has done nothing of significance'
+                cat[catIndex].lore ?? 'This cat has done nothing of significance'
               }</span>
             </div>
             <button class="CPLoreButton" >Report problem</button>
         </div>
 
         <div class="stylePolaroid">
-        <button class="CPdelete" onclick='deleteCat(${catId})'>X</button>
+        <button class="CPdelete" onclick='deleteCat(${catIndex})'>X</button>
             <div class="CPImg">
             <div class="CPArrowBtn" onclick="CPswapPic(-1)">❮</div>
-            <img onclick="playMeowAudio ()"src="${cat[catId].pics[model.data.showSlide]}">
+            <img onclick="playMeowAudio ()"src="${cat[catIndex].pics[model.data.showSlide]}">
             <div class="CPArrowBtn" onclick="CPswapPic(1)">❯</div>
             </div>
 
             <div class="CPPolaroidFirstText">
-              <span class="CPName">${cat[catId].name}</span>
+              <span class="CPName">${cat[catIndex].name}</span>
               <span class="CPRatingStar">
-                <span class="CPRating">${getRatingAverage(cat[catId].id)}</span>
+                <span class="CPRating">${getRatingAverage(cat[catIndex].id)}</span>
                 <span class="styleStar">&#11088;</span>
               </span>
             </div>
-            <div class="CPRatedTimes">rated ${cat[catId].timesRated} times</div>
+            <div class="CPRatedTimes">rated ${cat[catIndex].timesRated} times</div>
 
             <div class="CPAgeRace">
-            ${cat[catId].age} y/o, ${cat[catId].race}
+            ${cat[catIndex].age} y/o, ${cat[catIndex].race}
             </div>
             <div class="styleCatInteractiveStars">${makeInteractiveStars(
-              cat[catId].id, getRatingAverage(cat[catId].id)
+              cat[catIndex].id, getRatingAverage(cat[catIndex].id)
             )}</div>
         </div>
         <div class="CPCommentsContainer">
         <h3 class="CPCommentsHeader">Comments</h3>
-        <div class="CPCommentsLoop">${getCommentLoop(catId)}</div>
+        <div class="CPCommentsLoop">${getCommentLoop(catIndex)}</div>
         <div class="CPCommentButtonContainer"><input class="CPcommentField" onchange="model.input.viewCat.comment.comment=this.value"  type="text" placeholder= "comment..." />
-        <button onclick="postComment(${catId})" class="CPcommentButton">⤳</button></div>
+        <button onclick="postComment(${catIndex})" class="CPcommentButton">⤳</button></div>
         </div>
         
     </div>
@@ -55,7 +56,8 @@ function catProfileView() {
 
 function CPswapPic(toPage) {
   let catId = model.app.displayedCat;
-  let pics = model.data.cats[catId].pics;
+  let catIndex = model.data.cats.findIndex(cat => cat.id == catId);
+  let pics = model.data.cats[catIndex].pics;
   let showSlide = model.data.showSlide;
   if (toPage == -1 && showSlide == 0) {
     model.data.showSlide = pics.length - 1;

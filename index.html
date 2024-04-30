@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="css/catProfile.css" />
     <link rel="stylesheet" href="css/header.css" />
     <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/report.css">
 
     <script
       type="module"
@@ -56,6 +57,7 @@
     <script src="scripts/Profile/profileView.js"></script>
     <script src="scripts/Profile/editingProfile/profileEditView.js"></script>
     <script src="scripts/admin/adminView.js"></script>
+    <script src="scripts/report/reportView.js"></script>
 
     <script src="scripts/commonController.js"></script>
     <script src="scripts/Header/headerController.js"></script>
@@ -68,6 +70,7 @@
     <script src="scripts/Profile/profileController.js"></script>
     <script src="scripts/Profile/editingProfile/profileEditController.js"></script>
     <script src="scripts/admin/adminController.js"></script>
+    <script src="scripts/report/reportController.js"></script>
     <script>
       updateView();
       function updateView() {
@@ -100,6 +103,8 @@
           profileEditView();
         } else if (model.app.page == 'admin' && model.app.admin) {
           adminView();
+        } else if  (model.app.page == 'report' && model.app.isLoggedIn) {
+          reportView();
         } else {
           logInView();
         }

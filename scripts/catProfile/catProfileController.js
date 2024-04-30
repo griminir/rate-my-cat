@@ -1,5 +1,6 @@
 function getCommentLoop(catId) {
-  let comments = model.data.cats[catId].comments;
+  let catIndex = model.data.cats.findIndex(cat => cat.id == catId);
+  let comments = model.data.cats[catIndex].comments;
   html = "";
 
   for (let i = 0; i < comments.length; i++) {
@@ -44,9 +45,15 @@ function trulyDeleteCat(catId) {
       model.data.ratings.splice(ratingIndex, 1);
     }
   }
-
+  // delete reports about this cat
+  for (let i = 0; i < model.data.admin.reports.length; i++) {
+    if (model.data.admin.reports[i].reportedCatId === catId) {
+      model.data.admin.reports.splice(i, 1);
+      i--;
+    }
+  }
   model.app.displayedCat = null;
-  // changeReportedCatId(catId);
+  
   // changeCatId();
   changePage("feed");
 }
@@ -54,8 +61,9 @@ function trulyDeleteCat(catId) {
 function postComment(catId) {
   const theCommenter = model.app.loggedInUser;
   let theComment = model.input.viewCat.comment.comment;
+  let catIndex = model.data.cats.findIndex(cat => cat.id == catId);
 
-  model.data.cats[catId].comments.push({
+  model.data.cats[catIndex].comments.push({
     commenter: theCommenter,
     comment: theComment,
   });

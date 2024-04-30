@@ -56,11 +56,12 @@ function getRatingAverage(catId) {
   let ratings = model.data.ratings.filter(
     (rating) => rating.ratedCatId === catId
   );
-  model.data.cats[catId].timesRated = ratings.length;
+  let catIndex = model.data.cats.findIndex(cat => cat.id == catId);
+  model.data.cats[catIndex].timesRated = ratings.length;
   let sum = 0;
   ratings.forEach((rating) => (sum += rating.rating));
   sum = (sum / ratings.length).toFixed(1);
-  model.data.cats[catId].rating = sum;
+  // model.data.cats[catIndex].rating = sum;
   if (sum == 10.0) {
     return 10;
   } else if (ratings.length === 0) {
@@ -106,10 +107,10 @@ function playWahWahAudio() {
 //   }
 // }
 
-function changeReportedCatId(reportedCatId) {
-  let report = model.data.admin.reports.findIndex(report => report.reportedCatId === reportedCatId);
-  model.data.admin.reports[report].reportedCatId = reportedCatId - 1;
-}
+// function changeReportedCatId(reportedCatId) {
+//   let report = model.data.admin.reports.findIndex(report => report.reportedCatId === reportedCatId);
+//   model.data.admin.reports[report].reportedCatId = reportedCatId - 1;
+// }
 
 // function pickHoverRating(star, catId) {
 //   model.input.feed.hoverRating.cat = catId;

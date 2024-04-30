@@ -3,11 +3,15 @@ let model = {
     isLoggedIn: true,
     loggedInUser: 'aaltofar',
     admin: true,
-    page: 'feed',
+    page: 'report',
     displayedUser: '',
     displayedCat: 0,
   },
   input: {
+    admin: {
+      safeguardBan: false,
+      victim: null,
+    },
     postCat: {
       addNewCat: {
         id: null,
@@ -519,12 +523,14 @@ let model = {
     admin: {
       reports: [
         {
+          id: 0,
           reportedByUser: 'kitty',
           reportedCatId: 7,
           reportedUser: 'AntiKatt',
           reportReason: 'That aint a cat!!!',
         },
         {
+          id: 1,
           reportedByUser: 'bob',
           reportedCatId: 5,
           reportedUser: 'CatMage',

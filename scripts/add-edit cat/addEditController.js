@@ -22,8 +22,9 @@ function addPics(filesInput) {
 }
 
 function postCat() {
+  let cats= model.data.cats;
   const newCat = {
-    id: findMaxId() + 1,
+    id: cats[cats.length-1].id + 1,
     owner: model.app.loggedInUser,
     name: model.input.postCat.addNewCat.name,
     age: getAge(),
@@ -43,13 +44,13 @@ function postCat() {
   updateView();
 }
 
-function findMaxId() {
-  let maxId = -1;
-  for (let cat of model.data.cats) {
-    if (cat.id > maxId) maxId = cat.id;
-  }
-  return maxId;
-}
+// function findMaxId() {
+//   let maxId = -1;
+//   for (let cat of model.data.cats) {
+//     if (cat.id > maxId) maxId = cat.id;
+//   }
+//   return maxId;
+// }
 
 function getAge() {
   // Parse the birthdate string into a Date object

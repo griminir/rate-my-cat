@@ -17,10 +17,9 @@ function adminUsersLoop() {
 
   for (let i = 1; i < users.length; i++) {
     html += /*HTML*/ `
-    <div class="A-userDiv">${users[i].username} <button onclick="adminBanUser(${i})">Ban user</button></div> 
+    <div class="A-userDiv">${users[i].username} <button onclick="adminBanUser('${users[i].username}')">Ban user</button></div> 
 `;
   }
-  changeCatId();
   return html;
 }
 
@@ -31,7 +30,7 @@ function adminIssuesLoop() {
   let reports = model.data.admin.reports;
 
   for (let report of reports) {
-    changeReportedCatId(report.reportedCatId);
+    
     html += /*HTML*/ `
     <div class="A-reports">
     <div>Reported by: ${report.reportedByUser}</div>
@@ -39,9 +38,9 @@ function adminIssuesLoop() {
     <div>Reported cat id: ${report.reportedCatId}</div>
     <div>Reason: ${report.reportReason}</div>
     <button onclick="pickCat('${report.reportedCatId}')">Go to cat page</button>
+    <button onclick='deleteReport(${report.id})'>Delete report</button>
     </div>
     `;
   }
-  changeCatId();
   return html;
 }
