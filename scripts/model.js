@@ -516,5 +516,21 @@ let model = {
     ],
     showSlide: 0,
     img: ['img/misc/bubble.png'],
+    admin: {
+      reports: [
+        {
+          reportedByUser: 'kitty',
+          reportedCatId: 7,
+          reportedUser: 'AntiKatt',
+          reportReason: 'That aint a cat!!!',
+        },
+        {
+          reportedByUser: 'bob',
+          reportedCatId: 5,
+          reportedUser: 'CatMage',
+          reportReason: 'im not 100% sure but that might not, i could be wrong, but that might not be a cat. you should double check tho',
+        },
+      ]
+    }
   },
 };

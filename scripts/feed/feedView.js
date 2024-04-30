@@ -137,21 +137,21 @@ function getTopThreeCats(arr) {
 function getFeedLoop() {
   let cats = sortCatsForFeedLoop();
   let html = "";
-  for (let i = 0; i < cats.length; i++) {
+  for (let cat of cats) {
     html += /*HTML*/ `
     <div class="FVFeedPolaroidLoop">
       <div class="stylePolaroid">
-        <div class="FVFeedCatPics"><img onclick="pickCat('${cats[i].id}'); playPurrAudio();" 
-        src="${cats[i].pics[cats[i].pics.length - 1]}"></div>
+        <div class="FVFeedCatPics"><img onclick="pickCat('${cat.id}'); playPurrAudio();" 
+        src="${cat.pics[cat.pics.length - 1]}"></div>
         <div class="FVFeedFirstText">
-          <div class="FVFeedCatName">${cats[i].name}</div>
-          <div class="FVFeedCatAgeRace">${cats[i].age} y/o</div> 
-          <div class="FVFeedCatRating">${getRatingAverage(cats[i].id)}<span class="styleStar">&#11088;</span>
+          <div class="FVFeedCatName">${cat.name}</div>
+          <div class="FVFeedCatAgeRace">${cat.age} y/o</div> 
+          <div class="FVFeedCatRating">${getRatingAverage(cat.id)}<span class="styleStar">&#11088;</span>
             </div>
         </div>
-        <div class="FVFeedRatedTimes">rated ${cats[i].timesRated} times</div>
-    <div class="styleCatInteractiveStars">${makeInteractiveStars(cats[i].id, getRatingAverage(cats[i].id))}</div>
-      <img onclick="pickCat('${cats[i].id}');" class="FVCommentBubble" src="${model.data.img[0]}"></div>
+        <div class="FVFeedRatedTimes">rated ${cat.timesRated} times</div>
+    <div class="styleCatInteractiveStars">${makeInteractiveStars(cat.id, getRatingAverage(cat.id))}</div>
+      <img onclick="pickCat('${cat.id}');" class="FVCommentBubble" src="${model.data.img[0]}"></div>
     </div>
         `;
   }

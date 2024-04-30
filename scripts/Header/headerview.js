@@ -10,6 +10,7 @@ function makeHeader() {
           }</a></li>
           <li class="H-li"><a onclick="loggedInCheck('catAdd')" class="H-a" href="#">Add Meow</a></li>
           <li class="H-li"><a onclick="loggedInCheck('catEdit')" class="H-a" href="#">Edit Meow</a></li>
+          ${adminAccess()}
         </ul>
       </nav>
       
@@ -18,4 +19,16 @@ function makeHeader() {
   `;
 
   return html;
+}
+
+function adminAccess() {
+  html = '';
+  if (model.app.admin) {
+    html = /*html*/`
+    <li class="H-li"><a onclick="changePage('admin')" class="H-a" href="#">Admin</a></li>
+    `
+    return html;
+  } else {
+    return;
+  }
 }

@@ -46,7 +46,8 @@ function trulyDeleteCat(catId) {
   }
 
   model.app.displayedCat = null;
-  changeCatId();
+  // changeReportedCatId(catId);
+  // changeCatId();
   changePage("feed");
 }
 

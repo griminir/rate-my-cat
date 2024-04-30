@@ -98,12 +98,17 @@ function playWahWahAudio() {
     wah.play();
 }
 
-function changeCatId() {
-  let cats = model.data.cats;
-  for (let i = 0; i < cats.length; i++) {
-    let catIndex = cats.indexOf(cats[i]);
-    model.data.cats[i].id = catIndex;
-  }
+// function changeCatId() {
+//   let cats = model.data.cats;
+//   for (let i = 0; i < cats.length; i++) {
+//     let catIndex = cats.indexOf(cats[i]);
+//     model.data.cats[i].id = catIndex;
+//   }
+// }
+
+function changeReportedCatId(reportedCatId) {
+  let report = model.data.admin.reports.findIndex(report => report.reportedCatId === reportedCatId);
+  model.data.admin.reports[report].reportedCatId = reportedCatId - 1;
 }
 
 // function pickHoverRating(star, catId) {

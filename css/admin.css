@@ -1,0 +1,68 @@
+.A-container {
+    display: flex;
+    justify-content: center;
+}
+
+.A-issueList {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    width: 400px;
+}
+
+.A-usersList {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    width: 400px;
+}
+
+.A-userDiv {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+}
+
+.A-userDiv > button{
+    border: 3px solid black;
+    border-radius: 5px;
+    height: 30px;
+    width: 100px;
+    background-color: #f8c5d5;
+    font-family: "Black Han Sans", sans-serif;
+    border-bottom: 7px solid black;
+    border-right: 5px solid black;
+}
+.A-userDiv > button:hover{
+    border-bottom: 8px solid black;
+    border-right: 6px solid black;
+    background-color: #fdb3cb;
+}
+
+.A-reports {
+    background-color: #89DCEB;
+    border: 3px solid black;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    border-bottom: 7px solid black;
+    border-right: 5px solid black;
+}
+
+.A-reports button {
+    float: right;
+    border: 3px solid black;
+    border-radius: 5px;
+    height: 30px;
+    width: 150px;
+    margin-top: 5px;
+    background-color: #f8c5d5;
+    font-family: "Black Han Sans", sans-serif;
+    border-bottom: 7px solid black;
+    border-right: 5px solid black;
+}
+.A-reports button:hover {
+    border-bottom: 8px solid black;
+    border-right: 6px solid black;
+    background-color: #fdb3cb;
+}

@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="css/signup.css" />
     <link rel="stylesheet" href="css/catProfile.css" />
     <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/admin.css">
 
     <script
       type="module"
@@ -54,6 +55,7 @@
     <script src="scripts/sign-up/signUp.js"></script>
     <script src="scripts/Profile/profileView.js"></script>
     <script src="scripts/Profile/editingProfile/profileEditView.js"></script>
+    <script src="scripts/admin/adminView.js"></script>
 
     <script src="scripts/commonController.js"></script>
     <script src="scripts/Header/headerController.js"></script>
@@ -65,6 +67,7 @@
     <script src="scripts/catProfile/catProfileController.js"></script>
     <script src="scripts/Profile/profileController.js"></script>
     <script src="scripts/Profile/editingProfile/profileEditController.js"></script>
+    <script src="scripts/admin/adminController.js"></script>
     <script>
       updateView();
       function updateView() {
@@ -95,6 +98,8 @@
           model.app.isLoggedIn === true
         ) {
           profileEditView();
+        } else if (model.app.page == 'admin' && model.app.admin) {
+          adminView();
         } else {
           logInView();
         }
