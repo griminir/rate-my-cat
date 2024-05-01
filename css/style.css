@@ -1,9 +1,3 @@
-/* Beholde gul, lilla og mintgrønn. 
-Liker bakgrunnen, men det er for mye som skjer i bakgrunnen. En ide, kan være å blurre bakgrunnen.
-Vil ha tykke skygger i bunnen og på høyre. (4px) 
-
-Bold text
-Litt småting i header. */
 body {
   background-color: #fff46f;
   margin: 0;
@@ -34,19 +28,19 @@ body {
 
 .styleCatInteractiveStars {
   display: flex;
-  flex-direction: row-reverse;  
+  flex-direction: row-reverse;
   float: right;
 }
 .styleCatInteractiveStars div {
   position: relative;
-  content: url("/img/star-empty.png");
+  content: url('/img/star-empty.png');
   cursor: pointer;
 }
 
-.styleCatInteractiveStars .filled{
-  content: url("/img/star-filled-in.png");
+.styleCatInteractiveStars .filled {
+  content: url('/img/star-filled-in.png');
 }
 .styleCatInteractiveStars div:hover,
 .styleCatInteractiveStars div:hover ~ div {
-  content: url("/img/star-filled-in.png");
+  content: url('/img/star-filled-in.png');
 }

@@ -17,7 +17,7 @@ function editView() {
             ${makePickYourCatHtml()}
             </select>
             Birthday: <span id="catsDoB">
-            <input class="ACinputItems" type='date' onchange="updateBirthday(this.value)" value="${getCatDoB()}">
+            <input class="ACinputItems" type='date' onchange="updateInfo(this.value, 'dateOfBirth')" value="${getCatDoB()}">
             </span>
               <label>Race:</label> 
               <button class="ECButton" onclick='toggleRaces()'>Edit race</button>
@@ -25,9 +25,7 @@ function editView() {
                   ${makeDropDownRaceHtml()}
                   </div>
           </div>
-          <textarea id="catLore" class="ACcatLoreField" type='text' onchange="updateLore(this.value)" placeholder="Add meow lore">
-          ${getCatsLore() ?? 'Add meow lore'}
-          </textarea>
+          <textarea maxlength="300" id="catLore" class="ACcatLoreField" type='text' onchange="updateInfo(this.value, 'lore')" placeholder="Add meow lore">${getCatsLore()}</textarea>
           <button class="ECButton" onclick='updateCat()'>Post my meow</button>
       </div>
       `;

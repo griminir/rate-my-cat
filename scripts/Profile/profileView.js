@@ -26,9 +26,8 @@ function profileCatDisplay() {
   for (let i = 0; i < cat.length; i++) {
     html += /*HTML*/ `
   <div class="Ppolaroid">
-    <div class="PimgDiv"><img onclick="${model.app.displayedCat = cat[i].id};pickCat('${cat[i].id}')" src="${
-      cat[i].pics[0]
-    }"/></div>
+    <div class="PimgDiv"><img onclick="${(model.app.displayedCat =
+      cat[i].id)};pickCat('${cat[i].id}')" src="${cat[i].pics[0]}"/></div>
     <div class="PcatName">${cat[i].name}</div>
     <div class="CPRating">${getRatingAverage(
       cat[i].id
@@ -39,6 +38,29 @@ function profileCatDisplay() {
   return html;
 }
 
-//hvorfor funker ikke getRatingAverage
-//onclick på linje 29 funker ikke
-// undefined før bildene vises
+function getUserBio() {
+  for (user of model.data.users) {
+    if (user.username == model.app.loggedInUser) {
+      return user.bio;
+    } else {
+      return null;
+    }
+  }
+}
+
+function getUserPic() {
+  for (user of model.data.users) {
+    if (user.username == model.app.loggedInUser) {
+      return user.profilePic;
+    } else {
+      return null;
+    }
+  }
+}
+
+function profileGetUserCatsLoop(rightOwner) {
+  let cats = model.data.cats;
+  rightOwner = model.app.loggedInUser;
+  let rightCats = cats.filter((cat) => cat.owner.includes(rightOwner));
+  return rightCats;
+}

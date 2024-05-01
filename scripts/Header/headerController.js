@@ -1,5 +1,5 @@
 function loggedInCheck(rightpage) {
-  if (model.app.isLoggedIn === true) {
+  if (model.app.isLoggedIn) {
     changePage(rightpage);
   } else {
     changePage('');
@@ -16,17 +16,6 @@ function easterEgg() {
 
 function playSound() {
   document.getElementById('easterEgg').play();
-}
-
-function makeLoginButton() {
-  html = ``;
-  if (model.app.isLoggedIn === false) {
-    html = `<button onclick="changePage('')" class="H-button">Login</button>`;
-    return html;
-  } else if (model.app.isLoggedIn === true) {
-    html = `<button onclick="signOut()" class="H-button">Sign Out</button>`;
-    return html;
-  }
 }
 
 function signOut() {

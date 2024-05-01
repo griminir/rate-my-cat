@@ -1,16 +1,6 @@
 // add controller
-
-function getName(catName) {
-  model.input.postCat.addNewCat.name = catName;
-}
-function getBirthday(catBirthday) {
-  model.input.postCat.addNewCat.dateOfBirth = catBirthday;
-}
-// function getRace(catRace) {
-//   model.input.postCat.addNewCat.race = catRace;
-// }
-function getLore(catLore) {
-  model.input.postCat.addNewCat.lore = catLore;
+function getInfo(value, property) {
+  model.input.postCat.addNewCat[property] = value;
 }
 function addPics(filesInput) {
   for (let i = 0; i < filesInput.length; i++) {
@@ -22,35 +12,24 @@ function addPics(filesInput) {
 }
 
 function postCat() {
-  let cats= model.data.cats;
+  let cats = model.data.cats;
+  let postCat = model.input.postCat;
   const newCat = {
-    id: cats[cats.length-1].id + 1,
+    id: cats[cats.length - 1].id + 1,
     owner: model.app.loggedInUser,
-    name: model.input.postCat.addNewCat.name,
+    name: postCat.addNewCat.name,
     age: getAge(),
-    dateOfBirth: model.input.postCat.addNewCat.dateOfBirth,
-    race: model.input.postCat.addNewCat.race,
-    lore: model.input.postCat.addNewCat.lore,
-    pics: model.input.postCat.addNewCat.pics,
+    dateOfBirth: postCat.addNewCat.dateOfBirth,
+    race: postCat.addNewCat.race,
+    lore: postCat.addNewCat.lore,
+    pics: postCat.addNewCat.pics,
     rating: [],
     updated: new Date().toISOString().slice(0, 19).replace('T', ' '),
   };
   model.data.cats.push(newCat);
-  model.app.page = 'feed';
   model.input.postCat.showSlide = 0;
-
-  // console log to see
-  console.log(model.data.cats);
-  updateView();
+  changePage('feed');
 }
-
-// function findMaxId() {
-//   let maxId = -1;
-//   for (let cat of model.data.cats) {
-//     if (cat.id > maxId) maxId = cat.id;
-//   }
-//   return maxId;
-// }
 
 function getAge() {
   // Parse the birthdate string into a Date object
@@ -105,15 +84,9 @@ function showSlide(x) {
 
 function pickLastCat(catName) {
   model.input.postCat.addMoreCatPics.name = catName;
-  let cat = model.data.cats.find(
-    (cat) =>
-      model.input.postCat.addMoreCatPics.name === cat.name &&
-      model.app.loggedInUser === cat.owner
-  );
   getCatDoB();
   getCatsLore();
   editView();
-  console.log(cat);
 }
 
 function getCatsLore() {
@@ -123,7 +96,7 @@ function getCatsLore() {
       model.app.loggedInUser === cat.owner
   );
   if (cat == undefined) {
-    return undefined;
+    return '';
   } else {
     return cat.lore;
   }
@@ -142,14 +115,9 @@ function getCatDoB() {
   }
 }
 
-
-function updateLore(catLore) {
-  model.input.postCat.addMoreCatPics.lore = catLore;
+function updateInfo(value, property) {
+  model.input.postCat.addMoreCatPics[property] = value;
 }
-function updateBirthday(catBirth) {
-  model.input.postCat.addMoreCatPics.dateOfBirth = catBirth;
-}
-
 function editPics(filesInput) {
   for (let i = 0; i < filesInput.length; i++) {
     model.input.postCat.addMoreCatPics.pics.push(
@@ -163,37 +131,27 @@ function editPics(filesInput) {
 }
 
 function updateCat() {
+  let addMoreCatPics = model.input.postCat.addMoreCatPics;
   let cat = model.data.cats.find(
     (cat) =>
-      model.input.postCat.addMoreCatPics.name === cat.name &&
-      model.app.loggedInUser === cat.owner
+      addMoreCatPics.name === cat.name && model.app.loggedInUser === cat.owner
   );
-  cat.lore = model.input.postCat.addMoreCatPics.lore;
-  cat.dateOfBirth = model.input.postCat.addMoreCatPics.dateOfBirth;
-  cat.pics.push(model.input.postCat.addMoreCatPics.pics);
+  cat.lore = addMoreCatPics.lore;
+  cat.dateOfBirth = addMoreCatPics.dateOfBirth;
+  cat.pics.push(addMoreCatPics.pics);
   cat.updated = new Date().toISOString().slice(0, 19).replace('T', ' ');
-  model.app.page = 'feed';
   model.input.postCat.showSlide = 0;
-
-  // log to see
-  console.log(model.data.cats);
+  changePage('feed');
 }
 
 function showSlideEditPage(x) {
+  let postCat = model.input.postCat;
   let slidesStyle = document.getElementById('ACslides');
   model.input.postCat.showSlide += x;
-  if (model.input.postCat.showSlide === -1) {
-    model.input.postCat.showSlide =
-      model.input.postCat.addMoreCatPics.pics.length - 1;
-  } else if (
-    model.input.postCat.showSlide ===
-    model.input.postCat.addMoreCatPics.pics.length
-  ) {
+  if (postCat.showSlide === -1) {
+    model.input.postCat.showSlide = postCat.addMoreCatPics.pics.length - 1;
+  } else if (postCat.showSlide === postCat.addMoreCatPics.pics.length) {
     model.input.postCat.showSlide = 0;
   }
-  slidesStyle.style.transform = `translateX(-${model.input.postCat.showSlide}00%)`;
+  slidesStyle.style.transform = `translateX(-${postCat.showSlide}00%)`;
 }
-
-// to do:
-// - Age doesnt update when updating cat/adding new pics
-

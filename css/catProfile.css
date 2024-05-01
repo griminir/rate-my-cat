@@ -1,10 +1,9 @@
 .CPContainer {
   display: flex;
   justify-content: center;
-  background-image: url("/img/background1.png");
-  /* background-size: contain; */
-background-size: cover; 
-    height: 100vh;
+  background-image: url('/img/background1.png');
+  background-size: cover;
+  height: 100vh;
 }
 
 .CPLoreContainer,
@@ -23,9 +22,6 @@ background-size: cover;
   background-color: #fff46f;
 }
 
-.CPLoreContainer {
-}
-
 .CPCommentsContainer {
   display: flex;
   flex-direction: column;
@@ -34,7 +30,7 @@ background-size: cover;
 
 .CPLoreHeader {
   font-size: 150%;
-  font-family: "Black Han Sans", sans-serif;
+  font-family: 'Black Han Sans', sans-serif;
 }
 
 .CPLoreText {
@@ -47,7 +43,7 @@ background-size: cover;
   height: 30px;
   width: 150px;
   background-color: #f8c5d5;
-  font-family: "Black Han Sans", sans-serif;
+  font-family: 'Black Han Sans', sans-serif;
   border-bottom: 7px solid black;
   border-right: 5px solid black;
 }
@@ -58,12 +54,19 @@ background-size: cover;
   background-color: #fdb3cb;
 }
 
-.CPImg > img {
+.CPImgContainer {
+  display: flex;
+  width: auto;
+  position: relative;
+  overflow: hidden;
+  width: 450px;
+  justify-content: space-between;
+  align-items: center;
   border: solid 4px black;
   border-radius: 3px;
-  margin-left: 7px;
-  margin-right: 7px;
-  margin-bottom: 5px;
+}
+
+.CPImgContainer > img {
   width: 450px;
   cursor: pointer;
 }
@@ -83,12 +86,12 @@ background-size: cover;
 
 .CPName {
   margin-right: 140px;
-  font-family: "Black Han Sans", sans-serif;
+  font-family: 'Black Han Sans', sans-serif;
 }
 
 .CPRatingStar {
   margin-left: 140px;
-  font-family: "Black Han Sans", sans-serif;
+  font-family: 'Black Han Sans', sans-serif;
 }
 
 .CPAgeRace {
@@ -98,7 +101,7 @@ background-size: cover;
 
 .CPCommentsHeader {
   font-size: 150%;
-  font-family: "Black Han Sans", sans-serif;
+  font-family: 'Black Han Sans', sans-serif;
 }
 
 .CPCommenter {
@@ -112,11 +115,6 @@ background-size: cover;
   margin-bottom: 40px;
 }
 
-/* Styled in main:
-Star 
-Polaroid
-*/
-
 .CPdelete {
   margin-top: -35px;
   margin-bottom: 5px;
@@ -125,7 +123,7 @@ Polaroid
   height: 40px;
   width: 40px;
   background-color: #f8c5d5;
-  font-family: "Black Han Sans", sans-serif;
+  font-family: 'Black Han Sans', sans-serif;
   border-bottom: 5px solid black;
   border-right: 4px solid black;
   border-radius: 50%;
@@ -139,23 +137,35 @@ Polaroid
   border-bottom: 3px solid black;
   background-color: #fdb3cb;
 }
-.CPArrowBtn {
+.CPArrowBtnLeft,
+.CPArrowBtnRight {
+  display: flex;
   cursor: pointer;
-  color: white;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 30px;
+  transition: 0.6s ease;
   user-select: none;
-  z-index: 999;
+  margin: 10px;
 }
 
-.CPImg {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.CPArrowBtnLeft {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
+.CPArrowBtnRight {
+  right: 0;
+  border-radius: 3px 0 0 3px;
 }
 
 .CPcommentButton {
   border: 3px solid black;
   background-color: #f8c5d5;
-  font-family: "Black Han Sans", sans-serif;
+  font-family: 'Black Han Sans', sans-serif;
   font-weight: bold;
   border-bottom: 5px solid black;
   border-right: 4px solid black;

@@ -22,29 +22,23 @@ function makeInteractiveStars(catId) {
       rating.ratedByUser === model.app.loggedInUser &&
       rating.ratedCatId === catId
   );
-
   let filledStars = myRating ? myRating.rating : 0;
   let exitFilledStars = 10 - filledStars;
   for (let i = 10; i >= numberOfStars; i--) {
     if (isRated) {
       if (exitFilledStars > 0) {
         html += /*HTML*/ `
-      
-        
         <div id="stars" onclick="giveRating(${i}, ${catId})"></div>
         `;
         exitFilledStars--;
       } else {
         html += /*HTML*/ `
-        
         <div id="stars" onclick="giveRating(${i}, ${catId})" class="filled"></div>
       `;
       }
     } else {
       html += /*HTML*/ `
-      
       <div id="stars" onclick="giveRating(${i}, ${catId})"></div>
-      
       `;
     }
   }
@@ -56,12 +50,11 @@ function getRatingAverage(catId) {
   let ratings = model.data.ratings.filter(
     (rating) => rating.ratedCatId === catId
   );
-  let catIndex = model.data.cats.findIndex(cat => cat.id == catId);
+  let catIndex = model.data.cats.findIndex((cat) => cat.id == catId);
   model.data.cats[catIndex].timesRated = ratings.length;
   let sum = 0;
   ratings.forEach((rating) => (sum += rating.rating));
   sum = (sum / ratings.length).toFixed(1);
-  // model.data.cats[catIndex].rating = sum;
   if (sum == 10.0) {
     return 10;
   } else if (ratings.length === 0) {
@@ -87,34 +80,16 @@ function giveRating(rating, catId) {
       });
     } else {
       playWahWahAudio();
-      setTimeout(function() {alert('Please log in to rate a cat!')},100);
+      setTimeout(function () {
+        alert('Please log in to rate a cat!');
+      }, 100);
     }
   }
   updateView();
 }
 
 function playWahWahAudio() {
-    let wah = new Audio('audio/wah-wah.mp3');
-    wah.volume = 0.1;
-    wah.play();
+  let wah = new Audio('audio/wah-wah.mp3');
+  wah.volume = 0.1;
+  wah.play();
 }
-
-// function changeCatId() {
-//   let cats = model.data.cats;
-//   for (let i = 0; i < cats.length; i++) {
-//     let catIndex = cats.indexOf(cats[i]);
-//     model.data.cats[i].id = catIndex;
-//   }
-// }
-
-// function changeReportedCatId(reportedCatId) {
-//   let report = model.data.admin.reports.findIndex(report => report.reportedCatId === reportedCatId);
-//   model.data.admin.reports[report].reportedCatId = reportedCatId - 1;
-// }
-
-// function pickHoverRating(star, catId) {
-//   model.input.feed.hoverRating.cat = catId;
-//   model.input.feed.hoverRating.starNumber = star;
-//   console.log(model.input.feed.hoverRating.starNumber);
-//   updateView();
-// }

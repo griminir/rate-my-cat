@@ -1,8 +1,7 @@
 function catProfileView() {
   let cat = model.data.cats;
   let catId = model.app.displayedCat;
-  let catIndex = model.data.cats.findIndex(cat => cat.id == catId);
-  // let catId = 2;
+  let catIndex = model.data.cats.findIndex((cat) => cat.id == catId);
 
   document.getElementById('app').innerHTML = /*HTML*/ `
     ${makeHeader()}
@@ -12,40 +11,48 @@ function catProfileView() {
             <div>
               <h3 class="CPLoreHeader">Meow Lore</h3><br>
               <span class="CPLoreText">${
-                cat[catIndex].lore ?? 'This cat has done nothing of significance'
+                cat[catIndex].lore ??
+                'This cat has done nothing of significance'
               }</span>
             </div>
-            <button class="CPLoreButton" >Report problem</button>
+            <button class="CPLoreButton" onclick="changePage('report')">Report problem</button>
         </div>
 
         <div class="stylePolaroid">
         <button class="CPdelete" onclick='deleteCat(${catIndex})'>X</button>
-            <div class="CPImg">
-            <div class="CPArrowBtn" onclick="CPswapPic(-1)">❮</div>
-            <img onclick="playMeowAudio ()"src="${cat[catIndex].pics[model.data.showSlide]}">
-            <div class="CPArrowBtn" onclick="CPswapPic(1)">❯</div>
+            <div class="CPImgContainer">
+              <div class="CPArrowBtnLeft" onclick="CPswapPic(-1)">❮</div>
+              <img onclick="playMeowAudio ()"src="${
+                cat[catIndex].pics[model.data.showSlide]
+              }">
+              <div class="CPArrowBtnRight" onclick="CPswapPic(1)">❯</div>
             </div>
 
             <div class="CPPolaroidFirstText">
               <span class="CPName">${cat[catIndex].name}</span>
               <span class="CPRatingStar">
-                <span class="CPRating">${getRatingAverage(cat[catIndex].id)}</span>
+                <span class="CPRating">${getRatingAverage(
+                  cat[catIndex].id
+                )}</span>
                 <span class="styleStar">&#11088;</span>
               </span>
             </div>
-            <div class="CPRatedTimes">rated ${cat[catIndex].timesRated} times</div>
+            <div class="CPRatedTimes">rated ${
+              cat[catIndex].timesRated
+            } times</div>
 
             <div class="CPAgeRace">
             ${cat[catIndex].age} y/o, ${cat[catIndex].race}
             </div>
             <div class="styleCatInteractiveStars">${makeInteractiveStars(
-              cat[catIndex].id, getRatingAverage(cat[catIndex].id)
+              cat[catIndex].id,
+              getRatingAverage(cat[catIndex].id)
             )}</div>
         </div>
         <div class="CPCommentsContainer">
         <h3 class="CPCommentsHeader">Comments</h3>
         <div class="CPCommentsLoop">${getCommentLoop(catIndex)}</div>
-        <div class="CPCommentButtonContainer"><input class="CPcommentField" onchange="model.input.viewCat.comment.comment=this.value"  type="text" placeholder= "comment..." />
+        <div class="CPCommentButtonContainer"><input maxlength="100" class="CPcommentField" onchange="model.input.viewCat.comment.comment=this.value"  type="text" placeholder= "comment..." />
         <button onclick="postComment(${catIndex})" class="CPcommentButton">⤳</button></div>
         </div>
         
@@ -56,7 +63,7 @@ function catProfileView() {
 
 function CPswapPic(toPage) {
   let catId = model.app.displayedCat;
-  let catIndex = model.data.cats.findIndex(cat => cat.id == catId);
+  let catIndex = model.data.cats.findIndex((cat) => cat.id == catId);
   let pics = model.data.cats[catIndex].pics;
   let showSlide = model.data.showSlide;
   if (toPage == -1 && showSlide == 0) {
@@ -67,4 +74,18 @@ function CPswapPic(toPage) {
     model.data.showSlide += toPage;
   }
   updateView();
+}
+
+function getCommentLoop(catId) {
+  let catIndex = model.data.cats.findIndex((cat) => cat.id == catId);
+  let comments = model.data.cats[catIndex].comments;
+  html = '';
+
+  for (let i = 0; i < comments.length; i++) {
+    html += /*html*/ `
+    <div ><span class="CPCommenter">${comments[i].commenter}</span> <br>
+    <span class="CPComment">${comments[i].comment}</span></div>
+    `;
+  }
+  return html;
 }

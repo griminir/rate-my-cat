@@ -24,11 +24,22 @@ function makeHeader() {
 function adminAccess() {
   html = '';
   if (model.app.admin) {
-    html = /*html*/`
+    html = /*html*/ `
     <li class="H-li"><a onclick="changePage('admin')" class="H-a" href="#">Admin</a></li>
-    `
+    `;
     return html;
   } else {
-    return;
+    return '';
+  }
+}
+
+function makeLoginButton() {
+  html = ``;
+  if (!model.app.isLoggedIn) {
+    html = `<button onclick="changePage('')" class="H-button">Login</button>`;
+    return html;
+  } else if (model.app.isLoggedIn) {
+    html = `<button onclick="signOut()" class="H-button">Sign Out</button>`;
+    return html;
   }
 }

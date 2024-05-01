@@ -1,11 +1,10 @@
 let model = {
   app: {
-    isLoggedIn: true,
-    loggedInUser: 'aaltofar',
-    admin: true,
-    page: 'report',
-    displayedUser: '',
-    displayedCat: 0,
+    isLoggedIn: false,
+    loggedInUser: null,
+    admin: false,
+    page: '',
+    displayedCat: null,
   },
   input: {
     admin: {
@@ -38,7 +37,7 @@ let model = {
       username: '',
       password: '',
       repeatPassword: '',
-      disclaimer: false,
+      disclaimer: false, // muligens ikke trengs
     },
     logInInfo: {
       logInUsername: null,
@@ -51,7 +50,7 @@ let model = {
         { name: 'Cats of the day', value: 1 },
         { name: 'Cats of the week', value: 7 },
         { name: 'Cats of the month', value: 30 },
-        { name: 'Cats of all time', value: 19838, },
+        { name: 'Cats of all time', value: 19838 },
       ],
       hoverRating: {
         cat: null,
@@ -154,7 +153,6 @@ let model = {
         lore: `Han ble arrestert for skattesvindel og heleri i 2017, 
                 er kretsmester i Mario Kart 64 og har litt for høyrevridde meninger 
                 rundt nåværende norsk innvandringspolitikk`,
-        ratings: [],
         pics: [
           'img/catPictures/oliver1.png',
           'img/catPictures/oliver2.jpg',
@@ -188,7 +186,6 @@ let model = {
         dateOfBirth: '2020-04-03',
         race: ['Unknown'],
         lore: `Previously owned by norwegian mafia`,
-        ratings: [],
         pics: ['img/catPictures/bianca1.jpg'],
         updated: '2024-03-03 11:00:00',
         timesRated: 1,
@@ -212,7 +209,6 @@ let model = {
         race: ['Unknown'],
         lore: `Hun kaster opp jenvlig fordi hun har sensitiv tarm, men er veldig glad i sokkelo.
               Hun terroriserer oss om natta, men på dagtid er hun bare søt. `,
-        ratings: [],
         pics: ['img/catPictures/loki1.jpg', 'img/catPictures/loki2.jpg'],
         updated: '2024-02-03 09:00:00',
         timesRated: 2,
@@ -235,7 +231,6 @@ let model = {
         dateOfBirth: '2020-04-03',
         race: ['Unknown'],
         lore: `I am a cat.`,
-        ratings: [],
         pics: ['img/catPictures/bianca1.jpg'],
         updated: '2024-01-03 10:00:00',
         timesRated: 2,
@@ -259,7 +254,6 @@ let model = {
         race: ['Unknown'],
         lore: `Used to live in Africa before some random dude picked me up
                 and took me to Norway. It's cold here. Big L.`,
-        ratings: [],
         pics: ['img/catPictures/simba1.jpg'],
         updated: '2024-02-02 10:00:00',
         timesRated: 1,
@@ -282,7 +276,6 @@ let model = {
         dateOfBirth: '2021-01-01',
         race: ['Portugisisk vannkatt'],
         lore: `katte så smart, den ble til en hund`,
-        ratings: [],
         pics: ['img/catPictures/frøya1.png', 'img/catPictures/frøya2.png'],
         updated: '2024-04-19 10:00:00',
         timesRated: 2,
@@ -307,7 +300,6 @@ let model = {
         lore: `Halvt bengal/skogskatt. Jeg digger nabokatten Findus, vi er bestevenner. 
         Og esker, esker får jeg aldri nok av! 
         Ellers er det gøy å plage å plage husholdningens slaver.`,
-        ratings: [],
         pics: ['img/catPictures/2simba1.png'],
         updated: '2024-04-18 11:00:00',
         timesRated: 3,
@@ -330,7 +322,6 @@ let model = {
         dateOfBirth: '2023-01-05',
         race: ['Uncat'],
         lore: `Max lusker i skyggene når katten din er ute.`,
-        ratings: [],
         pics: [
           'img/catPictures/max1.png',
           'img/catPictures/max2.png',
@@ -358,7 +349,6 @@ let model = {
         dateOfBirth: '2019-08-01',
         race: ['Unknown'],
         lore: null,
-        ratings: [],
         pics: [
           'img/catPictures/theodore1.jpg',
           'img/catPictures/theodore2.jpg',
@@ -384,7 +374,6 @@ let model = {
         dateOfBirth: '2018-05-19',
         race: ['Unknown'],
         lore: null,
-        ratings: [],
         pics: ['img/catPictures/camilla1.jpg', 'img/catPictures/camilla2.jpg'],
         updated: '2024-04-10 13:00:00',
         timesRated: 2,
@@ -402,7 +391,6 @@ let model = {
     ],
     ratings: [
       {
-        // date: '2024-04-01 10:21:11',
         date: 'Mon Apr 01 2024 10:21:11 GMT+0200 (Central European Summer Time)',
         ratedCatId: 0,
         ratedByUser: 'aaltofar',
@@ -523,20 +511,21 @@ let model = {
     admin: {
       reports: [
         {
-          id: 0,
+          ticketId: 0,
           reportedByUser: 'kitty',
           reportedCatId: 7,
           reportedUser: 'AntiKatt',
           reportReason: 'That aint a cat!!!',
         },
         {
-          id: 1,
+          ticketId: 1,
           reportedByUser: 'bob',
           reportedCatId: 5,
           reportedUser: 'CatMage',
-          reportReason: 'im not 100% sure but that might not, i could be wrong, but that might not be a cat. you should double check tho',
+          reportReason:
+            'im not 100% sure but that might not, i could be wrong, but that might not be a cat. you should double check tho',
         },
-      ]
-    }
+      ],
+    },
   },
 };

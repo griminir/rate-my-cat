@@ -1,5 +1,5 @@
 function adminView() {
-  document.getElementById("app").innerHTML = /*HTML*/ `
+  document.getElementById('app').innerHTML = /*HTML*/ `
     ${makeHeader()}
     <div class="A-container">
     <div class="A-usersList">${adminUsersLoop()}</div>
@@ -10,7 +10,7 @@ function adminView() {
 }
 
 function adminUsersLoop() {
-    let users = model.data.users;
+  let users = model.data.users;
   let html = /*HTML*/ `
   <h2><u>All users:</u></h2>
   `;
@@ -30,7 +30,6 @@ function adminIssuesLoop() {
   let reports = model.data.admin.reports;
 
   for (let report of reports) {
-    
     html += /*HTML*/ `
     <div class="A-reports">
     <div>Reported by: ${report.reportedByUser}</div>
@@ -38,7 +37,7 @@ function adminIssuesLoop() {
     <div>Reported cat id: ${report.reportedCatId}</div>
     <div>Reason: ${report.reportReason}</div>
     <button onclick="pickCat('${report.reportedCatId}')">Go to cat page</button>
-    <button onclick='deleteReport(${report.id})'>Delete report</button>
+    <button onclick="deleteReport(${report.ticketId})">Delete report</button>
     </div>
     `;
   }

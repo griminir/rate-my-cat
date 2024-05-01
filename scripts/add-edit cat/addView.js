@@ -11,15 +11,15 @@ function addView() {
                 ${makePreviewPics() ?? ''}
             </div>
         <div class="ACinputFields">
-            <input class="ACinputItems" type='text' onchange="getName(this.value)" placeholder="Name">
-            <input class="ACinputItems" type='date' onchange="getBirthday(this.value)">
+            <input class="ACinputItems" type='text' onchange="getInfo(this.value, 'name')" placeholder="Name">
+            <input class="ACinputItems" type='date' onchange="getInfo(this.value, 'dateOfBirth')">
             <label>Race:</label> 
             <button class="ACButton" onclick='toggleRaces()'>Pick race</button>
                 <div id="catRaces" class="ACraces">
                 ${makeDropDownRaceHtml()}
                 </div>
         </div>
-        <textarea class="ACcatLoreField" type='text' onchange="getLore(this.value)" placeholder="Add meow lore"></textarea>
+        <textarea maxlength="300" class="ACcatLoreField" type='text' onchange="getInfo(this.value, 'lore')" placeholder="Add meow lore"></textarea>
         <button class="ACButton" onclick='postCat()'>Post my meow</button>
     </div>
     `;

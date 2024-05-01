@@ -18,10 +18,12 @@ function login() {
 }
 
 function findUser() {
+  let logInInfo = model.input.logInInfo;
+
   for (let user of model.data.users) {
     if (
-      user.username == model.input.logInInfo.logInUsername &&
-      user.password == model.input.logInInfo.logInPassword
+      user.username == logInInfo.logInUsername &&
+      user.password == logInInfo.logInPassword
     ) {
       return user.username;
     }

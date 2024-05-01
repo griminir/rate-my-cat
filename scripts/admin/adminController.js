@@ -1,8 +1,7 @@
 function adminBanUser(username) {
   if (!model.input.admin.safeguardBan) {
-    // model.input.admin.safeguardBan = false;
     alert(
-      "You are about to ban a user. If you are certain you want to ban this user, click on the same button again"
+      'You are about to ban a user. If you are certain you want to ban this user, click on the same button again'
     );
     model.input.admin.victim = username;
 
@@ -36,15 +35,12 @@ function adminTrulyBanUser(username) {
 
   // delete users comments
   for (let i = 0; i < model.data.cats.length; i++) {
-    // if (model.data.cats[i].comments) {
     for (let n = 0; n < model.data.cats[i].comments.length; n++) {
       if (model.data.cats[i].comments[n].commenter === username) {
         model.data.cats[i].comments.splice(n, 1);
         n--;
-        console.log("deleted comment");
       }
     }
-    // }
   }
 
   // delete reports made by user
@@ -71,7 +67,7 @@ function adminTrulyBanUser(username) {
 
 function deleteReport(reportId) {
   let reportToDeleteIndex = model.data.admin.reports.findIndex(
-    (report) => report.id === reportId
+    (report) => report.ticketId === reportId
   );
   model.data.admin.reports.splice(reportToDeleteIndex, 1);
   updateView();
