@@ -29,8 +29,8 @@
     <link rel="stylesheet" href="css/signup.css" />
     <link rel="stylesheet" href="css/catProfile.css" />
     <link rel="stylesheet" href="css/header.css" />
-    <link rel="stylesheet" href="css/admin.css">
-    <link rel="stylesheet" href="css/report.css">
+    <link rel="stylesheet" href="css/admin.css" />
+    <link rel="stylesheet" href="css/report.css" />
 
     <script
       type="module"
@@ -46,7 +46,7 @@
 
     <script src="scripts/model.js"></script>
 
-    <script src="scripts/Header/headerview.js"></script>
+    <script src="scripts/Header/headerView.js"></script>
     <script src="scripts/add-edit cat/addView.js"></script>
     <script src="scripts/add-edit cat/editView.js"></script>
     <script src="scripts/feed/feedView.js"></script>
@@ -75,6 +75,7 @@
       updateView();
       function updateView() {
         model.input.viewCat.deleteCat = false;
+        updateCatAge();
         if (model.app.page == 'feed') {
           feedView();
         } else if (
@@ -103,7 +104,7 @@
           profileEditView();
         } else if (model.app.page == 'admin' && model.app.admin) {
           adminView();
-        } else if  (model.app.page == 'report' && model.app.isLoggedIn) {
+        } else if (model.app.page == 'report' && model.app.isLoggedIn) {
           reportView();
         } else {
           logInView();
@@ -112,10 +113,3 @@
     </script>
   </body>
 </html>
-
-<!-- Nyeste bilde av kattene kommer øverst i feeden. 
-Vil ikke ha contact us, heller report problem i bånn av profilen din.
-Hvis du er på en annens profil, report user.
-Når man ser bilde, eller gå inn på en katt, report problem.
-
-Nice to have: kan rapportere spesifike kommentarer.  -->

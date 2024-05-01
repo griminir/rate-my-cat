@@ -93,3 +93,25 @@ function playWahWahAudio() {
   wah.volume = 0.1;
   wah.play();
 }
+
+function updateCatAge() {
+  model.data.cats.forEach(
+    (cat) => (cat.dateOfBirth = getUpdateAge(cat.dateOfBirth))
+  );
+}
+
+function getUpdateAge(birthday) {
+  // Parse the birthdate string into a Date object
+  let dob = new Date(birthday);
+
+  // Get the current date
+  let currentDate = new Date();
+
+  // Calculate the time difference in milliseconds
+  let timeDiff = currentDate.getTime() - dob.getTime();
+
+  // Calculate the age based on the time difference
+  let age = Math.floor(timeDiff / (1000 * 3600 * 24 * 365.25));
+
+  return age;
+}
