@@ -11,8 +11,8 @@ function feedView() {
   </div>
   <h1 class="FE-headline"><u>FEED</u></h1>
   <div class="FVFeedContainer">${getFeedLoop()}</div>
-  </div>
   <a class="FV-backToTopButton" href="#topOfPage">&#8593;</a>
+  </div>
   `;
 }
 

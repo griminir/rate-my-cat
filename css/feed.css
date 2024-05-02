@@ -1,7 +1,7 @@
 .FVContainer {
   text-align: center;
-  background-image: url('/img/background1.png');
-  background-size: contain;
+  /* background-image: url('/img/background1.png');
+  background-size: contain; */
 }
 
 .FVContainer > h1,
@@ -157,6 +157,7 @@ h2 {
   border: 2px solid black;
   justify-content: center;
   align-items: center;
+  right: 10px;
   font-size: 200%;
   position: sticky;
   margin-right: 10px;
