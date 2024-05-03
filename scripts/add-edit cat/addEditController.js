@@ -25,6 +25,7 @@ function postCat() {
     pics: postCat.addNewCat.pics,
     rating: [],
     updated: new Date().toISOString().slice(0, 19).replace('T', ' '),
+    comments: [],
   };
   model.data.cats.push(newCat);
   model.input.postCat.showSlide = 0;
