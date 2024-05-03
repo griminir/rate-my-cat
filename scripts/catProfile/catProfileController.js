@@ -56,3 +56,13 @@ function playMeowAudio() {
   meow.volume = 0.1;
   meow.play();
 }
+
+function deleteComment(comment, commenter) {
+  let catId = Number(model.app.displayedCat);
+  let commentToDelete = model.data.cats[catId].comments.findIndex(
+    (c) => c.commenter === commenter && c.comment === comment
+  );
+  let cat = model.data.cats.find((cat) => cat.id === catId);
+  cat.comments.splice(commentToDelete, 1);
+  updateView();
+}

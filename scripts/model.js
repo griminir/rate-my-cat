@@ -1,10 +1,10 @@
 let model = {
   app: {
-    isLoggedIn: false,
-    loggedInUser: null,
-    admin: false,
-    page: '',
-    displayedCat: null,
+    isLoggedIn: true,
+    loggedInUser: 'aaltofar',
+    admin: true,
+    page: 'catProfile',
+    displayedCat: 0,
   },
   input: {
     admin: {

@@ -62,8 +62,10 @@
 }
 .PimgDiv > img {
   width: 250px;
+  height: 250px;
   border: solid 4px black;
   border-radius: 3px;
+  object-fit: cover;
 }
 .PimgDiv > img:hover {
   cursor: pointer;

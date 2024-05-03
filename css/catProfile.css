@@ -68,11 +68,14 @@
 
 .CPImgContainer > img {
   width: 450px;
+  height: 450px;
   cursor: pointer;
+  object-fit: cover;
 }
 
 .CPPolaroidFirstText {
   display: flex;
+  justify-content: space-between;
   width: 92%;
 }
 
@@ -85,12 +88,12 @@
 }
 
 .CPName {
-  margin-right: 140px;
+  /* margin-right: 140px; */
   font-family: 'Black Han Sans', sans-serif;
 }
 
 .CPRatingStar {
-  margin-left: 140px;
+  /* margin-left: 140px; */
   font-family: 'Black Han Sans', sans-serif;
 }
 
@@ -106,13 +109,16 @@
 
 .CPCommenter {
   font-size: 110%;
-  margin-bottom: 40px;
   font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: -20px;
 }
 
 .CPComment {
   font-style: italic;
   margin-bottom: 40px;
+  display: flex;
 }
 
 .CPdelete {
@@ -204,4 +210,24 @@
 }
 .CPCommentsLoop::-webkit-resizer {
   display: none;
+}
+
+.CPCommenter > button {
+  border: 3px solid black;
+  height: 25px;
+  width: 25px;
+  background-color: #f8c5d5;
+  font-family: 'Black Han Sans', sans-serif;
+  border-bottom: 5px solid black;
+  border-right: 4px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.CPCommenter > button:hover {
+  border-top: 4px solid black;
+  border-left: 5px solid black;
+  border-right: 3px solid black;
+  border-bottom: 3px solid black;
+  background-color: #fdb3cb;
 }

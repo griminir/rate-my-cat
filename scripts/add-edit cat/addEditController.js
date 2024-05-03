@@ -29,13 +29,17 @@ function postCat() {
   };
   model.data.cats.push(newCat);
   model.input.postCat.showSlide = 0;
+  model.input.postCat.addNewCat.pics = [];
   changePage('feed');
 }
 
 function getAge() {
   // Parse the birthdate string into a Date object
+  if(!model.input.postCat.addNewCat.dateOfBirth) {
+    return 'unknown';
+  }
   let dob = new Date(model.input.postCat.addNewCat.dateOfBirth);
-
+  
   // Get the current date
   let currentDate = new Date();
 
@@ -137,11 +141,14 @@ function updateCat() {
     (cat) =>
       addMoreCatPics.name === cat.name && model.app.loggedInUser === cat.owner
   );
-  cat.lore = addMoreCatPics.lore;
+  if (addMoreCatPics.lore !== '') {
+    cat.lore = addMoreCatPics.lore;
+  }
   cat.dateOfBirth = addMoreCatPics.dateOfBirth;
   cat.pics.push(addMoreCatPics.pics);
   cat.updated = new Date().toISOString().slice(0, 19).replace('T', ' ');
   model.input.postCat.showSlide = 0;
+  model.input.postCat.addMoreCatPics.pics = [];
   changePage('feed');
 }
 

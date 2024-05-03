@@ -3,7 +3,7 @@ function catProfileView() {
   let catId = model.app.displayedCat;
   let catIndex = model.data.cats.findIndex((cat) => cat.id == catId);
 
-  document.getElementById('app').innerHTML = /*HTML*/ `
+  document.getElementById("app").innerHTML = /*HTML*/ `
     ${makeHeader()}
     <div class="CPContainer">
         <div class="CPLoreContainer">
@@ -12,7 +12,7 @@ function catProfileView() {
               <h3 class="CPLoreHeader">Meow Lore</h3><br>
               <span class="CPLoreText">${
                 cat[catIndex].lore ??
-                'This cat has done nothing of significance'
+                "This cat has done nothing of significance"
               }</span>
             </div>
             <button class="CPLoreButton" onclick="changePage('report')">Report problem</button>
@@ -29,14 +29,14 @@ function catProfileView() {
             </div>
 
             <div class="CPPolaroidFirstText">
-              <span class="CPName">${cat[catIndex].name}</span>
-              <span class="CPRatingStar">
+              <div class="CPName">${cat[catIndex].name}</div>
+              <div class="CPRatingStar">
                 <span class="CPRating">${getRatingAverage(
                   cat[catIndex].id
                 )}</span>
                 <span class="styleStar">&#11088;</span>
-              </span>
-            </div>
+              </div> <!-- end of CPRatingStar -->
+            </div> <!-- end of CPPolaroidFirstText -->
             <div class="CPRatedTimes">rated ${
               cat[catIndex].timesRated
             } times</div>
@@ -79,13 +79,28 @@ function CPswapPic(toPage) {
 function getCommentLoop(catId) {
   let catIndex = model.data.cats.findIndex((cat) => cat.id == catId);
   let comments = model.data.cats[catIndex].comments;
-  html = '';
+  html = "";
 
   for (let i = 0; i < comments.length; i++) {
     html += /*html*/ `
-    <div ><span class="CPCommenter">${comments[i].commenter}</span> <br>
+    <div><span class="CPCommenter">${comments[i].commenter} ${addDeleteButton(
+      comments[i]
+    )}</span> <br>
     <span class="CPComment">${comments[i].comment}</span></div>
     `;
   }
   return html;
 }
+
+function addDeleteButton(comment) {
+  let html = "";
+  if (model.app.admin) {
+    html = /*html*/ `
+    <button onclick='deleteComment("${comment.comment}", "${comment.commenter}")'>x</button>
+    `;
+    return html;
+  } else {
+    return html;
+  }
+}
+
