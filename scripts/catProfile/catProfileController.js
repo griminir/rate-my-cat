@@ -39,16 +39,20 @@ function trulyDeleteCat(catId) {
 }
 
 function postComment(catId) {
-  const theCommenter = model.app.loggedInUser;
-  let theComment = model.input.viewCat.comment.comment;
-  let catIndex = model.data.cats.findIndex((cat) => cat.id == catId);
+  if (model.app.isLoggedIn) {
+    const theCommenter = model.app.loggedInUser;
+    let theComment = model.input.viewCat.comment.comment;
+    let catIndex = model.data.cats.findIndex((cat) => cat.id == catId);
 
-  model.data.cats[catIndex].comments.push({
-    commenter: theCommenter,
-    comment: theComment,
-  });
-  model.input.viewCat.comment.comment = null;
-  updateView();
+    model.data.cats[catIndex].comments.push({
+      commenter: theCommenter,
+      comment: theComment,
+    });
+    model.input.viewCat.comment.comment = null;
+    updateView();
+  } else {
+    changePage('');
+  }
 }
 
 function playMeowAudio() {
