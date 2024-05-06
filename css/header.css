@@ -53,7 +53,7 @@
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  transition: all 0.3s ease 0s;
+  transition: all 0.1s ease 0s;
   font-family: 'Black Han Sans', sans-serif;
   border: 3px solid black;
   border-bottom: 8px solid black;
@@ -61,5 +61,9 @@
 }
 
 .H-button:hover {
-  background-color: rgba(201, 190, 255, 0.8);
+  background-color: rgba(167, 151, 252, 0.8);
+  border-left: 7px solid black;
+  border-top: 6px solid black;
+  border-bottom: 4px solid black;
+  border-right: 4px solid black;
 }

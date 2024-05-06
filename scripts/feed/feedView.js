@@ -19,10 +19,10 @@ function feedView() {
 function makePodiumOptions() {
   let html =
     /*HTML*/
-    `<option selected value="3">${model.input.feed.podiums[3].name}</option>`;
+    `<option selected value="3" >${model.input.feed.podiums[3].name}</option>`;
   for (let i = 0; i < model.input.feed.podiums.length - 1; i++) {
     const podium = model.input.feed.podiums[i];
-    html += /*HTML*/ `<option ${
+    html += /*HTML*/ `<option  ${
       model.input.feed.currentPodium == i ? 'selected' : ''
     } value="${i}">${podium.name}</option>`;
   }

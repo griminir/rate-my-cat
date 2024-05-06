@@ -39,7 +39,7 @@ function trulyDeleteCat(catId) {
 }
 
 function postComment(catId) {
-  if (model.app.isLoggedIn) {
+  if (model.app.isLoggedIn && model.input.viewCat.comment.comment) {
     const theCommenter = model.app.loggedInUser;
     let theComment = model.input.viewCat.comment.comment;
     let catIndex = model.data.cats.findIndex((cat) => cat.id == catId);
@@ -49,6 +49,8 @@ function postComment(catId) {
       comment: theComment,
     });
     model.input.viewCat.comment.comment = null;
+    updateView();
+  } else if (!model.input.viewCat.comment.comment) {
     updateView();
   } else {
     changePage('');

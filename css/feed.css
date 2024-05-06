@@ -1,7 +1,5 @@
 .FVContainer {
   text-align: center;
-  /* background-image: url('/img/background1.png');
-  background-size: contain; */
 }
 
 .FVContainer > h1,
@@ -11,11 +9,14 @@ h2 {
 
 .FVPodiumDropDown {
   margin: 20px;
-  border: 2px solid black;
+  border: 3px solid black;
+  border-bottom: 7px solid black;
+  border-right: 5px solid black;
   border-radius: 5px;
   height: 30px;
   font-weight: bold;
 }
+
 .FVPodiumContainer {
   display: grid;
   grid-template: 3, 1fr;
@@ -110,8 +111,9 @@ h2 {
   border: solid 4px black;
   border-radius: 3px;
   object-fit: cover;
-  margin-top: 10px; }
- 
+  margin-top: 10px;
+}
+
 .FVFeedCatPics > img:hover {
   cursor: pointer;
   border: solid 5px black;
@@ -144,6 +146,7 @@ h2 {
   margin-right: 20px;
   margin-top: -18px;
   margin-bottom: 5px;
+  user-select: none;
 }
 
 .FVCommentBubble {

@@ -137,9 +137,14 @@
   border: 3px solid black;
   border-bottom: 8px solid black;
   border-right: 6px solid black;
+  transition: all 0.1s ease 0s;
 }
 .ACButton:hover {
   background-color: #89dceb;
+  border-left: 6px solid black;
+  border-top: 5px solid black;
+  border-bottom: 4px solid black;
+  border-right: 4px solid black;
 }
 
 .ECButton {
@@ -153,7 +158,12 @@
   border: 3px solid black;
   border-bottom: 8px solid black;
   border-right: 6px solid black;
+  transition: all 0.1s ease 0s;
 }
 .ECButton:hover {
   background-color: #f8c5d5;
+  border-left: 6px solid black;
+  border-top: 5px solid black;
+  border-bottom: 4px solid black;
+  border-right: 4px solid black;
 }
