@@ -39,23 +39,13 @@ function profileCatDisplay() {
 }
 
 function getUserBio() {
-  for (user of model.data.users) {
-    if (user.username == model.app.loggedInUser) {
-      return user.bio;
-    } else {
-      return null;
-    }
-  }
+  let user = model.data.users.find((u) => u.username == model.app.loggedInUser);
+  return user.bio ? user.bio : '';
 }
 
 function getUserPic() {
-  for (user of model.data.users) {
-    if (user.username == model.app.loggedInUser) {
-      return user.profilePic;
-    } else {
-      return null;
-    }
-  }
+  let user = model.data.users.find((u) => u.username == model.app.loggedInUser);
+  return user.profilePic ? user.profilePic : '';
 }
 
 function profileGetUserCatsLoop(rightOwner) {

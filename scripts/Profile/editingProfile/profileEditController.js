@@ -14,7 +14,9 @@ function changeProfilePicInData() {
   let user = model.data.users.find(
     (user) => model.app.loggedInUser === user.username
   );
-  if (profilePic != '') user.profilePic = profilePic;
+  if (profilePic != '') {
+    user.profilePic = profilePic;
+  }
 }
 
 function updateBio() {
